@@ -1,0 +1,345 @@
+@font-face {
+    font-family: 'font';
+    font-weight: 100;
+    src: url(../statics/Estedad-Thin.woff2) format(woff2),
+        url(../ttf/Estedad-Thin.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 200;
+    src: url(../statics/Estedad-SemiBold.woff2) format(woff2),
+        url(../ttf/Estedad-SemiBold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 300;
+    src: url(../statics/Estedad-Regular.woff2) format(woff2),
+        url(../ttf/Estedad-Regular.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 400;
+    src: url(../statics/Estedad-Medium.woff2) format(woff2),
+        url(../ttf/Estedad-Medium.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 500;
+    src: url(../statics/Estedad-Light.woff2) format(woff2),
+        url(../ttf/Estedad-Light.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 600;
+    src: url(../statics/Estedad-ExtraLight.woff2) format(woff2),
+        url(../ttf/Estedad-ExtraLight.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 700;
+    src: url(../statics/Estedad-ExtraBold.woff2) format(woff2),
+        url(../ttf/Estedad-ExtraBold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 800;
+    src: url(../statics/Estedad-Bold.woff2) format(woff2),
+        url(../ttf/Estedad-Bold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'font';
+    font-weight: 900;
+    src: url(../statics/Estedad-Black.woff2) format(woff2),
+        url(../ttf/Estedad-Black.ttf) format(truetype);
+}
+
+
+.gray {
+    background: #D9D9D9;
+}
+
+.light-blue {
+    background: #F1F3F6;
+}
+
+.wthit {
+    background: #FFFFFF;
+}
+
+.main-dark {
+    color: #1E232C;
+}
+
+/* ////////////home page //////////// */
+.img-gol {
+    background-image: url(../image/matthew-mcbrayer-qD9xzm7yK9U-unsplash.png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-button,
+.signup-button1 
+
+.login-button,
+.signup-button {
+    width: 29.55356rem;
+    height: 5rem;
+    font-size: 24px;
+    font-family: 'font';
+}
+
+.paragraph {
+    color: var(--main-dark, #1E232C);
+    text-align: center;
+    font-size: 36px;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    font-family: 'font';
+}
+.hamyar-5{
+    position: absolute;
+    bottom: -1rem;
+}
+/* //login page// */
+.h1-element{
+    color: #000000;
+    font-family: 'font';
+}
+.email-input , .password-input{
+    background-color: #F7F8F9;
+    width: 20.6875rem;
+    height: 3rem;
+    border: 1px solid#E8ECF4 !important;
+    font-size: 0.9375rem;
+}
+.login-button{
+    width: 20.6875rem;
+    height: 3rem;
+    background-color: #133675;
+    font-size: 0.9375rem;
+}
+.paragraph-element{
+    font-size: 0.875rem;
+    direction: ltr;
+    color: var(--dark-gray, #6A707C);
+}
+.email-input2, .password-input2, .login-button2{
+    width: 23.75rem;
+    height: 4rem;
+    border-radius: 12px;
+}
+.make-accunt{
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 200px;
+}
+.a-make-accont{
+    text-decoration: none;
+    color: #35C2C1;
+}
+/*------------------------------------- styles Dashbord -------------------------------------*/
+.titel_sub_menu {
+    color: var(--main-dark, #1E232C);
+    text-align: center;
+    /* font-size: 1.25rem; */
+    font-size: 0.9rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6875rem;
+}
+
+
+.img_logo {
+    width: 12.5rem;
+    height: 3.5rem;
+}
+
+.card-text {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 1.5rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.trash {
+    width: 1rem;
+}
+
+.card-title {
+    align-items: baseline;
+    color: var(--dark-2, #646A74);
+    text-align: right;
+    font-size: 1rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.box_card_subject {
+    border-radius: 0.5rem;
+    background: var(--white, #FFF);
+}
+
+.box_card_subject div {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 0.875rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card {
+    border-radius: 0.75rem;
+    border-color: transparent !important;
+    background: var(--light-blue, #F1F3F6);
+}
+
+.progress_title {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 0.9rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.bg_thin {
+    width: 4px !important;
+    transition: 0.6s ease-in-out;
+    /* right:0.85rem; */
+    position: absolute;
+    right: 0px;
+
+}
+
+.home-button {
+    width: 1rem;
+}
+
+.div_logo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.menu {
+    border-left: 2px solid #2E353F;
+    background: #F5F5F5;
+    height: 100vh;
+    width: 15.75rem;
+    overflow: hidden;
+}
+
+.button_menu {
+    width: 13.25rem;
+    height: 3rem;
+    border-radius: 8px;
+    margin: 0 auto;
+    font-family: 'Dana-FaNum';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1625rem;
+    line-height: 20px;
+    /* or 71% */
+    /* display: flex;
+align-items: center; */
+    text-align: right;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.name_header {
+    font-family: 'Dana-FaNum';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 20px;
+}
+
+/* ////////////////////Select app//////////////////// */
+.title_languages_programing p {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 2.5rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+}
+
+.title_languages_programing>p {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 2rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%;
+}
+
+.title_languages_programing input {
+    width: 20.9375rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border, #E8ECF4);
+    background: #F7F8F9;
+    text-align: right !important;
+    text-align: right;
+    font-size: 0.9375rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%;
+}
+
+.languages_programing_box {}
+
+.languages_programing_box .card_small {
+    /* width: 7.5rem;
+    height: 7.5rem; */
+    width: 6.25rem;
+    height: 6.25rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: var(--light-blue, #F1F3F6);
+
+}
+
+.languages_programing_box .card_big {
+    /* width: 16.875rem;
+    height: 16.875rem; */
+    width: 13.5rem;
+    height: 13.5rem;
+    flex-shrink: 0;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: var(--light-blue, #F1F3F6);
+}
+/* @media screen and (min:720px) {
+    .languages_programing_box .card_big{
+        display: none;
+    }
+} */
