@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'font';
     font-weight: 100;
     src: url(../statics/Estedad-Thin.woff2) format(woff2),
@@ -59,7 +59,7 @@
     font-weight: 900;
     src: url(../statics/Estedad-Black.woff2) format(woff2),
         url(../ttf/Estedad-Black.ttf) format(truetype);
-}
+} */
 
 
 .gray {
@@ -79,6 +79,7 @@
 }
 
 /* ////////////home page //////////// */
+
 .img-gol {
     background-image: url(../image/matthew-mcbrayer-qD9xzm7yK9U-unsplash.png);
     height: 100vh;
@@ -112,6 +113,7 @@
     bottom: -1rem;
 }
 /* //login page// */
+
 .h1-element{
     color: #000000;
     font-family: 'font';
@@ -142,11 +144,59 @@
 .make-accunt{
     text-align: center;
     font-size: 0.9rem;
+    position: absolute;
+    bottom: 1rem;
+}
+.a-make-accont{
+    text-decoration: none;
+    color: #35C2C1;
+}
+.h1-element2{
+    direction: rtl;
+}
+.h1-element{
+    color: #000000;
+    font-family: 'font';
+}
+.user-input , .password-input{
+    background-color: #F7F8F9;
+    width: 20.6875rem;
+    text-align: center;
+    height: 3rem;
+    border: 1px solid#E8ECF4 !important;
+    font-size: 0.9375rem;
+}
+.login-button{
+    width: 20.6875rem;
+    height: 3rem;
+    background-color: #133675;
+    font-size: 0.9375rem;
+}
+.paragraph-element{
+    font-size: 0.875rem;
+    direction: ltr;
+    color: var(--dark-gray, #6A707C);
+}
+.email-input2, .password-input2, .login-button2{
+    width: 23.75rem;
+    height: 4rem;
+    border-radius: 12px;
+}
+.make-accunt{
+    text-align: center;
+    font-size: 0.9rem;
     margin-top: 200px;
 }
 .a-make-accont{
     text-decoration: none;
     color: #35C2C1;
+}
+/* /// signup page/// */
+input.ng-invalid.ng-touched{
+    border: 3px solid red !important;
+}
+input.ng-valid.ng-touched{
+    border: 3px solid #133675 !important;
 }
 /*------------------------------------- styles Dashbord -------------------------------------*/
 .titel_sub_menu {

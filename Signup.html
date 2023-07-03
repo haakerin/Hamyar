@@ -4,52 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./dist/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <script src="./dist/js/Scripts/angular.js"></script>
+    <script src="./dist/js/Scripts/angular-route.js"></script>
+    <script src="./dist/js/Form.js"></script>
     <title>Document</title>
 </head>
 <body>
     
-    <div class="container-fluid d-md-none">
+    <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center p-md-5 ">
         <div class="row d-flex justify-content-center align-items-center p-3">
             <div class="col p-0 flex-column flex-wrap mt-5 mt-md-0">
-                <div class="form w-100">
+                <form class="form w-100" name="Sign_up_form" novalidate ng-controller="Formcontoroller" ng-app="Sign_up_form">
                     <h1 class="fs-1 h1-element fs-2"><b> سلام! <br> برای ثبت نام شروع کنید . . . </b></h1>
                     <br>
-                    <input type="text" class="w-100 rounded-1 border-0 p-2 email-input " placeholder=" نام حساب کاربری">
+                    <input type="text" class="w-100 rounded-1 border-0 p-4 user-input "ng-model="user.username" name="username" ng-required="true" placeholder=" نام حساب کاربری">
+                    <!-- <div ng-show="Sign_up_form.username.$invalid && Sign_up_form.username.$touched" class="d-flex justify-content-center">
+                        <span class="text-bg-danger text-center">نام کاربری خود را درست وارد نمایید</span>
+                    </div> -->
                     <br>
-                    <input type="password" class="w-100 rounded-1 border-0 p-2 password-input mt-3" placeholder="ایمیل">
+                    <input type="email" class="w-100 rounded-1 border-0 p-4 password-input mt-3" ng-model="user.email" name="email" ng-required="true" placeholder="ایمیل">
                     <br>
-                    <input type="password" class="w-100 rounded-1 border-0 p-2 password-input mt-3" placeholder="رمز عبور">
+                    <input type="password" class="w-100 rounded-1 border-0 p-4 password-input mt-3"ng-model="user.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                     <br>
-                    <input type="password" class="w-100 rounded-1 border-0 p-2 password-input mt-3" placeholder="تکرار رمز عبور">
-                    <button type="button" class="btn btn-primary w-100 border-0 mt-3 p-2 login-button"> ثبت نام </button>
+                    <input type="password" class="w-100 rounded-1 border-0 p-4 password-input mt-3"compare-to="user.password"ng-model="user.R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
+                    
+                    <button type="submit" ng-disabled="Sign_up_form.$invalid" class="btn btn-primary w-100 border-0 mt-3 p-2 login-button"> ثبت نام </button>
                     <h6 class="make-accunt text-center"> درحال حاضر حساب دارید؟ <a href="" class="a-make-accont"> ورود حساب </a> </h6>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid d-none d-md-flex justify-content-center align-items-center vh-100">
-        <div class="row p-3">
-            <div class="col">
-                <div class="form w-100 d-flex flex-column">
-                    <h1 class=" h1-element h1-element2 fs-2 "><b> سلام! <br> برای ثبت نام شروع کنید . . . </b></h1>
-                    <br>
-                    <input type="text" class=" border-0 p-2 email-input email-input2 mt-2" placeholder=" نام حساب کاربری">
-                    <br>
-                    <input type="password" class=" border-0 p-2 password-input password-input2 " placeholder="ایمیل">
-                    <br>
-                    <input type="password" class=" border-0 p-2 password-input password-input2 " placeholder="رمز عبور">
-                    <br>
-                    <input type="password" class=" border-0 p-2 password-input password-input2 mb-3" placeholder="تکرار رمز عبور">
-                    <button type="button" class="btn btn-primary border-0 mt-3 p-2 login-button login-button2"> ثبت نام </button>
-                    <h6 class="make-accunt2 text-center mt-5"> درحال حاضر حساب دارید؟ <a href="" class="a-make-accont"> ورود حساب </a> </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
