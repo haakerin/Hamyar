@@ -88,16 +88,18 @@
 }
 
 .login-button,
-.signup-button1 
-
-.login-button,
 .signup-button {
     width: 29.55356rem;
     height: 5rem;
     font-size: 24px;
     font-family: 'font';
 }
-
+.login-button{
+    width: 29.55356rem;
+    height: 5rem;
+    font-size: 24px;
+    font-family: 'font';
+}
 .paragraph {
     color: var(--main-dark, #1E232C);
     text-align: center;
