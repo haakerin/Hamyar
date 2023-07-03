@@ -94,12 +94,14 @@
     font-size: 24px;
     font-family: 'font';
 }
-.login-button{
+
+.login-button {
     width: 29.55356rem;
     height: 5rem;
     font-size: 24px;
     font-family: 'font';
 }
+
 .paragraph {
     color: var(--main-dark, #1E232C);
     text-align: center;
@@ -110,96 +112,114 @@
     line-height: 27px;
     font-family: 'font';
 }
-.hamyar-5{
+
+.hamyar-5 {
     position: absolute;
     bottom: -1rem;
 }
+
 /* //login page// */
 
-.h1-element{
+.h1-element {
     color: #000000;
     font-family: 'font';
 }
-.email-input , .password-input{
+
+.email-input, .password-input {
     background-color: #F7F8F9;
     width: 20.6875rem;
     height: 3rem;
     border: 1px solid#E8ECF4 !important;
     font-size: 0.9375rem;
 }
-.login-button{
+
+.login-button {
     width: 20.6875rem;
     height: 3rem;
     background-color: #133675;
     font-size: 0.9375rem;
 }
-.paragraph-element{
+
+.paragraph-element {
     font-size: 0.875rem;
     direction: ltr;
     color: var(--dark-gray, #6A707C);
 }
-.email-input2, .password-input2, .login-button2{
+
+.email-input2, .password-input2, .login-button2 {
     width: 23.75rem;
     height: 4rem;
-    border-radius: 12px;
+    border-radius: 0.75rem;
 }
-.make-accunt{
+
+.make-accunt {
     text-align: center;
     font-size: 0.9rem;
     position: absolute;
     bottom: 1rem;
 }
-.a-make-accont{
+
+.a-make-accont {
     text-decoration: none;
     color: #35C2C1;
 }
-.h1-element2{
+
+.h1-element2 {
     direction: rtl;
 }
-.h1-element{
+
+.h1-element {
     color: #000000;
     font-family: 'font';
 }
-.user-input , .password-input{
+
+.email-input, .password-input {
     background-color: #F7F8F9;
     width: 20.6875rem;
-    text-align: center;
     height: 3rem;
     border: 1px solid#E8ECF4 !important;
+    color: var(--gray, #8391A1);
+    text-align: right;
     font-size: 0.9375rem;
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%;
 }
-.login-button{
+
+.login-button {
     width: 20.6875rem;
     height: 3rem;
     background-color: #133675;
     font-size: 0.9375rem;
 }
-.paragraph-element{
+
+.paragraph-element {
     font-size: 0.875rem;
     direction: ltr;
     color: var(--dark-gray, #6A707C);
 }
-.email-input2, .password-input2, .login-button2{
-    width: 23.75rem;
-    height: 4rem;
-    border-radius: 12px;
-}
-.make-accunt{
+
+.make-accunt {
     text-align: center;
     font-size: 0.9rem;
     margin-top: 200px;
 }
-.a-make-accont{
+
+.a-make-accont {
     text-decoration: none;
     color: #35C2C1;
 }
+
 /* /// signup page/// */
-input.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched {
     border: 3px solid red !important;
 }
-input.ng-valid.ng-touched{
+
+input.ng-valid.ng-touched {
     border: 3px solid #133675 !important;
 }
+
 /*------------------------------------- styles Dashbord -------------------------------------*/
 .titel_sub_menu {
     color: var(--main-dark, #1E232C);
@@ -359,7 +379,6 @@ align-items: center; */
     border: 1px solid var(--border, #E8ECF4);
     background: #F7F8F9;
     text-align: right !important;
-    text-align: right;
     font-size: 0.9375rem;
     font-family: Urbanist;
     font-style: normal;
@@ -390,8 +409,18 @@ align-items: center; */
     border-radius: 0.75rem;
     background: var(--light-blue, #F1F3F6);
 }
-/* @media screen and (min:720px) {
-    .languages_programing_box .card_big{
-        display: none;
+
+@media only screen and (min-width: 720px) {
+    .email-input, .password-input {
+        width: 23.75rem !important;
+        height: 5rem !important;
+        flex-shrink: 0;
+
     }
-} */
+
+    .login-button {
+        width: 23.75rem;
+        height: 5rem;
+        flex-shrink: 0;
+    }
+}
