@@ -1,4 +1,4 @@
-var form = angular.module("Sign_up_form",["ngRoute"]);
+var form = angular.module("Sign_up_form",[]);
 
 
 form.controller('Formcontoroller',function($scope,$http){
@@ -9,10 +9,10 @@ form.controller('Formcontoroller',function($scope,$http){
     // }
   
   
-    $http.get("https://api.countrylayer.com/v2/iran")
-    .then(function(res){
-      console.log(res);    
-    })
+    // $http.get("https://api.countrylayer.com/v2/iran")
+    // .then(function(res){
+    //   console.log(res);    
+    // })
   });
 form.directive("compareTo", function ()  
 {  
