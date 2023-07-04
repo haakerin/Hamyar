@@ -1,9 +1,9 @@
-<div class="paretnt">
+<div class="paretnt"ng-app="select_app" ng-controller='select_app'>
   <div
     class="row title_languages_programing d-flex flex-column p-1 m-1 m-md-0 flex-md-nowrap flex-md-row-reverse justify-content-md-between align-items-md-center flex-row-reverse"
   >
     <p class="m-2 ms-0">:نام برنامه</p>
-    <input
+    <input id="search_learn" ng-model="name_learn"
       type="text"
       class="d-inline text-end m-auto p-3 m-1 col-12 col-md-9 m-md-2 col-lg-9"
       placeholder="مثال: برنامه آموزشی طراحی وب"
@@ -12,10 +12,15 @@
   <p class="col-12 d-flex p-1 mt-1 flex-row-reverse">
     زبان مد نظر خود را انتخاب کنید
   </p>
-  <div class="languages_programing_box justify-content-sm-end">
+  <div class="languages_programing_box justify-content-sm-end" >
     <!-- <div class="card_big"></div> -->
-    <div class="card_small c1" style="grid-area: c1"></div>
-    <div class="card_small c2" style="grid-area: c2"></div>
+    <div class="card_small c1 noborder" style="grid-area: c1" ng-class="Html"  ng-click="click('Html')">
+      <img src="./dist/image/icons8-html-5-480.png" alt="">
+      <p ng-model="name">Html</p>
+    </div>
+    <div class="card_small c2 noborder" style="grid-area: c2" ng-class="nodejs" ng-click="click('nodejs')">
+      <img src="./dist/image/icons8-nodejs-480.png" alt="" style="width: auto;">
+    </div>
     <div class="card_small c3" style="grid-area: c3"></div>
     <div class="card_small c4" style="grid-area: c4"></div>
     <div class="card_small c5" style="grid-area: c5"></div>
@@ -47,6 +52,12 @@
     <div class="card_small c20" style="grid-area: c30"></div>
     <div class="card_small c20" style="grid-area: c31"></div>
     <div class="card_small c20" style="grid-area: c32"></div>
+    
     <div class="card_small c20" style="grid-area: c33"></div>
   </div>
+  <div class="alert m-auto alert-warning alert-dismissible fade show" role="alert" style="position: fixed; bottom:1rem">
+    لطفا برای انتخاب برنامه مورد نظر خود دوبار کلیک کنید !
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  
 </div>

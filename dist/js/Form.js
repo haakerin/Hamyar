@@ -44,3 +44,25 @@ Dashboard.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"})
 }]);
 
+
+var select_app = angular.module("select_app", []);
+Dashboard.controller('select_app', function ($scope) {
+    $scope.click = function(name) {
+
+        
+        // console.log(name);
+        if ($scope[name] == 'noborder'){
+            $scope[name] = 'border';
+            console.log("border");
+            $scope.name_learn = name;
+
+        }
+      else{
+          $scope[name] = "noborder";
+          console.log('noborder');
+          $scope.name_learn = ' ';
+
+      }
+    };
+    
+});
