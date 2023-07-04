@@ -388,14 +388,17 @@ background: var(--main-blue, #133675);
 
 .languages_programing_box {
     display: grid;
-    grid-template-columns: repeat(7,6.5rem);
-    grid-template-rows: repeat(6,6.5rem);
-    gap: 1%;
-    grid-template-areas: "c2 c3 c4 c5 c6 c1 c1" "c7 c8 c8 c9 c10 c1 c1" "c11 c8 c8 c12 c13 c14 c15" "c16 c17 c18 c19 c20 c20 c21"
-    "c22 c23 c24 c25 c20 c20 c26" "c27 c28 c29 c30 c31 c32 c33"
+    column-gap: 4%;
+    /* margin-left: 9rem; */
+    row-gap: 1%;
+    justify-content: normal !important; 
+    grid-template-areas: "c2 c1 c1" " c3 c1 c1" "c4 c5 c6" "c7 c8 c9"
+    "c10 c10 c11" "c10 c10 c12" "c13 c14 c15 ""c16 c17 c18""c19 c20 c20" "c21 c20 c20" "c22 c23 c24"
     ;
     margin-bottom: 6rem ;
-
+    grid-template-columns: repeat(3,5.5rem);
+    grid-template-rows: repeat(11,5.5rem);
+    justify-content: end;
 }
 
 .languages_programing_box .card_small {
@@ -407,6 +410,22 @@ background: var(--main-blue, #133675);
     flex-shrink: 0;
     border-radius: 12px;
     background: var(--light-blue, #F1F3F6);
+    grid-template-columns: repeat(3,5.5rem);
+    grid-template-rows: repeat(11,5.5rem);
+}
+
+@media only screen and (min-width: 375px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3,6.5rem);
+        grid-template-rows: repeat(11,6.5rem);
+    }
+}
+@media only screen and (min-width: 425px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3,7.5rem);
+        grid-template-rows: repeat(11,7.5rem);
+
+    }
 
 }
 
@@ -449,7 +468,7 @@ background: var(--main-blue, #133675);
     
     }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
     .languages_programing_box {
         display: grid;
         grid-template-columns: repeat(7,4.25rem);
@@ -460,7 +479,7 @@ background: var(--main-blue, #133675);
         ;
     }
 }
-@media only screen and (max-width: 766px) {
+@media only screen and (min-width: 766px) {
     .languages_programing_box {
         display: grid;
         grid-template-columns: repeat(7,6.25rem);
@@ -472,24 +491,3 @@ background: var(--main-blue, #133675);
     }
 }
 
-@media only screen and (max-width: 425px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(3,6.5rem);
-        grid-template-rows: repeat(11,6.5rem);
-        justify-content: start !important;
-        column-gap: 4%;
-        /* margin-left: 9rem; */
-        row-gap: 1%;
-        grid-template-areas: "c2 c1 c1" " c3 c1 c1" "c4 c5 c6" "c7 c8 c9"
-        "c10 c10 c11" "c10 c10 c12" "c13 c14 c15 ""c16 c17 c18""c19 c20 c20" "c21 c20 c20" "c22 c23 c24"
-        ;
-    }
-
-}
-@media only screen and (max-width: 375px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(3,5.5rem);
-        grid-template-rows: repeat(11,5.5rem);
-        justify-content: end;
-    }
-}

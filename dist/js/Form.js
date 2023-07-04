@@ -41,6 +41,6 @@ Dashboard.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when('/dashboard',
         { templateUrl: "../../Dashboard_app.html" }
     );
-    $routeProvider.when('/Select_app',{templateUrl:"../../Select_app.html"})
+    $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"})
 }]);
 
