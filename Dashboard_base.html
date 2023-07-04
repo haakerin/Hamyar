@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dist/css/reset.css">
+    <link rel="stylesheet" href="./dist/css/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <link rel="stylesheet" href="./dist/css/animate.min.css">
+    <script src="./dist/js/Scripts/angular.js"></script>
+    <script src="./dist/js/Scripts/angular-route.js"></script>
+    <script src="./dist/js/Form.js"></script>
+</head>
+
+<body>
+
+    <div class="d-flex overflow-hidden flex-sm-row-reverse"  ng-app="Dashboard" ng-controller="Dashboard">
+
+        <!-- ------------------------------ header ----------------------------- -->
+        <!-- header of md -->
+        <div class="col-3 d-none d-md-block col-md-4 col-lg-3 flex-row-reverse menu" style="">
+
+            <div class="col-12 d-flex align-items-center justify-content-center flex-column mt-5">
+                <img class="my-auto m-5 p-2 img_logo" src="./dist/image/icon/Close Circle.svg" alt="">
+                <p class="col-12 d-flex align-items-center justify-content-center m-0 mt-2 titel_sub_menu">سـامـانـه
+                    خـدمـاتـی هـمــیـار</p>
+
+                <div class="mt-2 position-relative">
+                    <a href="#!dashboard">
+                        <button
+                            class="opinion_1  button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                            داشبورد
+                            <img id="note-button" src="./dist/image/icon/note.svg" height=30 width=30>
+                        </button>
+                    </a>
+                </div>
+                <div class="mt-2 position-relative">
+                    <a href="#!apps">
+                        <button
+                            class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                            برنامه ها
+                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/clipboard-text.svg"
+                                height=30 width=30>
+                        </button>
+                    </a>
+                </div>
+                <div class="mt-2 position-relative">
+                    <a href="#!setting">
+                        <button
+                            class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                            تنظیمات
+                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"
+                                height=30 width=30>
+                        </button>
+                    </a>
+                </div>
+                <div class="mt-2 position-relative">
+                    <a href="#!guid">
+                        <button
+                            class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                            راهنمای سایت
+                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
+                                height=30 width=30>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- d-flex justify-content-around flex-column flex-md-row -->
+        <!-- header of sm -->
+
+        <div class="col-12 col-md-8 col-lg-9 p-4">
+
+            <!-- header of opinion -->
+            <div class="col-12">
+                <div class="d-flex m-2  justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <div class="div_logo gray ms-2">
+                            <!-- <img src="./dist/image/icon/Long T-Shirt Boy_3d 1.png" alt=""> -->
+                        </div>
+                        <span class="ms-2 d-md-flex d-flex align-items-center justify-content-center name_header">حسین
+                            حسینی</span>
+
+                        <img src="./dist/image/icon/bell.svg" alt="">
+                    </div>
+                    <div class="d-inline d-md-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <img src="./dist/image/icon/menu.svg" style="width: 2.5rem;" alt="">
+                    </div>
+
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header">
+                            <div class="col-12 d-flex flex-row">
+                                <img src="./dist/image/icon/close-circle.svg" style="width: 2.5rem;" type="button"
+                                    data-bs-dismiss="offcanvas" aria-label="Close" alt="">
+                            </div>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="col-12 d-flex justify-content-center align-items-center flex-column ">
+                                <img class=" col-12 my-auto d-flex align-items-center img_logo"
+                                    src="./dist/image/icon/Close Circle.svg" alt="">
+                                <p
+                                    class="col-12 d-flex align-items-center justify-content-center m-0 mt-2 titel_sub_menu">
+                                    سـامـانـه خـدمـاتـی هـمــیـار</p>
+
+                            </div>
+
+                            <div class="col-12 d-flex align-items-center justify-content-center flex-column mt-5">
+
+                                <div class="mt-4 position-relative">
+                                    <a href="#!dashboard">
+                                        <button
+                                            class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                                            داشبورد
+                                            <img id="note-button" src="./dist/image/icon/note.svg" height=30 width=30>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="mt-4 position-relative">
+                                    <a href="#!apps">
+                                    <button
+                                        class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                                        برنامه ها
+                                        <img id="note-button"
+                                            src="./dist/image/icon/User Interface/vuesax/outline/clipboard-text.svg"
+                                            height=30 width=30>
+                                    </button>
+                                </a>
+                                </div>
+                                <div class="mt-4 position-relative">
+                                    <a href="#!setting">
+                                    <button
+                                        class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                                        تنظیمات
+                                        <img id="note-button"
+                                            src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"
+                                            height=30 width=30>
+                                    </button>
+                                </a>
+                                </div>
+                                <div class="mt-4 position-relative">
+                                    <a href="#!guid">
+                                        <button
+                                            class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                                            راهنمای سایت
+                                            <img id="note-button"
+                                                src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
+                                                height=30 width=30>
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-view>
+
+            </div>
+        
+        </div>
+    </div>
+
+
+
+
+</body>
+
+<script src="./dist/css/materail_ripley.js"></script>
+<script src="./dist/css/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</html>

@@ -77,7 +77,13 @@
 .main-dark {
     color: #1E232C;
 }
+a{
+    text-decoration: none;
 
+}
+a:hover{
+    color: transparent;
+}
 /* ////////////home page //////////// */
 
 .img-gol {
@@ -332,7 +338,15 @@ align-items: center; */
     font-size: 1.1rem;
     line-height: 20px;
 }
-
+.add_app{
+    display: inline-flex;
+padding: 1.5rem;
+justify-content: center;
+align-items: center;
+gap: 0.625rem;
+border-radius: 0.75rem;
+background: var(--main-blue, #133675);
+}
 /* ////////////////////Select app//////////////////// */
 .title_languages_programing p {
     color: var(--main-dark, #1E232C);
