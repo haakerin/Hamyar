@@ -69,3 +69,12 @@ Dashboard.controller('select_app', function ($scope) {
     //     alert("boz");
     };
 });
+
+
+
+
+
+
+
+
+/// eay login

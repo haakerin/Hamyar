@@ -1,67 +1,69 @@
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 100;
     src: url(../font/Estedad-Thin.woff2) format(woff2),
         url(../font/Estedad-Thin.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 200;
     src: url(../font/Estedad-SemiBold.woff2) format(woff2),
         url(../font/Estedad-SemiBold.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 300;
     src: url(../font/Estedad-Regular.woff2) format(woff2),
         url(../font/Estedad-Regular.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 400;
     src: url(../font/Estedad-Medium.woff2) format(woff2),
         url(../font/ttf/Estedad-Medium.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 500;
     src: url(../font/Estedad-Light.woff2) format(woff2),
         url(../font/Estedad-Light.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 600;
     src: url(../font/Estedad-ExtraLight.woff2) format(woff2),
         url(../font/Estedad-ExtraLight.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 700;
     src: url(../font/Estedad-ExtraBold.woff2) format(woff2),
         url(../font/Estedad-ExtraBold.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 800;
     src: url(../font/Estedad-Bold.woff2) format(woff2),
         url(../font/Estedad-Bold.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: 'font';
+    font-family: 'Urbanist';
     font-weight: 900;
     src: url(../font/Estedad-Black.woff2) format(woff2),
         url(../font/Estedad-Black.ttf) format(truetype);
 }
 
-
+body{
+    font-family: 'Urbanist';
+}
 .gray {
     background: #D9D9D9;
 }
@@ -98,14 +100,7 @@ a:hover{
     width: 29.55356rem;
     height: 5rem;
     font-size: 24px;
-    font-family: 'font';
-}
-
-.login-button {
-    width: 29.55356rem;
-    height: 5rem;
-    font-size: 24px;
-    font-family: 'font';
+    font-family: 'Urbanist';
 }
 
 .paragraph {
@@ -116,7 +111,7 @@ a:hover{
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
-    font-family: 'font';
+    font-family: 'Urbanist';
 }
 
 .hamyar-5 {
@@ -128,15 +123,7 @@ a:hover{
 
 .h1-element {
     color: #000000;
-    font-family: 'font';
-}
-
-
-.login-button {
-    width: 20.6875rem;
-    height: 3rem;
-    background-color: #133675;
-    font-size: 0.9375rem;
+    font-family: 'Urbanist';
 }
 
 .paragraph-element {
@@ -149,6 +136,7 @@ a:hover{
 .make-accunt {
     text-align: center;
     font-size: 0.9rem;
+
     /* position: absolute;
     bottom: 1rem; */
 }
@@ -165,7 +153,7 @@ a:hover{
 
 .h1-element {
     color: #000000;
-    font-family: 'font';
+    font-family: 'Urbanist';
 }
 
 .email-input, .password-input ,.user-input {
@@ -179,14 +167,16 @@ a:hover{
     font-family: Urbanist;
     font-style: normal;
     font-weight: 500;
+    border-radius: 8px;
     line-height: 125%;
 }
 
-.login-button {
+.login-button ,.singup-button {
     width: 20.6875rem;
     height: 3rem;
     background-color: #133675;
     font-size: 0.9375rem;
+    border-radius: 8px;
 }
 
 .paragraph-element {
@@ -345,6 +335,13 @@ gap: 0.625rem;
 border-radius: 0.75rem;
 background: var(--main-blue, #133675);
 }
+.far{
+    cursor: pointer;
+    position: absolute;
+    opacity: 40%;
+    margin-top: 2rem;
+    margin-right: -1.8rem;
+}
 /* ////////////////////Select app//////////////////// */
 .title_languages_programing p {
     color: var(--main-dark, #1E232C);
@@ -450,12 +447,26 @@ background: var(--main-blue, #133675);
         width: 23.75rem !important;
         height: 4rem !important;
         flex-shrink: 0;
-    }
+        border-radius: 12px;
 
-    .login-button {
+    }
+    .far{
+        margin-top: 2.4rem;
+        margin-right: -1.8rem;
+    }
+    .make-accunt{
+        margin-top: 25vh !important;
+
+    }
+    .login-button ,.singup-button{
         width: 23.75rem;
         height: 4rem;
         flex-shrink: 0;
+        border-radius: 12px;
+
+    }
+    .singup-button{
+        width: 90% !important;
     }
     .title_languages_programing p {
         color: var(--main-dark, #1E232C);
@@ -527,6 +538,11 @@ background: var(--main-blue, #133675);
 
 
  /* //// styles model timetable//// */
+ /* input[type="checkbox"]  {
+    display: none;
+    
+ } */
+
  .modal-header {
     background-color: #F1F3F6;
 
