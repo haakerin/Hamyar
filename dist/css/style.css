@@ -134,11 +134,10 @@ a:hover{
 
 
 .make-accunt {
-    text-align: center;
+    position: fixed;
+    bottom: 1rem;
+    left:6%;
     font-size: 0.9rem;
-
-    /* position: absolute;
-    bottom: 1rem; */
 }
 
 .a-make-accont {
@@ -455,8 +454,6 @@ background: var(--main-blue, #133675);
         margin-right: -1.8rem;
     }
     .make-accunt{
-        margin-top: 25vh !important;
-
     }
     .login-button ,.singup-button{
         width: 23.75rem;
@@ -466,7 +463,7 @@ background: var(--main-blue, #133675);
 
     }
     .singup-button{
-        width: 90% !important;
+        width:86% !important;
     }
     .title_languages_programing p {
         color: var(--main-dark, #1E232C);
