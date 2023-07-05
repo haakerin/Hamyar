@@ -16,7 +16,7 @@
     <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center  ">
         <div class="row d-flex justify-content-center align-items-center p-3">
             <div class="p-0 flex-column flex-wrap  mt-md-0">
-                <form action="./Dashboard_base.html" class="form w-100 p-3" name="Sign_up_form" novalidate ng-controller="Formcontoroller" ng-app="Sign_up_form">
+                <form action="./Dashboard_base.html" class="form w-100 p-3 " name="Sign_up_form" novalidate ng-controller="Formcontoroller" ng-app="Sign_up_form">
                     <!-- <div class="m-auto col-6"> -->
                         <h1 class="fs-1 h1-element fs-2"><b> سلام! <br> برای ثبت نام شروع کنید . . . </b></h1>
                         <br>
@@ -29,11 +29,11 @@
                         <br>
                         <input type="password" class="w-100 border-0 p-4 password-input mt-3"ng-model="user.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                         <div ng-show="Sign_up_form.password.$invalid && Sign_up_form.password.$touched" class="d-flex justify-content-center">
-                            <span class="text-danger text-center" style="font-size: 0.99rem;">رمز عبور خود را درست وارد کنید</span>
+                            <span class="text-danger text-center ms-5" style="font-size: 0.99rem;">رمز عبور خود را درست وارد کنید</span>
                         </div>
                         <br>
                         <input type="password" class="w-100  border-0 p-4 password-input mt-3"compare-to="user.password"ng-model="user.R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
-                        <button  type="submit" class="btn btn-primary w-100 border-0 mt-3 p-2 singup-button"> ثبت نام </button>
+                        <button  type="submit" ng-disabled="Sign_up_form.$invalid" class="btn btn-primary w-100 border-0 mt-3 p-2 singup-button"> ثبت نام </button>
                         <!-- <button type="submit" ng-disabled="Sign_up_form.$invalid" class="btn btn-primary  w-100 border-0 mt-5 p-2 login-button"> ثبت نام </button> -->
                         <h6 class="make-accunt col-11 text-center mt-5 m-md-3" style="margin-top: 1rem !important;"> درحال حاضر حساب کاربری دارید؟ <a href="./Login.html" class="a-make-accont"> ورود حساب </a> </h6>
 

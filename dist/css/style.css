@@ -94,7 +94,9 @@ a:hover{
     background-size: cover;
     background-position: center;
 }
-
+/* .logo_home{
+    background-image: url(../image/icon/);
+} */
 .login-button,
 .signup-button {
     width: 29.55356rem;
