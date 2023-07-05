@@ -456,6 +456,8 @@ background: var(--main-blue, #133675);
         margin-right: -1.8rem;
     }
     .make-accunt{
+        position: relative;
+        margin-top: 2rem ;
     }
     .login-button ,.singup-button{
         width: 23.75rem;
