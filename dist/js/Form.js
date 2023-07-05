@@ -39,9 +39,13 @@ Dashboard.controller('Dashboard', function ($scope) {
 window.location = '#!dashboard';
 Dashboard.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when('/dashboard',
-        { templateUrl: "../../Dashboard_app.html" }
+        { templateUrl: "../../Dashboard.html" }
     );
-    $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"})
+    $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"}
+        // document.getElementById("menu")
+    );
+    $routeProvider.when('/apps',{templateUrl:"../../Dashboard_app.html"})
+
 }]);
 
 
@@ -49,15 +53,23 @@ var select_app = angular.module("select_app", []);
 Dashboard.controller('select_app', function ($scope) {
     $scope.click = function(name) {
         // console.log(name);
+        // $scope[name].toogleclass('noborder','border');
+ let search_learn = document.getElementById('search_learn').value;
+//  alert(search_learn);
         if ($scope[name] == 'noborder'){
             $scope[name] = 'border';
-            $scope.name_learn = name;
+            if( search_learn == ''){
+                $scope.name_learn = name;
+            }
+            else{
+                $scope.name_learn = search_learn;
+
+            }
             document.getElementById('click_model').click();
         }
       else{
           $scope[name] = "noborder";
-          $scope.name_learn = ' ';
-
+        //   $scope.name_learn = ' ';
       }
       
     };

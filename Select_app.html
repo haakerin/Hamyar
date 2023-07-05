@@ -1,11 +1,17 @@
+<style>
+    .menu{
+        height: auto;
+    }
+</style>
+
 <div class="paretnt"ng-app="select_app" ng-controller='select_app'>
   <div
     class="row title_languages_programing d-flex flex-column p-1 m-1 m-md-0 flex-md-nowrap flex-md-row-reverse justify-content-md-between align-items-md-center flex-row-reverse"
   >
-    <p class="m-2 ms-0">:نام برنامه</p>
+    <p class="my-2 ms-0">:نام برنامه</p>
     <input id="search_learn" ng-model="name_learn"
       type="text"
-      class="d-inline text-end m-auto p-3 m-1 col-12 col-md-9 m-md-2 col-lg-9"
+      class="d-inline text-end m-auto p-3 me-1 col-12 col-md-9 ms-md-0 col-lg-9 ng-pristine ng-untouched ng-valid ng-empty"
       placeholder="مثال: برنامه آموزشی طراحی وب"
     />
   </div>
@@ -17,11 +23,11 @@
 </button>
   <div class="languages_programing_box justify-content-sm-end" >
     <!-- <div class="card_big"></div> -->
-    <div class="card_small c1 noborder" style="grid-area: c1"  ng-class="Html"  ng-click="click('Html')">
+    <div class="card_small c1 noborder" style="grid-area: c1"  ng-class="Html"  ng-click="click('اموزش برنامه نویسی html')">
       <img src="./dist/image/icons8-html-5-480.png" alt="">
       <p ng-model="name">Html</p>
     </div>
-    <div class="card_small c2 noborder" style="grid-area: c2" ng-class="nodejs" ng-click="click('nodejs')">
+    <div class="card_small c2 noborder" style="grid-area: c2" ng-class="nodejs" ng-click="click('اموزش مینی دوره node js')">
       <img src="./dist/image/icons8-nodejs-480.png" alt="" style="width: auto;">
     </div>
     <div class="card_small c3" style="grid-area: c3"></div>
@@ -71,7 +77,7 @@
               <div class="col-12 header-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
                       <div class="col-2 me-3 p-0 time-type"> ساعات: </div>
-                      <div class="col-10 d-flex justify-content-between">
+                      <div class="col-10 d-flex justify-content-between flex-row-reverse">
                           <div class=" px-1 time-number"> 00 </div>
                           <div class=" px-1 time-number"> 03 </div>
                           <div class=" px-1 time-number"> 06 </div>
@@ -432,8 +438,8 @@
   </div>
 </div>
   <div class="col-12 d-flex flex-row-reverse">
-    <div class="alert m-auto alert-primary alert-dismissible fade show" role="alert" style="position: fixed; bottom:1rem">
-      لطفا برای انتخاب برنامه مورد نظر خود دوبار کلیک کنید !
+    <div class="alert m-auto alert-primary alert-dismissible fade show" role="alert" style="position: fixed; bottom:1rem;font-size: 0.7rem;" >
+     ! لطفا برای انتخاب برنامه مورد نظر خود دوبار کلیک کنید
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
