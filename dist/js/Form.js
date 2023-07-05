@@ -48,21 +48,24 @@ Dashboard.config(["$routeProvider", function ($routeProvider) {
 var select_app = angular.module("select_app", []);
 Dashboard.controller('select_app', function ($scope) {
     $scope.click = function(name) {
-
-        
         // console.log(name);
         if ($scope[name] == 'noborder'){
             $scope[name] = 'border';
-            console.log("border");
             $scope.name_learn = name;
-
+            document.getElementById('click_model').click();
         }
       else{
           $scope[name] = "noborder";
-          console.log('noborder');
           $scope.name_learn = ' ';
 
       }
+      
     };
-    
+    $scope.disChoies_timetable = function(){
+        // document.getElementById('flexCheckDefault').checked = false;
+    //   var chekbox= document.getElementsByClassName("form-check-input");
+    location.href+="?anything#selectapp";
+        //location.reload();
+    //     alert("boz");
+    };
 });

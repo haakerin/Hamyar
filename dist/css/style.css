@@ -437,6 +437,12 @@ background: var(--main-blue, #133675);
         grid-template-rows: repeat(11,7.75rem);
     }
 
+}@media only screen and (min-width: 1220px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3,6.75rem);
+        grid-template-rows: repeat(11,6.75rem);
+    }
+
 }
 
 @media only screen and (min-width: 720px) {
@@ -492,12 +498,18 @@ background: var(--main-blue, #133675);
 @media only screen and (min-width: 900px) {
     .languages_programing_box {
         display: grid;
-        grid-template-columns: repeat(7,1fr);
-        grid-template-rows: repeat(6,7.5rem);
+        grid-template-columns: repeat(7,8.5rem);
+        grid-template-rows: repeat(6,8.5rem);
         gap: 1%;
         grid-template-areas: "c2 c3 c4 c5 c6 c1 c1" "c7 c8 c8 c9 c10 c1 c1" "c11 c8 c8 c12 c13 c14 c15" "c16 c17 c18 c19 c20 c20 c21"
         "c22 c23 c24 c25 c20 c20 c26" "c27 c28 c29 c30 c31 c32 c33"
         ;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(7,6.6rem);
+        grid-template-rows: repeat(6,6.6rem);
     }
 }
 /* @media only screen and (min-width: 766px) {
@@ -512,3 +524,98 @@ background: var(--main-blue, #133675);
     }
 }
  */
+
+
+ /* //// styles model timetable//// */
+ .modal-header {
+    background-color: #F1F3F6;
+
+}
+
+.modal-title {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+}
+
+.header-modal-body {
+    background-color: #646A74;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.time-number {
+    color: var(--white, #FFF);
+    text-align: right;
+    font-size: 0.5625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    display: flex;
+    align-items: center;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    padding-right: .6rem;
+
+}
+
+.time-check {
+    font-size: 1rem;
+}
+
+.div-checkbox {
+    gap: 1%;
+}
+
+.body-modal-body {
+    background-color: #F1F3F6;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    color: rgb(0, 0, 0);
+}
+
+.Program-registration {
+    background-color: #00B207;
+    color: var(--white, #FFF);
+    text-align: right;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+.Cancel-button{
+    background-color: #E40000;
+    color: var(--white, #FFF);
+    text-align: right;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
