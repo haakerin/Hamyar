@@ -3,11 +3,12 @@
   .menu{
       height: auto;
   }
+
 </style>
      <!-- Section left code -->
         <div class="card-box p-3 col-12 position-relative">
             <div class=" col-12 d-flex   flex-column flex-wrap flex-md-nowrap flex-md-row-reverse">
-                <div class="card col-6 p-1 me-md-3  col-12 col-md-6" data-bs-toggle="modal" href="#exampleModalToggle">
+                <div class="card col-6 p-1 me-md-3  col-12 col-md-6"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                         <p class="">:نام برنامه</p>
@@ -32,7 +33,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card col-6 mt-3 mt-md-0 p-1 col-12 col-md-6" data-bs-toggle="modal" href="#exampleModalToggle">
+                  <div class="card col-6 mt-3 mt-md-0 p-1 col-12 col-md-6" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                         <p class="">:نام برنامه</p>
@@ -59,7 +60,7 @@
                   </div>
             </div>
             <div class=" col-12 d-flex mt-3 flex-column flex-wrap flex-md-nowrap flex-md-row-reverse">
-                <div class="card col-6 p-1  col-12 col-md-6"  data-bs-toggle="modal" href="#exampleModalToggle">
+                <div class="card col-6 p-1  col-12 col-md-6"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                         <p class="">:نام برنامه</p>
@@ -93,42 +94,41 @@
                  </div>
                </a>
              </div> 
+             <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button> -->
 
-             <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-              <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                  <div class="modal-header border-0" style="background-color: transparent;" >
-                    <h1 class="fs-4 mt-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
-                          <g id="vuesax/outline/clipboard-text">
-                              <g id="vuesax/outline/clipboard-text_2">
-                                  <g id="clipboard-text">
-                                      <path id="Vector"
-                                          d="M19.9998 17.7667H10.6665C10.1198 17.7667 9.6665 17.3133 9.6665 16.7667C9.6665 16.22 10.1198 15.7667 10.6665 15.7667H19.9998C20.5465 15.7667 20.9998 16.22 20.9998 16.7667C20.9998 17.3133 20.5465 17.7667 19.9998 17.7667Z"
-                                          fill="#1E232C" />
-                                      <path id="Vector_2"
-                                          d="M16.5065 23.1H10.6665C10.1198 23.1 9.6665 22.6467 9.6665 22.1C9.6665 21.5533 10.1198 21.1 10.6665 21.1H16.5065C17.0532 21.1 17.5065 21.5533 17.5065 22.1C17.5065 22.6467 17.0532 23.1 16.5065 23.1Z"
-                                          fill="#1E232C" />
-                                      <path id="Vector_3"
-                                          d="M18.6665 9.49999H13.3332C12.0532 9.49999 9.6665 9.49999 9.6665 5.83332C9.6665 2.16666 12.0532 2.16666 13.3332 2.16666H18.6665C19.9465 2.16666 22.3332 2.16666 22.3332 5.83332C22.3332 7.11332 22.3332 9.49999 18.6665 9.49999ZM13.3332 4.16666C12.0132 4.16666 11.6665 4.16666 11.6665 5.83332C11.6665 7.49999 12.0132 7.49999 13.3332 7.49999H18.6665C20.3332 7.49999 20.3332 7.15332 20.3332 5.83332C20.3332 4.16666 19.9865 4.16666 18.6665 4.16666H13.3332Z"
-                                          fill="#1E232C" />
-                                      <path id="Vector_4"
-                                          d="M20 30.8333H12C4.50667 30.8333 3 27.3933 3 21.8333V13.8333C3 7.75334 5.2 5.15334 10.6133 4.87334C11.1467 4.84668 11.64 5.26001 11.6667 5.82001C11.6933 6.38001 11.2667 6.83334 10.72 6.86001C6.93333 7.07334 5 8.20668 5 13.8333V21.8333C5 26.7667 5.97333 28.8333 12 28.8333H20C26.0267 28.8333 27 26.7667 27 21.8333V13.8333C27 8.20668 25.0667 7.07334 21.28 6.86001C20.7333 6.83334 20.3067 6.35334 20.3333 5.80668C20.36 5.26001 20.84 4.83334 21.3867 4.86001C26.8 5.15334 29 7.75334 29 13.82V21.82C29 27.3933 27.4933 30.8333 20 30.8333Z"
-                                          fill="#1E232C" />
-                                  </g>
-                              </g>
-                          </g>
-                      </svg>
-                      برنامه تمرینی شما
-                  </h1>
-                  <div class="col-6 show_curriculum">
-                      <span>نام برنامه :</span>
-                      <span>آموزش برنامه نویسی</span>
-                      <span >Gtml</span>
-                  </div>
-                  </div>
-                  <div class="modal-body">
-                    <div class="col-12 header-modal-body justify-content-center">
+             <div class="offcanvas offcanvas-bottom h-100" data-bs-scroll="false" tabindex="-1" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+               <div class="offcanvas-header px-5 pe-md-3 d-flex flex-column-reverse  flex-md-row-reverse">
+                <div class="fs-4 mt-3 mt-md-0 d-flex flex-row-reverse col-12 col-md-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                        <g id="vuesax/outline/clipboard-text">
+                            <g id="vuesax/outline/clipboard-text_2">
+                                <g id="clipboard-text">
+                                    <path id="Vector"
+                                        d="M19.9998 17.7667H10.6665C10.1198 17.7667 9.6665 17.3133 9.6665 16.7667C9.6665 16.22 10.1198 15.7667 10.6665 15.7667H19.9998C20.5465 15.7667 20.9998 16.22 20.9998 16.7667C20.9998 17.3133 20.5465 17.7667 19.9998 17.7667Z"
+                                        fill="#1E232C" />
+                                    <path id="Vector_2"
+                                        d="M16.5065 23.1H10.6665C10.1198 23.1 9.6665 22.6467 9.6665 22.1C9.6665 21.5533 10.1198 21.1 10.6665 21.1H16.5065C17.0532 21.1 17.5065 21.5533 17.5065 22.1C17.5065 22.6467 17.0532 23.1 16.5065 23.1Z"
+                                        fill="#1E232C" />
+                                    <path id="Vector_3"
+                                        d="M18.6665 9.49999H13.3332C12.0532 9.49999 9.6665 9.49999 9.6665 5.83332C9.6665 2.16666 12.0532 2.16666 13.3332 2.16666H18.6665C19.9465 2.16666 22.3332 2.16666 22.3332 5.83332C22.3332 7.11332 22.3332 9.49999 18.6665 9.49999ZM13.3332 4.16666C12.0132 4.16666 11.6665 4.16666 11.6665 5.83332C11.6665 7.49999 12.0132 7.49999 13.3332 7.49999H18.6665C20.3332 7.49999 20.3332 7.15332 20.3332 5.83332C20.3332 4.16666 19.9865 4.16666 18.6665 4.16666H13.3332Z"
+                                        fill="#1E232C" />
+                                    <path id="Vector_4"
+                                        d="M20 30.8333H12C4.50667 30.8333 3 27.3933 3 21.8333V13.8333C3 7.75334 5.2 5.15334 10.6133 4.87334C11.1467 4.84668 11.64 5.26001 11.6667 5.82001C11.6933 6.38001 11.2667 6.83334 10.72 6.86001C6.93333 7.07334 5 8.20668 5 13.8333V21.8333C5 26.7667 5.97333 28.8333 12 28.8333H20C26.0267 28.8333 27 26.7667 27 21.8333V13.8333C27 8.20668 25.0667 7.07334 21.28 6.86001C20.7333 6.83334 20.3067 6.35334 20.3333 5.80668C20.36 5.26001 20.84 4.83334 21.3867 4.86001C26.8 5.15334 29 7.75334 29 13.82V21.82C29 27.3933 27.4933 30.8333 20 30.8333Z"
+                                        fill="#1E232C" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    برنامه تمرینی شما
+                </div>
+                <div class="col-12 col-md-5 p-3 show_curriculum justify-content-between d-flex">
+                    <span >html</span>
+                    <span>نام برنامه : <span>آموزش برنامه نویسی</span></span>                   
+                </div>
+               </div>
+               <div class="offcanvas-body small">
+                <div class="modal-body">
+                    <div class="col-12 header-modal-body justify-content-center flex-row-reverse">
                       <div class=" p-2 time-type"> ساعات </div>
                       <div class="row col-12 d-flex p-2">
                           <div class="col d-flex justify-content-around">
@@ -147,7 +147,7 @@
               
                   <!-- //////////////// days time//////////////////// -->
               
-                  <div class="col-12 body-modal-body justify-content-center mt-3">
+                  <div class="col-12 body-modal-body justify-content-center mt-3 flex-row-reverse">
                       <div class=" p-2  day-type"> شنبه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -164,7 +164,7 @@
                       </div>
                   </div>
               
-                  <div class="col-12 body-modal-body justify-content-center mt-2">
+                  <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                       <div class=" p-1  day-type"> یکشنبه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -181,7 +181,7 @@
                       </div>
                   </div>
               
-                  <div class="col-12 body-modal-body justify-content-center mt-2">
+                  <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                       <div class=" p-1  day-type"> دوشنبه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -198,7 +198,7 @@
                       </div>
                   </div>
               
-                  <div class="col-12 body-modal-body justify-content-center mt-2">
+                  <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                       <div class="p-1 day-type"> سه‌شنبه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -215,7 +215,7 @@
                       </div>
                   </div>
               
-                  <div class="col-12 body-modal-body justify-content-center mt-2">
+                  <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                       <div class="p-1 day-type"> چهارشنبه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -232,7 +232,7 @@
                       </div>
                   </div>
               
-                  <div class="col-12 body-modal-body justify-content-center mt-2">
+                  <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                       <div class=" p-1  day-type"> پنجشنبه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -249,7 +249,7 @@
                       </div>
                   </div>
               
-                  <div class="col-12 body-modal-body justify-content-center mt-2">
+                  <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                       <div class=" p-2  day-type"> جمعه </div>
                       <div class="row col-12 d-flex ">
                           <div class="col d-flex justify-content-around px-3">
@@ -265,30 +265,31 @@
                           </div>
                       </div>
                   </div>
-                  </div>
+                  <button class=" d-flex border-0 bg-transparent  mt-4 align-content-center align-items-center flex-row-reverse justify-content-end"  data-bs-dismiss="offcanvas" aria-label="Close">
+                    <p class=" m-0 me-2">بازگشت به داشبورد</p>  
 
-                  <!-- <a href="#"> -->
-                    <h6 class="Back-dashboard mt-3" data-bs-dismiss="offcanvas" aria-label="Close">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <g id="vuesax/outline/arrow-circle-left">
-                                <g id="vuesax/outline/arrow-circle-left_2">
-                                    <g id="arrow-circle-left">
-                                        <path id="Vector"
-                                            d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
-                                            fill="#646A74" />
-                                        <path id="Vector_2"
-                                            d="M13.2599 16.28C13.0699 16.28 12.8799 16.21 12.7299 16.06L9.19992 12.53C8.90992 12.24 8.90992 11.76 9.19992 11.47L12.7299 7.94003C13.0199 7.65003 13.4999 7.65003 13.7899 7.94003C14.0799 8.23003 14.0799 8.71003 13.7899 9.00003L10.7899 12L13.7899 15C14.0799 15.29 14.0799 15.77 13.7899 16.06C13.6499 16.21 13.4599 16.28 13.2599 16.28Z"
-                                            fill="#646A74" />
-                                    </g>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" class="col-2" height="24" viewBox="0 0 24 24" fill="none">
+                        <g id="vuesax/outline/arrow-circle-left">
+                            <g id="vuesax/outline/arrow-circle-left_2">
+                                <g id="arrow-circle-left">
+                                    <path id="Vector"
+                                        d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                                        fill="#646A74" />
+                                    <path id="Vector_2"
+                                        d="M13.2599 16.28C13.0699 16.28 12.8799 16.21 12.7299 16.06L9.19992 12.53C8.90992 12.24 8.90992 11.76 9.19992 11.47L12.7299 7.94003C13.0199 7.65003 13.4999 7.65003 13.7899 7.94003C14.0799 8.23003 14.0799 8.71003 13.7899 9.00003L10.7899 12L13.7899 15C14.0799 15.29 14.0799 15.77 13.7899 16.06C13.6499 16.21 13.4599 16.28 13.2599 16.28Z"
+                                        fill="#646A74" />
                                 </g>
                             </g>
-                        </svg>
-                        بازگشت به داشبورد
-                    </h6>
+                        </g>
+                    </svg>
+                  </button>
+                  <!-- <a href="#" > -->
+
                 <!-- </a> -->
-                </div>
-              </div>
-            </div>
-            <!-- </div> -->
+                  </div>
+
+               </div>
+             </div>
+
     
             

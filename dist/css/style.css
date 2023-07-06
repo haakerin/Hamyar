@@ -768,3 +768,14 @@ align-items: center; */
 a {
     text-decoration: none;
 }
+.show_curriculum{
+    border-radius: 8px;
+background: var(--light-blue, #F1F3F6);
+color: var(--dark-2, #646A74);
+text-align: right;
+font-family: Estedad-VF;
+font-size: 1rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
