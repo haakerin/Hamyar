@@ -1,44 +1,44 @@
 @font-face {
     font-family: 'Urbanist';
+    font-weight: 200;
+    src: url(../font/Estedad-ExtraLight.woff2) format(woff2),
+        url(../font/Estedad-ExtraLight.ttf) format(truetype);
+}
+@font-face {
+    font-family: 'Urbanist';
     font-weight: 100;
     src: url(../font/Estedad-Thin.woff2) format(woff2),
         url(../font/Estedad-Thin.ttf) format(truetype);
-}
-
+    }
+    
+    @font-face {
+        font-family: 'Urbanist';
+        font-weight: 300;
+        src: url(../font/Estedad-Light.woff2) format(woff2),
+            url(../font/Estedad-Light.ttf) format(truetype);
+    }
+    
 @font-face {
     font-family: 'Urbanist';
-    font-weight: 200;
+    font-weight: 600;
     src: url(../font/Estedad-SemiBold.woff2) format(woff2),
         url(../font/Estedad-SemiBold.ttf) format(truetype);
 }
 
 @font-face {
     font-family: 'Urbanist';
-    font-weight: 300;
+    font-weight: 400;
     src: url(../font/Estedad-Regular.woff2) format(woff2),
         url(../font/Estedad-Regular.ttf) format(truetype);
 }
 
 @font-face {
     font-family: 'Urbanist';
-    font-weight: 400;
+    font-weight: 500;
     src: url(../font/Estedad-Medium.woff2) format(woff2),
         url(../font/ttf/Estedad-Medium.ttf) format(truetype);
 }
 
-@font-face {
-    font-family: 'Urbanist';
-    font-weight: 500;
-    src: url(../font/Estedad-Light.woff2) format(woff2),
-        url(../font/Estedad-Light.ttf) format(truetype);
-}
-
-@font-face {
-    font-family: 'Urbanist';
-    font-weight: 600;
-    src: url(../font/Estedad-ExtraLight.woff2) format(woff2),
-        url(../font/Estedad-ExtraLight.ttf) format(truetype);
-}
 
 @font-face {
     font-family: 'Urbanist';
@@ -536,7 +536,7 @@ align-items: center; */
         right:19rem;
     
     }
-    .day-type ,.time-type{
+    .day-type ,.time-type {
         transform: rotate(0deg) !important;
         padding: 1rem;
         margin-right: 1rem;
@@ -784,3 +784,99 @@ font-style: normal;
 font-weight: 300;
 line-height: normal;
 }
+
+
+
+/* dashbord page */
+
+.div-number-Program {
+    background-color: #F1F3F6;
+    display: inline-flex;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.0625rem;
+    border-radius: 0.75rem;
+}
+
+.number {
+    background-color: #133675;
+    color: white;
+    display: flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.625rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.5625rem;
+}
+
+.h1-number-Program {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-family: Urbanist;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.h3-number-Program {
+    color: var(--white, #FFF);
+    text-align: right;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.col-h1-number-Program {
+    margin-left: .9rem;
+}
+
+.div-number-Program-2 {
+    background-color: #F1F3F6;
+    display: inline-flex;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.0625rem;
+    border-radius: 0.75rem;
+    height: 14rem;
+    flex-shrink: 0;
+}
+
+.div-number-Program-3 {
+    background-color: #F1F3F6;
+    display: inline-flex;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.0625rem;
+    border-radius: 0.75rem;
+    height: 5rem;
+    flex-shrink: 0;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.div-number-Program-4 {
+    background-color: #F1F3F6;
+    display: inline-flex;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.0625rem;
+    border-radius: 0.75rem;
+    height: 11rem;
+    flex-shrink: 0;
+}
+
+.div-number-Program-32 {
+    height: 7rem;
+    flex-shrink: 0;
+}
+
+
