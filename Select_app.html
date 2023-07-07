@@ -2,7 +2,7 @@
     .menu{
         height: auto;
     }
-    .time-type-add{
+    .time-type-add d-flex justify-content-end align-items-center{
 text-align: right;
 font-family: Inter;
 font-size: 1rem;
@@ -82,363 +82,472 @@ line-height: 125%;
           </div>
           <div class="modal-body">
               <!--  -->
-              <div class="col-12 header-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add">: ساعات</div>
+              <!-- <div class="col-12 header-modal-body justify-content-center">
+                  <div class=" col-12 p-1 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-1 me-sm-1 p-0 time-type-add d-flex justify-content-end align-items-center">: ساعات</div>
                       <div class="col-10 d-flex justify-content-between flex-row-reverse">
-                          <div class=" px-1 time-number"> 00 </div>
-                          <div class=" px-1 time-number"> 03 </div>
-                          <div class=" px-1 time-number"> 06 </div>
-                          <div class=" px-1 time-number"> 09 </div>
-                          <div class=" px-1 time-number"> 12 </div>
-                          <div class=" px-1 time-number"> 15 </div>
-                          <div class=" px-1 time-number"> 18 </div>
-                          <div class=" px-1 time-number"> 21 </div>
-                          <div class=" px-1 time-number"> 24 </div>
+                          <div class=" px-1 px-md-1 time-number"> 00 </div>
+                          <div class=" px-1 px-md-1 time-number"> 03 </div>
+                          <div class=" px-1 px-md-1 time-number"> 06 </div>
+                          <div class=" px-1 px-md-1 time-number"> 09 </div>
+                          <div class=" px-1 px-md-1 time-number"> 12 </div>
+                          <div class=" px-1 px-md-1 time-number"> 15 </div>
+                          <div class=" px-1 px-md-1 time-number"> 18 </div>
+                          <div class=" px-1 px-md-1 time-number"> 21 </div>
+                          <div class=" px-1 px-md-1 time-number"> 24 </div>
+                      </div>
+                  </div>
+              </div> -->
+              <div class="col-12 header-modal-body justify-content-center">
+                <div class=" col-12 d-flex flex-nowrap flex-row-reverse">
+                    <div class=" me-3 p-0 time-type-add">ساعات</div>
+                    <div class="col-10 d-flex justify-content-between flex-row-reverse">
+                        <div class=" px-1 time-number"> 00 </div>
+                        <div class=" px-1 time-number"> 03 </div>
+                        <div class=" px-1 time-number"> 06 </div>
+                        <div class=" px-1 time-number"> 09 </div>
+                        <div class=" px-1 time-number"> 12 </div>
+                        <div class=" px-1 time-number"> 15 </div>
+                        <div class=" px-1 time-number"> 18 </div>
+                        <div class=" px-1 time-number"> 21 </div>
+                        <div class=" px-1 time-number"> 24 </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class=" col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-3 p-0 time-type-add d-flex justify-content-end align-items-center"> شنبه </div>
+                      <div class="col-9 d-flex ms-2 ms-sm-3 justify-content-between flex-row-reverse div-checkbox">
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday1">
+                                  <label for="saturday1"></label>
+                              </div>
+                          </div>
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday2">
+                                  <label for="saturday2"></label>
+
+                              </div>
+                          </div>
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday3">
+                                  <label for="saturday3"></label>
+
+                              </div>
+                          </div>
+
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday4">
+                                  <label for="saturday4"></label>
+
+                              </div>
+                          </div>
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday5">
+                                  <label for="saturday5"></label>
+
+                              </div>
+                          </div>
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday6">
+                                  <label for="saturday6"></label>
+
+                              </div>
+                          </div>
+                          <div class="px-0 px-md-1 time-check">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="saturday7">
+                                  <label for="saturday7"></label>
+                              </div>
+                          </div>
+                          <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="saturday8">
+                                <label for="saturday8"></label>
+                            </div>
+                        </div>
                       </div>
                   </div>
               </div>
 
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> شنبه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class="col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-2 me-sm-0 p-0 time-type-add d-flex justify-content-end align-items-center taller-datatime"> یکشنبه </div>
+                      <div class="col-9 d-flex ms-2 ms-sm-3 justify-content-between flex-row-reverse div-checkbox">
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday1">
+                                <label for="sunday1"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday2">
+                                <label for="sunday2"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday3">
+                                <label for="sunday3"></label>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday4">
+                                <label for="sunday4"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday5">
+                                <label for="sunday5"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday6">
+                                <label for="sunday6"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sunday7">
+                                <label for="sunday7"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="sunday8">
+                              <label for="sunday8"></label>
                           </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
 
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> یکشنبه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class="col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-2 me-sm-0 p-0 time-type-add d-flex justify-content-end align-items-center taller-datatime"> دوشنبه </div>
+                      <div class="col-9 d-flex ms-2 ms-sm-3 justify-content-between flex-row-reverse div-checkbox">
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday1">
+                                <label for="monday1"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday2">
+                                <label for="monday2"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday3">
+                                <label for="monday3"></label>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday4">
+                                <label for="monday4"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday5">
+                                <label for="monday5"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday6">
+                                <label for="monday6"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="monday7">
+                                <label for="monday7"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="monday8">
+                              <label for="monday8"></label>
                           </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
 
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> دوشنبه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class="col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-1 me-sm-0 p-0 time-type-add d-flex justify-content-end align-items-center taller-datatime"> سه‌شنبه </div>
+                      <div class="col-9 d-flex ms-2 justify-content-between flex-row-reverse div-checkbox">
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday1">
+                                <label for="tuesday1"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday2">
+                                <label for="tuesday2"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday3">
+                                <label for="tuesday3"></label>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday4">
+                                <label for="tuesday4"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday5">
+                                <label for="tuesday5"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday6">
+                                <label for="tuesday6"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tuesday7">
+                                <label for="tuesday7"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="tuesday8">
+                              <label for="tuesday8"></label>
                           </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
 
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> سه‌شنبه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class="col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-1 me-sm-0 p-0 time-type-add d-flex justify-content-end align-items-center taller-datatime"> چهارشنبه </div>
+                      <div class="col-9 d-flex ms-1  justify-content-between flex-row-reverse div-checkbox">
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday1">
+                                <label for="wednesday1"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday2">
+                                <label for="wednesday2"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday3">
+                                <label for="wednesday3"></label>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday4">
+                                <label for="wednesday4"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday5">
+                                <label for="wednesday5"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday6">
+                                <label for="wednesday6"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="wednesday7">
+                                <label for="wednesday7"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="wednesday8">
+                              <label for="wednesday8"></label>
                           </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
 
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> چهارشنبه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class="col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-1 me-sm-0 p-0 time-type-add d-flex justify-content-end align-items-center taller-datatime"> پنجشنبه </div>
+                      <div class="col-9 d-flex ms-2  justify-content-between flex-row-reverse div-checkbox">
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday1">
+                                <label for="thursday1"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday2">
+                                <label for="thursday2"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday3">
+                                <label for="thursday3"></label>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday4">
+                                <label for="thursday4"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday5">
+                                <label for="thursday5"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday6">
+                                <label for="thursday6"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="thursday7">
+                                <label for="thursday7"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="thursday8">
+                              <label for="thursday8"></label>
                           </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
 
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> پنجشنبه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
+              <div class="col-12 mt-2  body-modal-body justify-content-center">
+                  <div class="col-12 d-flex flex-nowrap flex-row-reverse">
+                      <div class="me-3 p-0 time-type-add d-flex justify-content-end align-items-center"> جمعه </div>
+                      <div class="col-9 d-flex ms-2  justify-content-between flex-row-reverse div-checkbox">
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday1">
+                                <label for="friday1"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday2">
+                                <label for="friday2"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday3">
+                                <label for="friday3"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday4">
+                                <label for="friday4"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday5">
+                                <label for="friday5"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday6">
+                                <label for="friday6"></label>
+                        
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="friday7">
+                                <label for="friday7"></label>
+                            </div>
+                        </div>
+                        <div class="px-0 px-md-1 time-check">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="friday8">
+                              <label for="friday8"></label>
                           </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
-                  <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type-add"> جمعه </div>
-                      <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
-                          <div class="px-1 time-check">
-                              <div class="form-check script">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                  <span class="geekmark"></span>
-                              </div>
-                              
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
-                          <div class="px-1 time-check">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              </div>
-                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
           </div>
               <!--  ng-click="accepet_timetable()"  -->
-          <div class="modal-footer">
+          <div class="modal-footer justify-content-start">
               <button  ng-click="disChoies_timetable()" class="btn btn-danger Cancel-button" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"> لغو </button>
               <button class="btn btn-success Program-registration" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">ثبت برنامه </button>
           </div>

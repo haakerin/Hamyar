@@ -436,13 +436,36 @@ background: var(--main-blue, #133675);
 .border {
     border: 2px solid #133675 !important;
 }
-
-
+.form-check-input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+  }
+ .form-check label {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: #fff;
+    transition: 0.4s all ease-in-out;
+    cursor: pointer;
+  }
+  
+  .form-check-input:checked + label {
+    transition: 0.4s all ease-in-out;
+    background-color: #1460E9; 
+  }
+  .time-type-add{
+    font-size:0.6rem !important;
+    }
 
 @media only screen and (min-width: 375px) {
     .languages_programing_box {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(11, 6.5rem);
+    }
+    .div-checkbox{
+
     }
 }
 
@@ -451,7 +474,15 @@ background: var(--main-blue, #133675);
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(11, 7.75rem);
     }
-
+    .time-type-add{
+        font-size:1rem !important;
+        }
+        .div-checkbox{
+            /* margin-right: 1.3rem!important; */
+        }
+        .taller-datatime{
+            margin-left: 0 !important;
+        }
 }
 
 @media only screen and (min-width: 1220px) {
@@ -470,7 +501,13 @@ background: var(--main-blue, #133675);
         border-radius: 12px;
 
     }
-
+    .time-type-add{
+    font-size: 1rem !important;
+    }
+    .form-check label{
+        width: 1.25rem;
+        height: 1.25rem;
+    }
     .far {
         margin-top: 2.4rem;
         margin-right: -1.8rem;
@@ -629,10 +666,6 @@ background: var(--main-blue, #133675);
     font-size: 1rem;
 }
 
-.div-checkbox {
-    gap: 1%;
-}
-
 .body-modal-body {
     background-color: #F1F3F6;
     display: flex;
@@ -752,9 +785,9 @@ background: var(--main-blue, #133675);
     color: rgb(0, 0, 0);
 }
 
-.div-checkbox {
+/* .div-checkbox {
     gap: 1%;
-}
+} */
 
 .time-check {
     font-size: 1rem;
@@ -782,6 +815,7 @@ font-size: 1rem;
 font-style: normal;
 font-weight: 300;
 line-height: normal;
+box-sizing: content-box;
 }
 
 
