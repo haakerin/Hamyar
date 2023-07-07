@@ -343,7 +343,8 @@ background: var(--main-blue, #133675);
 }
 .add_app p {
     color: var(--white, #FFF);
-    font-family: Estedad-VF;
+    font-family:Urbanist;
+    /* font-family: Estedad-VF; */
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 600;
@@ -356,7 +357,9 @@ background: var(--main-blue, #133675);
     margin-top: 2rem;
     margin-right: -1.8rem;
 }
-
+.marker_menu{
+    transition: 1s ease-in-out;
+}
 /* ////////////////////Select app//////////////////// */
 .title_languages_programing p {
     color: var(--main-dark, #1E232C);
@@ -428,7 +431,16 @@ background: var(--main-blue, #133675);
     height: 80%;
     object-fit: cover;
 }
-
+.languages_programing_box .card_small p{
+    color: var(--main-dark, #1E232C);
+text-align: center;
+font-family: Inter;
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 700;
+line-height: 125%;
+letter-spacing: 0.15rem;
+}
 .noborder {
     border: 0 !important;
 }
@@ -810,7 +822,7 @@ a {
 background: var(--light-blue, #F1F3F6);
 color: var(--dark-2, #646A74);
 text-align: right;
-font-family: Estedad-VF;
+font-family: Urbanist;
 font-size: 1rem;
 font-style: normal;
 font-weight: 300;

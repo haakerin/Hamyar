@@ -1,0 +1,15 @@
+<svg width="46" height="92" viewBox="0 0 46 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 127">
+<g id="Ellipse 1" filter="url(#filter0_f_454_1824)">
+<circle cx="46" cy="46" r="16" fill="#133675"/>
+</g>
+<circle id="Ellipse 2" cx="46" cy="46" r="15.5" stroke="#133675"/>
+</g>
+<defs>
+<filter id="filter0_f_454_1824" x="0" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_454_1824"/>
+</filter>
+</defs>
+</svg>

@@ -2,13 +2,6 @@ var form = angular.module("Sign_up_form", []);
 
 
 form.controller('Formcontoroller', function ($scope, $http) {
-    $scope.name = "Ali";
-
-    // if ($scope.user.password === $scope.user.R_password){
-    //   console.log("Boz");
-    // }
-
-
     // $http.get("https://api.countrylayer.com/v2/iran")
     // .then(function(res){
     //   console.log(res);    
@@ -35,11 +28,24 @@ form.directive("compareTo", function () {
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope) {
 
+    $scope.change_menu = function(menu){
+        document.getElementById("marker_menu").style.top = menu+"rem " ;
+
+        document.getElementById("marker2_menu").style.top = menu+"rem " ;
+        
+
+        close();
+        setTimeout(function colse(){ 
+            document.getElementById("close-menu").click()}
+            , 2000);
+    
+    }
+
 });
 window.location = '#!dashboard';
 Dashboard.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when('/dashboard',
-        { templateUrl: "../../Dashboard.html" }
+        { templateUrl: "../../Dashboard.html" } 
     );
     $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"}
         // document.getElementById("menu")
@@ -74,19 +80,7 @@ Dashboard.controller('select_app', function ($scope) {
       
     };
     $scope.disChoies_timetable = function(){
-        // document.getElementById('flexCheckDefault').checked = false;
-    //   var chekbox= document.getElementsByClassName("form-check-input");
     location.href+="?anything#selectapp";
-        //location.reload();
-    //     alert("boz");
+
     };
 });
-
-
-
-
-
-
-
-
-/// eay login

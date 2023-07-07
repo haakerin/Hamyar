@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./dist/css/style.css">
     <script src="./dist/js/Scripts/angular.js"></script>
     <script src="./dist/js/Scripts/angular-route.js"></script>
-    <script src="./dist/js/Form.js"></script>
+    <script src="./dist/js/Script.js"></script>
     <title>ثبت نام</title>
 </head>
 <body style="overflow: hidden;">
@@ -29,7 +29,7 @@
                         <br>
                         <input type="password" class="w-100 border-0 d-block p-4 password-input mt-3"ng-model="user.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                         <div ng-show="Sign_up_form.password.$invalid && Sign_up_form.password.$touched" class="d-flex col-12 ">
-                            <span class="text-danger" style="font-size: 0.89rem;">رمز عبور خود را درست وارد کنید</span>
+                            <span class="text-danger" style="font-size: 0.89rem;">رمز عبور باید بیشتر از هشت کاراکتر باشد</span>
                         </div>
                         <!-- <br> -->
                         <input type="password" class="w-100  border-0 p-4 password-input mt-2"compare-to="user.password"ng-model="user.R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
