@@ -2,13 +2,21 @@
     .menu{
         height: auto;
     }
+    .time-type-add{
+text-align: right;
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 125%;
+    }
 </style>
 
-<div class="paretnt"ng-app="select_app" ng-controller='select_app'>
+<div class="paretnt mt-4"ng-app="select_app" ng-controller='select_app'>
   <div
     class="row title_languages_programing d-flex flex-column p-1 m-1 m-md-0 flex-md-nowrap flex-md-row-reverse justify-content-md-between align-items-md-center flex-row-reverse"
   >
-    <p class="my-2 ms-0">:نام برنامه</p>
+    <p class="my-2 px-0 ms-0">:نام برنامه</p>
     <input id="search_learn" ng-model="name_learn"
       type="text"
       class="d-inline text-end m-auto p-3 me-1 col-12 col-md-9 ms-md-0 col-lg-9 ng-pristine ng-untouched ng-valid ng-empty"
@@ -21,7 +29,7 @@
   <button class="btn btn-primary opacity-0" id="click_model" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
     <!-- <img src="download.png" alt=""> -->
 </button>
-  <div class="languages_programing_box justify-content-sm-end" >
+  <div class="languages_programing_box  justify-content-sm-end" style="margin-bottom: 10rem;" >
     <!-- <div class="card_big"></div> -->
     <div class="card_small c1 noborder" style="grid-area: c1"  ng-class="Html"  ng-click="click('اموزش برنامه نویسی html')">
       <img src="./dist/image/icons8-html-5-480.png" alt="">
@@ -76,7 +84,7 @@
               <!--  -->
               <div class="col-12 header-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> ساعات: </div>
+                      <div class="col-2 me-3 p-0 time-type-add">: ساعات</div>
                       <div class="col-10 d-flex justify-content-between flex-row-reverse">
                           <div class=" px-1 time-number"> 00 </div>
                           <div class=" px-1 time-number"> 03 </div>
@@ -93,7 +101,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> شنبه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> شنبه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check">
@@ -141,7 +149,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> یکشنبه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> یکشنبه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check">
@@ -189,7 +197,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> دوشنبه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> دوشنبه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check">
@@ -237,7 +245,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> سه‌شنبه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> سه‌شنبه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check">
@@ -285,7 +293,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> چهارشنبه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> چهارشنبه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check">
@@ -333,7 +341,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> پنجشنبه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> پنجشنبه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check">
@@ -381,7 +389,7 @@
 
               <div class="col-12 mt-2 py-3 body-modal-body justify-content-center">
                   <div class="row col-12 d-flex flex-nowrap flex-row-reverse">
-                      <div class="col-2 me-3 p-0 time-type"> جمعه </div>
+                      <div class="col-2 me-3 p-0 time-type-add"> جمعه </div>
                       <div class="col-9 ms-4 d-flex justify-content-between div-checkbox">
                           <div class="px-1 time-check">
                               <div class="form-check script">

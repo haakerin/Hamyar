@@ -336,20 +336,19 @@ align-items: center; */
 }
 
 .add_app {
-    display: inline-flex;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    border-radius: 0.75rem;
-    opacity: 76%;
-    background: var(--main-blue, #133675);
-    position: fixed;
-    bottom: 1rem;
-    float: right;
-    right: 2.5rem;
+    gap: 1rem;
+    height:4rem;
+    border-radius: 12px;
+background: var(--main-blue, #133675);
 }
-
+.add_app p {
+    color: var(--white, #FFF);
+    font-family: Estedad-VF;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
 .far {
     cursor: pointer;
     position: absolute;
@@ -524,8 +523,7 @@ align-items: center; */
 
 @media only screen and (min-width: 768px) {
     .languages_programing_box {
-        display: grid;
-        grid-template-columns: repeat(7, 4.25rem);
+        grid-template-columns: repeat(7, 1fr);
         grid-template-rows: repeat(6, 4.25rem);
         gap: 1%;
         grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
@@ -533,7 +531,6 @@ align-items: center; */
         ;
     }
     .add_app{
-        right:19rem;
     
     }
     .day-type ,.time-type {
@@ -541,13 +538,15 @@ align-items: center; */
         padding: 1rem;
         margin-right: 1rem;
     }
+    .row_dashboard_buttom{
+        margin-right: -10px !important;
+    }
 }
 
 @media only screen and (min-width: 900px) {
     .languages_programing_box {
-        display: grid;
-        grid-template-columns: repeat(7, 8.5rem);
-        grid-template-rows: repeat(6, 8.5rem);
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: repeat(6,5.25rem);
         gap: 1%;
         grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
             "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
@@ -558,7 +557,7 @@ align-items: center; */
 @media only screen and (min-width: 1024px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 6.6rem);
+        grid-template-rows: repeat(6, 8.6rem);
     }
 }
 
@@ -817,7 +816,7 @@ line-height: normal;
     color: var(--main-dark, #1E232C);
     text-align: right;
     font-family: Urbanist;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -870,7 +869,7 @@ line-height: normal;
     align-items: center;
     gap: 2.0625rem;
     border-radius: 0.75rem;
-    height: 11rem;
+    height:13rem;
     flex-shrink: 0;
 }
 
