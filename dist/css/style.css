@@ -488,72 +488,6 @@ letter-spacing: 0.15rem;
     font-size:0.6rem !important;
     }
 
-@media only screen and (min-width: 375px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 6.5rem);
-    }
-    .div-checkbox{
-
-    }
-}
-
-@media only screen and (min-width: 425px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 7.75rem);
-    }
-    .time-type-add{
-        font-size:1rem !important;
-        }
-        .div-checkbox{
-            /* margin-right: 1.3rem!important; */
-        }
-        .taller-datatime{
-            margin-left: 0 !important;
-        }
-}
-
-@media only screen and (min-width: 1220px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(3, 6.75rem);
-        grid-template-rows: repeat(11, 6.75rem);
-    }
-
-}
-
-@media only screen and (min-width: 720px) {
-    .email-input, .password-input, .user-input {
-        width: 23.75rem !important;
-        height: 4rem !important;
-        flex-shrink: 0;
-        border-radius: 12px;
-
-    }
-    .time-type-add{
-    font-size: 1rem !important;
-    }
-    .form-check label{
-        width: 1.25rem;
-        height: 1.25rem;
-    }
-    .far {
-        margin-top: 2.4rem;
-        margin-right: -1.8rem;
-    }
-
-    .make-accunt {
-        position: relative;
-        margin-top: 2rem;
-    }
-
-    .login-button, .singup-button {
-        width: 23.75rem;
-        height: 4rem;
-        flex-shrink: 0;
-        border-radius: 12px;
-
-    }
 
     .singup-button {
         width: 86% !important;
@@ -587,45 +521,7 @@ letter-spacing: 0.15rem;
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 4.25rem);
-        gap: 1%;
-        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
-            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
-        ;
-    }
-    .add_app{
-    
-    }
-    .day-type ,.time-type {
-        transform: rotate(0deg) !important;
-        padding: 1rem;
-        margin-right: 1rem;
-    }
-    .row_dashboard_buttom{
-        margin-right: -10px !important;
-    }
-}
 
-@media only screen and (min-width: 900px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(7,1fr);
-        grid-template-rows: repeat(6,5.25rem);
-        gap: 1%;
-        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
-            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
-        ;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 8.6rem);
-    }
-}
 
 .modal-header {
     background-color: #F1F3F6;
@@ -794,9 +690,7 @@ letter-spacing: 0.15rem;
     color: rgb(0, 0, 0);
 }
 
-/* .div-checkbox {
-    gap: 1%;
-} */
+
 
 .time-check {
     font-size: 1rem;
@@ -921,4 +815,128 @@ box-sizing: content-box;
     flex-shrink: 0;
 }
 
+.div-checkbox {
+    margin-right:0.8rem !important;
+}
 
+
+
+
+@media only screen and (min-width: 375px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(11, 6.5rem);
+    }
+
+    .div-checkbox{
+        margin-right: 1.2rem!important;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(11, 7.75rem);
+    }
+    .time-type-add{
+        font-size:1rem !important;
+        }
+
+        .taller-datatime{
+            margin-left: 0 !important;
+        }
+        .div-checkbox{
+            margin-right: 1.7rem!important;
+        }
+        .div-checkbox_tuesday{
+            margin-right: 1.4rem!important;
+        }
+        .div-checkbox_wednesday{
+            margin-right: 1rem!important;
+        }
+        .div-checkbox_thursday{
+            margin-right:1.2rem!important;
+        }
+        .div-checkbox_friday{
+            margin-right:1.4rem!important;
+        }
+}
+
+@media only screen and (min-width: 1220px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3, 6.75rem);
+        grid-template-rows: repeat(11, 6.75rem);
+    }
+
+}
+
+@media only screen and (min-width: 720px) {
+    .email-input, .password-input, .user-input {
+        width: 23.75rem !important;
+        height: 4rem !important;
+        flex-shrink: 0;
+        border-radius: 12px;
+
+    }
+    .time-type-add{
+    font-size: 1rem !important;
+    }
+    .form-check label{
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    .far {
+        margin-top: 2.4rem;
+        margin-right: -1.8rem;
+    }
+
+    .make-accunt {
+        position: relative;
+        margin-top: 2rem;
+    }
+
+    .login-button, .singup-button {
+        width: 23.75rem;
+        height: 4rem;
+        flex-shrink: 0;
+        border-radius: 12px;
+
+    }
+@media only screen and (min-width: 768px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 4.25rem);
+        gap: 1%;
+        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
+            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
+        ;
+    }
+
+    .day-type ,.time-type {
+        transform: rotate(0deg) !important;
+        padding: 1rem;
+        margin-right: 1rem;
+    }
+    .row_dashboard_buttom{
+        margin-right: -10px !important;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: repeat(6,5.25rem);
+        gap: 1%;
+        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
+            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
+        ;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 8.6rem);
+    }
+}
