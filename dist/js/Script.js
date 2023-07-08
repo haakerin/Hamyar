@@ -1,13 +1,15 @@
-var form = angular.module("Sign_up_form", []);
+//Forms
+
+var form_singup = angular.module("Sign_up_form", []);
 
 
-form.controller('Formcontoroller', function ($scope, $http) {
+form_singup.controller('Formcontoroller', function ($scope, $http) {
     // $http.get("https://api.countrylayer.com/v2/iran")
     // .then(function(res){
     //   console.log(res);    
     // })
 });
-form.directive("compareTo", function () {
+form_singup.directive("compareTo", function () {
     return {
         require: "ngModel",
         scope:
@@ -24,6 +26,17 @@ form.directive("compareTo", function () {
         }
     };
 });
+var form_login = angular.module("login_form", []);
+form_login.controller("lgoinCTR" , function($scope,$http){
+
+});
+
+
+
+
+
+
+// Dashboard
 
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope) {

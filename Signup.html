@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./dist/css/style.css">
-    <script src="./dist/js/Scripts/angular.js"></script>
-    <script src="./dist/js/Scripts/angular-route.js"></script>
-    <script src="./dist/js/Script.js"></script>
     <title>ثبت نام</title>
 </head>
 <body style="overflow: hidden;">
@@ -34,7 +31,6 @@
                         <!-- <br> -->
                         <input type="password" class="w-100  border-0 p-4 password-input mt-2"compare-to="user.password"ng-model="user.R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
                         <button  type="submit" ng-disabled="Sign_up_form.$invalid" class="btn btn-primary w-100 border-0 mt-3 p-2 singup-button"> ثبت نام </button>
-                        <!-- <button type="submit" ng-disabled="Sign_up_form.$invalid" class="btn btn-primary  w-100 border-0 mt-5 p-2 login-button"> ثبت نام </button> -->
                         <h6 class="make-accunt col-11 text-center mt-md-5 ms-md-4" style="margin-top: 2rem !important;"> درحال حاضر حساب کاربری دارید؟ <a href="./Login.html" class="a-make-accont"> ورود حساب </a> </h6>
 
                     <!-- </div> -->
@@ -42,6 +38,8 @@
             </div>
         </div>
     </div>
-
+    <script src="./dist/js/Scripts/angular.js"></script>
+    <script src="./dist/js/Scripts/angular-route.js"></script>
+    <script src="./dist/js/Script.js"></script>
 </body>
 </html>
