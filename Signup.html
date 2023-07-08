@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./dist/css/style.css">
     <title>ثبت نام</title>
 </head>
-<body style="overflow: hidden;">
+<body >
     
     <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center  ">
         <div class="row d-flex justify-content-center align-items-center p-3">
@@ -26,7 +26,7 @@
                         <br>
                         <input type="password" class="w-100 border-0 d-block p-4 password-input mt-3"ng-model="user.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                         <div ng-show="Sign_up_form.password.$invalid && Sign_up_form.password.$touched" class="d-flex col-12 ">
-                            <span class="text-danger" style="font-size: 0.89rem;">رمز عبور باید بیشتر از هشت کاراکتر باشد</span>
+                            <span class="text-danger mt-1" style="font-size: 0.89rem;">رمز عبور باید بیشتر از هشت کاراکتر باشد</span>
                         </div>
                         <!-- <br> -->
                         <input type="password" class="w-100  border-0 p-4 password-input mt-2"compare-to="user.password"ng-model="user.R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">

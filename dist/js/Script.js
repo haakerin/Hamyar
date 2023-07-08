@@ -46,12 +46,9 @@ Dashboard.controller('Dashboard', function ($scope) {
 
         document.getElementById("marker2_menu").style.top = menu+"rem " ;
         
-
-        close();
-        setTimeout(function colse(){ 
+        setTimeout(function (){ 
             document.getElementById("close-menu").click()}
             , 2000);
-    
     }
 
 });
