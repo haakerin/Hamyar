@@ -51,7 +51,7 @@ Dashboard.controller('Dashboard', function ($scope) {
         
         setTimeout(function (){ 
             document.getElementById("close-menu").click()}
-            , 2000);
+            , 1000);
     }
 
 });
