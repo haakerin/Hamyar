@@ -58,6 +58,7 @@ window.onload = (event) => {
     // console.log(hash);
     if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem";console.log('kar'); document.getElementById("marker2_menu").style.top = "14.5rem"; }
     else if (hash == '!/apps') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
+    else if (hash == '!/select_app'){ document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
     else if (hash == '!/setting') { document.getElementById("marker_menu").style.top = "14.9rem"; document.getElementById("marker2_menu").style.top = "23.6rem"; }
     else if (hash == '!/guid') { document.getElementById("marker_menu").style.top = "18.5rem"; document.getElementById("marker2_menu").style.top = "28.2rem"; }
 
