@@ -42,9 +42,12 @@ var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope) {
 
     $scope.change_menu = function(menu){
-        document.getElementById("marker_menu").style.top = menu+"rem " ;
-
-        document.getElementById("marker2_menu").style.top = menu+"rem " ;
+       window.location.href = menu[0].url;
+        // window.location.href = "!" + menu.url;
+        // alert(menu.url);
+        document.getElementById("marker_menu").style.top = menu[1].size+"rem " ;
+        
+        document.getElementById("marker2_menu").style.top = menu[1].size +"rem " ;
         
         setTimeout(function (){ 
             document.getElementById("close-menu").click()}
@@ -52,15 +55,15 @@ Dashboard.controller('Dashboard', function ($scope) {
     }
 
 });
-window.location = '#!dashboard';
+// window.location.href = '#dashboard';
 Dashboard.config(["$routeProvider", function ($routeProvider) {
-    $routeProvider.when('/dashboard',
-        { templateUrl: "../../Dashboard.html" } 
-    );
-    $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"}
-        // document.getElementById("menu")
-    );
-    $routeProvider.when('/apps',{templateUrl:"../../Dashboard_app.html"})
+    // let location = window.location.hash.replace('#','/')
+    $routeProvider.when('/dashboard',{ templateUrl: "../../Dashboard.html" } );
+    $routeProvider.when('/select_app',{templateUrl:"../../Select_app.html"});
+    $routeProvider.when('/apps',{templateUrl:"../../Dashboard_app.html"});
+    $routeProvider.when('/guid',{templateUrl:"../../guid.html"})
+    $routeProvider.when('/setting',{templateUrl:"../../setting.html"})
+
 
 }]);
 
