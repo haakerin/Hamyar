@@ -18,13 +18,13 @@
     </style>
 </head>
 
-<body>
+<body style="height: 100vh;overflow-x: scroll;">
 
     <div class="d-flex overflow-hidden flex-sm-row-reverse"  ng-app="Dashboard" ng-controller="Dashboard">
 
         <!-- ------------------------------ header ----------------------------- -->
         <!-- header of md -->
-        <div class="col-3 d-none d-md-block col-md-4 col-lg-3 flex-row-reverse menu"id="menu" style="">
+        <div class="col-3 d-none d-lg-inline col-md-4 col-lg-3 flex-row-reverse menu"id="menu" style="">
 
             <div class="col-12 d-flex align-items-center justify-content-center flex-column mt-5">
                 <img class="my-auto m-5 p-2 img_logo" src="./dist/image/icon/Close Circle.svg" alt="">
@@ -76,7 +76,7 @@
         <!-- d-flex justify-content-around flex-column flex-md-row -->
         <!-- header of sm -->
 
-        <div class="col-12 col-md-8 col-lg-9 p-4 container">
+        <div class="col-12 col-md-12 col-lg-9 p-4 container header_leftbar">
 
             <!-- header of opinion -->
             <div class="col-12  header_opinion">
@@ -91,7 +91,7 @@
 
                         <!-- <img src="./dist/image/icon/bell.svg" alt=""> -->
                     </div>
-                    <div class="d-inline d-md-none" type="button" data-bs-toggle="offcanvas"
+                    <div class="d-inline d-lg-none" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                         <img src="./dist/image/icon/menu.svg" style="width: 2.5rem;" alt="">
                     </div>

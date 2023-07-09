@@ -113,9 +113,6 @@ a:hover {
     background-position: center;
 }
 
-/* .logo_home{
-    background-image: url(../image/icon/);
-} */
 .login-button,
 .signup-button {
     width: 29.55356rem;
@@ -127,7 +124,7 @@ a:hover {
 .paragraph {
     color: var(--main-dark, #1E232C);
     text-align: center;
-    font-size: 36px;
+    font-size: 2rem;
     font-family: Urbanist;
     font-style: normal;
     font-weight: 400;
@@ -351,6 +348,7 @@ align-items: center; */
 }
 
 .add_app {
+
     gap: 1rem;
     height:4rem;
     border-radius: 12px;
@@ -834,7 +832,7 @@ box-sizing: content-box;
 @media only screen and (min-width: 425px) {
     .languages_programing_box {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 7.75rem);
+        grid-template-rows: repeat(11, 8.75rem);
     }
     .time-type-add{
         font-size:1rem !important;
@@ -894,16 +892,19 @@ box-sizing: content-box;
     }
 
     .login-button, .singup-button {
-        width:86% !important;
+        /* width:86% !important; */
         height: 4rem !important;
         flex-shrink: 0;
         border-radius: 12px;
-
     }
+    .singup-button{
+        width:86% !important;
+    }
+
 @media only screen and (min-width: 768px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 4.25rem);
+        grid-template-rows: repeat(6,  5.25rem);
         gap: 1%;
         grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
             "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
@@ -918,22 +919,12 @@ box-sizing: content-box;
     .row_dashboard_buttom{
         margin-right: -10px !important;
     }
+    .add_app{
+        position: fixed;
+        bottom: 1rem;
+    }
 }
 
-/* @media only screen and (min-width: 900px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(7,1fr);
-        grid-template-rows: repeat(6,5.25rem);
-        gap: 1%;
-        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
-            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
-        ;
-    }
-    .header_opinion{
-        position: relative;
-        right: 0;
-    }
-} */
 @media only screen and (min-width: 990px) {
     .languages_programing_box {
         grid-template-columns: repeat(7,1fr);
@@ -947,6 +938,6 @@ box-sizing: content-box;
 @media only screen and (min-width: 1024px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 8.6rem);
+        grid-template-rows: repeat(6, 5.6rem);
     }
 }
