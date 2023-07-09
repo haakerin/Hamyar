@@ -194,7 +194,6 @@ a:hover {
 }
 
 .login-button, .singup-button {
-    width: 20.6875rem;
     height: 3rem;
     background-color: #133675;
     font-size: 0.9375rem;
@@ -376,6 +375,7 @@ background: var(--main-blue, #133675);
 .marker_menu{
     transition: 1s ease-in-out;
 }
+
 /* ////////////////////Select app//////////////////// */
 .title_languages_programing p {
     color: var(--main-dark, #1E232C);
@@ -446,7 +446,7 @@ background: var(--main-blue, #133675);
 .languages_programing_box .card_small img {
     width: 60%;
     height: 80%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .languages_programing_box .card_small p{
     color: var(--main-dark, #1E232C);
@@ -489,9 +489,6 @@ letter-spacing: 0.15rem;
     }
 
 
-    .singup-button {
-        width: 86% !important;
-    }
 
     .title_languages_programing p {
         color: var(--main-dark, #1E232C);
@@ -897,8 +894,8 @@ box-sizing: content-box;
     }
 
     .login-button, .singup-button {
-        width: 23.75rem;
-        height: 4rem;
+        width:86% !important;
+        height: 4rem !important;
         flex-shrink: 0;
         border-radius: 12px;
 
@@ -923,7 +920,21 @@ box-sizing: content-box;
     }
 }
 
-@media only screen and (min-width: 900px) {
+/* @media only screen and (min-width: 900px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: repeat(6,5.25rem);
+        gap: 1%;
+        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
+            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
+        ;
+    }
+    .header_opinion{
+        position: relative;
+        right: 0;
+    }
+} */
+@media only screen and (min-width: 990px) {
     .languages_programing_box {
         grid-template-columns: repeat(7,1fr);
         grid-template-rows: repeat(6,5.25rem);
@@ -933,7 +944,6 @@ box-sizing: content-box;
         ;
     }
 }
-
 @media only screen and (min-width: 1024px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
