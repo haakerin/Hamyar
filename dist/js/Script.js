@@ -4,10 +4,28 @@ var form_singup = angular.module("Sign_up_form", []);
 
 
 form_singup.controller('Formcontoroller', function ($scope, $http) {
-    // $http.get("https://api.countrylayer.com/v2/iran")
+    $scope.signup = function () {
+
+    }
+    // $http.post("https://hamyar-api.iran.liara.run/signup.php")
     // .then(function(res){
     //   console.log(res);    
     // })
+    let url = 'https://hamyar-api.iran.liara.run/signup.php';
+    // let data = [ username = 'parameters@gmail.com', email = 'contenttype',passwoard ='boz'];
+    let data = [{ username : 'parameters@gmail.com'},{ email: 'contenttype@gamil.com'},{passwoard :'boz'}];
+
+    $http.post(url,data).then(function (response) {
+
+        // This function handles success
+        console.log(response);
+    }, function (response) {
+
+        // this function handles error
+        console.log(response);
+
+    });
+
 });
 form_singup.directive("compareTo", function () {
     return {
@@ -54,9 +72,9 @@ Dashboard.controller('Dashboard', function ($scope) {
 window.onload = (event) => {
     var hash = window.location.hash.substring(1);
     // console.log(hash);
-    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem";console.log('kar'); document.getElementById("marker2_menu").style.top = "14.5rem"; }
+    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem"; console.log('kar'); document.getElementById("marker2_menu").style.top = "14.5rem"; }
     else if (hash == '!/apps') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
-    else if (hash == '!/select_app'){ document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
+    else if (hash == '!/select_app') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
     else if (hash == '!/setting') { document.getElementById("marker_menu").style.top = "14.9rem"; document.getElementById("marker2_menu").style.top = "23.6rem"; }
     else if (hash == '!/guid') { document.getElementById("marker_menu").style.top = "18.5rem"; document.getElementById("marker2_menu").style.top = "28.2rem"; }
 
@@ -73,14 +91,14 @@ Dashboard.controller('select_app', function ($scope) {
     $scope.click = function (name) {
         let search_learn = document.getElementById('search_learn').value;
 
-            if (search_learn == '') {
-                $scope.name_learn = name;
-            }
-            else {
-                $scope.name_learn = search_learn;
-            } 
-            document.getElementById('click_model').click();
-        };
+        if (search_learn == '') {
+            $scope.name_learn = name;
+        }
+        else {
+            $scope.name_learn = search_learn;
+        }
+        document.getElementById('click_model').click();
+    };
     $scope.disChoies_timetable = function () {
         location.href += "?anything#selectapp";
 

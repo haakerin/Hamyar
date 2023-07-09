@@ -906,7 +906,7 @@ box-sizing: content-box;
         grid-template-columns: repeat(7, 1fr);
         grid-template-rows: repeat(6,  5.25rem);
         gap: 1%;
-        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
+        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c10 c10 c9 c8 c1 c1""c11 c10 c10 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
             "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
         ;
     }
@@ -930,9 +930,6 @@ box-sizing: content-box;
         grid-template-columns: repeat(7,1fr);
         grid-template-rows: repeat(6,5.25rem);
         gap: 1%;
-        grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c8 c8 c9 c10 c1 c1""c11 c8 c8 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
-            "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
-        ;
     }
 }
 @media only screen and (min-width: 1024px) {
