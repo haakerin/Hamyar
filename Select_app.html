@@ -83,23 +83,6 @@ line-height: 125%;
               <h1 class="modal-title" id="exampleModalToggleLabel"> در هفته چه زمان هایی وقت خالی دارید؟ </h1>
           </div>
           <div class="modal-body">
-              <!--  -->
-              <!-- <div class="col-12 header-modal-body justify-content-center">
-                  <div class=" col-12 p-1 d-flex flex-nowrap flex-row-reverse">
-                      <div class="me-1 me-sm-1 p-0 time-type-add d-flex justify-content-end align-items-center">: ساعات</div>
-                      <div class="col-10 d-flex justify-content-between flex-row-reverse">
-                          <div class=" px-1 px-md-1 time-number"> 00 </div>
-                          <div class=" px-1 px-md-1 time-number"> 03 </div>
-                          <div class=" px-1 px-md-1 time-number"> 06 </div>
-                          <div class=" px-1 px-md-1 time-number"> 09 </div>
-                          <div class=" px-1 px-md-1 time-number"> 12 </div>
-                          <div class=" px-1 px-md-1 time-number"> 15 </div>
-                          <div class=" px-1 px-md-1 time-number"> 18 </div>
-                          <div class=" px-1 px-md-1 time-number"> 21 </div>
-                          <div class=" px-1 px-md-1 time-number"> 24 </div>
-                      </div>
-                  </div>
-              </div> -->
               <div class="col-12 header-modal-body justify-content-center">
                 <div class=" col-12 d-flex flex-nowrap flex-row-reverse">
                     <div class=" me-3 p-0 time-type-add">ساعات</div>
@@ -551,7 +534,7 @@ line-height: 125%;
               <!--  ng-click="accepet_timetable()"  -->
           <div class="modal-footer justify-content-start">
               <button  ng-click="disChoies_timetable()" class="btn btn-danger Cancel-button" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"> لغو </button>
-              <button class="btn btn-success Program-registration" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">ثبت برنامه </button>
+              <button ng-click="send_timetable()" class="btn btn-success Program-registration" >ثبت برنامه </button>
           </div>
       </div>
   </div>

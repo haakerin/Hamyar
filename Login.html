@@ -14,17 +14,18 @@
     <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center p-md-5 ">
         <div class="row d-flex justify-content-center align-items-center pt-3">
             <div class="p-0 flex-column flex-wrap mt-5 mt-md-0">
-                <form action="./Dashboard_base.html#!dashboard" name="login_form" novalidate ng-controller="lgoinCTR" ng-app="login_form" class="form w-100 p-3">
+                <form ng-submit="sendlogin()" name="login_form" novalidate ng-controller="lgoinCTR" ng-app="login_form" class="form d-flex flex-column p-3">
                     <h1 class="fs-1 h1-element fs-2"><b>خوش آمدید :) </b></h1>
                     <br>
-                    <input type="text" class="  border-0 p-4 user-input " ng-model="user.username" name="username" placeholder=" نام حساب کاربری" ng-required="true">
-                    <br>
-                    <input type="password" class=" border-0 p-4 password-input mt-3 input examplePassword1" ng-model="user.passwoard" name="passwoard" ng-required="true" id="id_password"  placeholder="رمز عبور" name="passwoard">
-                    <!-- <p class="paragraph-element mt-2 text-center"> رمز عبور خود را فراموش کرده اید؟ </p> -->
-                    <i class="far fa-eye " id="togglePassword "></i>
-                    <br>
-
-                    <button  type="submit" ng-disabled="login_form.$invalid" class="btn btn-primary w-100 border-0 mt-5 p-2 login-button"> ورود </button>
+                    <input type="text" class="  border-0 p-4 user-input " ng-model="login.username" name="username" placeholder=" نام حساب کاربری" ng-required="true">
+                    <div>                        
+                        <input type="password" class=" border-0 p-4 password-input mt-3 input examplePassword1" ng-model="login.password" name="passwoard" ng-required="true" id="id_password"  placeholder="رمز عبور" name="passwoard">
+                        <i class="far fa-eye " id="togglePassword "></i>
+                    </div>
+                    <div ng-show="error" class="d-flex col-12 error">
+                        <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">{{error}}</span>
+                    </div>
+                    <button  type="submit" ng-disabled="login_form.$invalid" name="login" class="btn btn-primary w-100 border-0 mt-5 p-2 login-button"> ورود </button>
                     <h6 class="make-accunt  mt-md-5 ms-md-4 text-center mt-5 col-11"> هنوز حساب کاربری ندارید؟ <a href="./Signup.html" class="a-make-accont"> ساخت حساب </a> </h6>
                 </form>
             </div>

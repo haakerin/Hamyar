@@ -6,28 +6,29 @@ var form_singup = angular.module("Sign_up_form", []);
 form_singup.controller('Formcontoroller', function ($scope, $http) {
 
     $scope.insert = {};
-    $scope.sendfunction = function () {
+    $scope.sendsignup = function () {
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/signup.php',
             data: $scope.insert,
         }).then(function(response){
             console.log(response);
-            console.log($scope.insert);
-        },function(error){
-            console.log(error);
-            console.log($scope.insert);
+            if(response.data.status == -2){
+                $scope.error = response.data.message ;
+                $scope.insert= null;
+                $scope.R_password = null;
+            }else if(response.data.status == 1){
+                console.log('درسته');
+                $scope.error = '' ;
+            }
+            else if(response.data.status == -1){
+                $scope.error = response.data.message ;
+                $scope.insert= null;
+                $scope.R_password = null;
+            }
         });
     }
 });
-            // if(data.error){
-            //     console.log(data.error);
-            // }
-            // else{
-            //     $scope.insert = null;
-            //     console.log(data);
-            // }
-// let data = {username:"amirooo" , email:"sefid@gmail.com" ,password:"bozi"};
 
 form_singup.directive("compareTo", function () {
     return {
@@ -49,7 +50,27 @@ form_singup.directive("compareTo", function () {
 
 var form_login = angular.module("login_form", []);
 form_login.controller("lgoinCTR", function ($scope, $http) {
-
+    $scope.login = {};
+    $scope.sendlogin = function () {
+        $http({
+            method: "POST",
+            url: 'https://hamyar-api.iran.liara.run/sign-in.php',
+            data: $scope.login,
+        }).then(function(response){
+            console.log(response);
+            if(response.data.status == -2){
+                $scope.error = response.data.message ;
+                $scope.login= null;
+                }else if(response.data.status == 1){
+                localStorage.setItem('username' ,[response.data.user.username,response.data.user.email]);
+                location.href = "Dashboard_base.html#!/dashboard";
+                }
+            else if(response.data.status == -1){
+                $scope.error = response.data.message ;
+                $scope.login= null;
+            }
+        });
+    }
 });
 
 
@@ -61,7 +82,7 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
 
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope) {
-
+    $scope.username_header = localStorage.getItem('username')[0];
     $scope.change_menu = function (menu) {
         window.location.href = menu[0].url;
         document.getElementById("marker_menu").style.top = menu[1].size + "rem ";
@@ -104,6 +125,23 @@ Dashboard.controller('select_app', function ($scope) {
     };
     $scope.disChoies_timetable = function () {
         location.href += "?anything#selectapp";
-
     };
+    $scope.send_timetable = function () {
+        let saturday = ['saturday1','saturday2','saturday3','saturday4','saturday5','saturday6','saturday7','saturday8'];
+        const saturdaytrue = [] ;
+        for (let i = 0; i < saturday.length; i++) {
+           saturdaytrue.push(JSON.stringify([saturday[i] = document.getElementById(saturday[i]).checked]));
+            if(saturday[0].checked === true){
+
+            }
+        }   
+        console.log(saturdaytrue);
+
+
+        // if(document.getElementById('saturday1').checked == true){
+        //     console.log('boz');
+        // }
+        // console.log('kar');
+    }
+
 });
