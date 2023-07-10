@@ -4,29 +4,31 @@ var form_singup = angular.module("Sign_up_form", []);
 
 
 form_singup.controller('Formcontoroller', function ($scope, $http) {
-    $scope.signup = function () {
 
+    $scope.insert = {};
+    $scope.sendfunction = function () {
+        $http({
+            method: "POST",
+            url: 'https://hamyar-api.iran.liara.run/signup.php',
+            data: $scope.insert,
+        }).then(function(response){
+            console.log(response);
+            console.log($scope.insert);
+        },function(error){
+            console.log(error);
+            console.log($scope.insert);
+        });
     }
-    // $http.post("https://hamyar-api.iran.liara.run/signup.php")
-    // .then(function(res){
-    //   console.log(res);    
-    // })
-    let url = 'https://hamyar-api.iran.liara.run/signup.php';
-    // let data = [ username = 'parameters@gmail.com', email = 'contenttype',passwoard ='boz'];
-    let data = [{ username : 'parameters@gmail.com'},{ email: 'contenttype@gamil.com'},{passwoard :'boz'}];
-
-    $http.post(url,data).then(function (response) {
-
-        // This function handles success
-        console.log(response);
-    }, function (response) {
-
-        // this function handles error
-        console.log(response);
-
-    });
-
 });
+            // if(data.error){
+            //     console.log(data.error);
+            // }
+            // else{
+            //     $scope.insert = null;
+            //     console.log(data);
+            // }
+// let data = {username:"amirooo" , email:"sefid@gmail.com" ,password:"bozi"};
+
 form_singup.directive("compareTo", function () {
     return {
         require: "ngModel",
@@ -44,6 +46,7 @@ form_singup.directive("compareTo", function () {
         }
     };
 });
+
 var form_login = angular.module("login_form", []);
 form_login.controller("lgoinCTR", function ($scope, $http) {
 
@@ -104,23 +107,3 @@ Dashboard.controller('select_app', function ($scope) {
 
     };
 });
-// function click(name){
-//     alert('boz');
-//     let search_learn = document.getElementById('search_learn').value;
-//     //  alert(search_learn);
-//     if (this[name] == 'noborder') {
-//         this[name] = 'border';
-//         if (search_learn == '') {
-//             $scope.name_learn = name;
-//         }
-//         else {
-//             $scope.name_learn = search_learn;
-
-//         }
-//         document.getElementById('click_model').click();
-//     }
-//     else {
-//        this[name] = "noborder";
-//         //   $scope.name_learn = ' ';
-//     }
-// }

@@ -858,14 +858,6 @@ box-sizing: content-box;
         }
 }
 
-@media only screen and (min-width: 1220px) {
-    .languages_programing_box {
-        grid-template-columns: repeat(3, 6.75rem);
-        grid-template-rows: repeat(11, 6.75rem);
-    }
-
-}
-
 @media only screen and (min-width: 720px) {
     .email-input, .password-input, .user-input {
         width: 23.75rem !important;
@@ -890,7 +882,7 @@ box-sizing: content-box;
         position: relative;
         margin-top: 2rem;
     }
-
+    
     .login-button, .singup-button {
         /* width:86% !important; */
         height: 4rem !important;
@@ -900,7 +892,7 @@ box-sizing: content-box;
     .singup-button{
         width:86% !important;
     }
-
+    
 @media only screen and (min-width: 768px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
@@ -908,8 +900,8 @@ box-sizing: content-box;
         gap: 1%;
         grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c10 c10 c9 c8 c1 c1""c11 c10 c10 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
             "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
-        ;
-    }
+            ;
+        }
 
     .day-type ,.time-type {
         transform: rotate(0deg) !important;
@@ -935,6 +927,14 @@ box-sizing: content-box;
 @media only screen and (min-width: 1024px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 5.6rem);
+        grid-template-rows: repeat(6, 6.6rem);
     }
+}
+
+@media only screen and (min-width: 1220px) {
+    .languages_programing_box {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(11, 7.75rem);
+    }
+
 }

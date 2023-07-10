@@ -12,25 +12,25 @@
     
     <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center  ">
         <div class="row d-flex justify-content-center align-items-center p-3">
-            <div class="p-0 flex-column flex-wrap  mt-md-0">
-                <form  class="form w-100 p-3 " name="Sign_up_form" novalidate ng-controller="Formcontoroller" ng-app="Sign_up_form">
+            <div class="p-0 flex-column flex-wrap  mt-md-0" ng-controller="Formcontoroller" ng-app="Sign_up_form">
+                <form  class="form w-100 p-3 " name="Sign_up_form" ng-submit="sendfunction()" novalidate >
                     <!-- <div class="m-auto col-6"> -->
                         <h1 class="fs-1 h1-element fs-2"><b> سلام! <br> برای ثبت نام شروع کنید . . . </b></h1>
                         <br>
-                        <input type="text" class="w-100  border-0 p-4 user-input "ng-model="user.username" name="username" ng-required="true" placeholder=" نام حساب کاربری">
+                        <input type="text" class="w-100  border-0 p-4 user-input "ng-model="insert.username" name="username" ng-required="true" placeholder=" نام حساب کاربری">
                         <!-- <div ng-show="Sign_up_form.username.$invalid && Sign_up_form.username.$touched" class="d-flex justify-content-center">
                             <span class="text-bg-danger text-center">نام کاربری خود را درست وارد نمایید</span>
                         </div> -->
                         <br>
-                        <input type="email" class="w-100 border-0 p-4 password-input mt-3" ng-model="user.email" name="email" ng-required="true" placeholder="ایمیل">
+                        <input type="email" class="w-100 border-0 p-4 password-input mt-3" ng-model="insert.email" name="email" ng-required="true" placeholder="ایمیل">
                         <br>
-                        <input type="password" class="w-100 border-0 d-block p-4 password-input mt-3"ng-model="user.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
+                        <input type="password" class="w-100 border-0 d-block p-4 password-input mt-3"ng-model="insert.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                         <div ng-show="Sign_up_form.password.$invalid && Sign_up_form.password.$touched" class="d-flex col-12 ">
                             <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">رمز عبور باید بیشتر از هشت کاراکتر باشد</span>
                         </div>
                         <!-- <br> -->
-                        <input type="password" class="w-100  border-0 p-4 password-input mt-3"compare-to="user.password"ng-model="user.R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
-                        <button  type="submit" ng-disabled="Sign_up_form.$invalid" ng-click="singup()" class="btn btn-primary w-100 border-0 mt-3 p-2 my-auto singup-button"> ثبت نام </button>
+                        <input type="password" class="w-100  border-0 p-4 password-input mt-3"compare-to="insert.password"ng-model="R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
+                        <input  type="submit" ng-disabled="Sign_up_form.$invalid" name="insert"class="btn btn-primary w-100 border-0 mt-3 p-2 my-auto singup-button" value="ثبت نام"></input>
                         <h6 class="make-accunt col-11 text-center mt-md-5 ms-md-4" style="margin-top: 2rem !important;"> درحال حاضر حساب کاربری دارید؟ <a href="./Login.html" class="a-make-accont"> ورود حساب </a> </h6>
 
                     <!-- </div> -->
