@@ -205,7 +205,9 @@ a:hover {
 .error{
     margin-bottom: -0.6rem;
 }
-
+.loading{
+    background: #2e353f94;
+}
 
 
 /* /// signup page/// */

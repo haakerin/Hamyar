@@ -33,7 +33,11 @@
                         <br>
                         <input  type="submit" ng-disabled="Sign_up_form.$invalid" name="insert"class="btn btn-primary w-100 border-0 mt-3 p-2 my-auto singup-button" value="ثبت نام"></input>
                         <h6 class="make-accunt col-11 text-center mt-md-5 ms-md-4" style="margin-top: 2rem !important;"> درحال حاضر حساب کاربری دارید؟ <a href="./Login.html" class="a-make-accont"> ورود حساب </a> </h6>
-
+                        <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
+                            <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
+                                <!-- <span class="sr-only">Loading...</span> -->
+                            </div>
+                        </div>
                     <!-- </div> -->
                 </form>
             </div>
