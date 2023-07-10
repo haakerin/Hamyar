@@ -13,25 +13,25 @@
     <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center  ">
         <div class="row d-flex justify-content-center align-items-center p-3">
             <div class="p-0 flex-column flex-wrap  mt-md-0" ng-controller="Formcontoroller" ng-app="Sign_up_form">
-                <form  class="form w-100 p-3 d-flex flex-column" name="Sign_up_form" ng-submit="sendsignup()" novalidate >
+                <form  class="form w-100 p-3 d-flex flex-column" name="Sign_up_form" id="Sign_up_form" ng-model="Sign_up_form" ng-submit="sendsignup()" novalidate >
                     <!-- <div class="m-auto col-6"> -->
                         <h1 class="fs-1 h1-element fs-2"><b> سلام! <br> برای ثبت نام شروع کنید . . . </b></h1>
                         <br>
-                        <input type="text" class="w-100  border-0 p-4 user-input "ng-model="insert.username" name="username" ng-required="true" placeholder=" نام حساب کاربری">
-                        <div ng-show="error" class="d-flex col-12 error">
-                            <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">{{error}}</span>
+                        <input type="text" class="w-100  p-4 user-input "ng-model="insert.username" id="username" name="username" ng-required="true" placeholder=" نام حساب کاربری">
+                        <div ng-show="error_username" class="d-flex col-12 error">
+                            <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">{{error_username}}</span>
                         </div>
-                        <input type="email" class="w-100 border-0 p-4 password-input mt-3" ng-model="insert.email" name="email" ng-required="true" placeholder="ایمیل">
-                        <div ng-show="error" class="d-flex col-12 error">
-                            <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">{{error}}</span>
-                        </div>
-                        <input type="password" class="w-100 border-0 d-block p-4 password-input mt-3"ng-model="insert.password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
+                        <input type="email" ng-click="checkemail()" class="w-100  p-4 password-input mt-3" ng-model="insert.email"id="email" name="email" ng-required="true" placeholder="ایمیل">
+                        <input type="password" class="w-100  d-block p-4 password-input mt-3"ng-model="insert.password"id="password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                         <div ng-show="Sign_up_form.password.$invalid && Sign_up_form.password.$touched" class="d-flex col-12 ">
                             <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">رمز عبور باید بیشتر از هشت کاراکتر باشد</span>
                         </div>
-                        <input type="password" class="w-100  border-0 p-4 password-input mt-3"compare-to="insert.password"ng-model="R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
-                        <br>
-                        <input  type="submit" ng-disabled="Sign_up_form.$invalid" name="insert"class="btn btn-primary w-100 border-0 mt-3 p-2 my-auto singup-button" value="ثبت نام"></input>
+                        <input type="password" class="w-100   p-4 password-input mt-3"compare-to="insert.password"id="R_password" ng-model="R_password" name="R_password" ng-required="true" placeholder="تکرار رمز عبور">
+                        <div ng-show="error" class="d-flex col-12 error p-2 mt-2">
+                            <span class="text-danger mt-1 me-1 p-2" style="font-size: 0.99rem;">{{error}}</span>
+                        </div>
+                        <input  type="submit" ng-disabled="Sign_up_form.$invalid" name="insert"class="btn btn-primary w-100  mt-3 p-2 my-auto singup-button" value="ثبت نام"></input>
+
                         <h6 class="make-accunt col-11 text-center mt-md-5 ms-md-4" style="margin-top: 2rem !important;"> درحال حاضر حساب کاربری دارید؟ <a href="./Login.html" class="a-make-accont"> ورود حساب </a> </h6>
                         <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
                             <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
@@ -46,5 +46,11 @@
     <script src="./dist/js/Scripts/angular.js"></script>
     <script src="./dist/js/Scripts/angular-route.js"></script>
     <script src="./dist/js/Script.js"></script>
+    <script>
+        if(localStorage.getItem('been') == 'true'){
+            location.href = "Dashboard_base.html#!/dashboard";
+        }    
+    </script>
 </body>
 </html>
+

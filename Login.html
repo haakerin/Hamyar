@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="./dist/css/bootstrap/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="./dist/css/style.css">
     <link rel="stylesheet" href="./dist/css/all.min.css">
-    <title>ٍورود</title>
+    <title>ورود</title>
 </head>
 <body style="overflow: hidden">
     
     <div class="container-fluid container-md col-12 d-flex justify-content-center align-content-center align-items-center p-md-5 ">
-        <div class="row d-flex justify-content-center align-items-center pt-3">
+        <div class="row d-flex justify-content-center align-items-center p-3">
             <div class="p-0 flex-column flex-wrap mt-5 mt-md-0">
-                <form ng-submit="sendlogin()" name="login_form" novalidate ng-controller="lgoinCTR" ng-app="login_form" class="form d-flex flex-column p-3">
+                <form ng-submit="sendlogin()" name="login_form" novalidate ng-controller="lgoinCTR" ng-app="login_form" class="form w-100 p-3 d-flex flex-column">
                     <h1 class="fs-1 h1-element fs-2"><b>خوش آمدید :) </b></h1>
                     <br>
-                    <input type="text" class="  border-0 p-4 user-input " ng-model="login.username" name="username" placeholder=" نام حساب کاربری" ng-required="true">
+                    <input type="text" class="w-100  border-0 p-4 user-input" ng-model="login.username" name="username" placeholder=" نام حساب کاربری" ng-required="true">
                     <div>                        
-                        <input type="password" class=" border-0 p-4 password-input mt-3 input examplePassword1" ng-model="login.password" name="passwoard" ng-required="true" id="id_password"  placeholder="رمز عبور" name="passwoard">
+                        <input type="password" class="w-100 border-0 p-4 password-input mt-3 input examplePassword1" ng-model="login.password" name="passwoard" ng-required="true" id="id_password"  placeholder="رمز عبور" name="passwoard">
                         <i class="far fa-eye " id="togglePassword "></i>
                     </div>
                     <div ng-show="error" class="d-flex col-12 error">
@@ -30,7 +30,6 @@
 
                     <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
                         <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
-                            <!-- <span class="sr-only">Loading...</span> -->
                         </div>
                     </div>
                 </form>
@@ -43,13 +42,16 @@
     <script src="./dist/js/Script.js"></script>
     <script>
         var togglePassword = document.getElementById("togglePassword ");
-var password = document.getElementById("id_password");
-password.type = "password";
-togglePassword.addEventListener('click', function(e) {
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    this.classList.toggle('fa-eye-slash');
-});
+        var password = document.getElementById("id_password");
+        password.type = "password";
+        togglePassword.addEventListener('click', function(e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+        if(localStorage.getItem('been') == 'true'){
+            location.href = "Dashboard_base.html#!/dashboard";
+        }
     </script>
 </body>
 </html>

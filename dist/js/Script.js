@@ -8,8 +8,11 @@ function loading_none(){
 }
 
 form_singup.controller('Formcontoroller', function ($scope, $http) {
-
     $scope.insert = {};
+
+    $scope.checkemail=function(){
+        $scope.error_email = '';
+    }
     $scope.sendsignup = function () {
         document.getElementById("loading").classList.add("d-flex");
         document.getElementById("loading").classList.remove("d-none");
@@ -21,8 +24,10 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
             console.log(response);
             if (response.data.status == -2) {
                 $scope.error = response.data.message;
-                $scope.insert = null;
-                $scope.R_password = null;
+                $scope.Sign_up_form.$setPristine();
+                $scope.Sign_up_form.$setUntouched();
+                // $scope.insert=null;
+                // $scope.R_password = null;
                 loading_none();
             } else if (response.data.status == 1) {
                 $scope.error = '';
@@ -35,6 +40,7 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
                         if (response.data.status == 1) {
                         localStorage.setItem('username',response.data.user.username);
                         localStorage.setItem('email',response.data.user.email);
+                        localStorage.setItem('been',true);
                         location.href = "Dashboard_base.html#!/dashboard";
                     }
                 });
@@ -42,8 +48,6 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
             }
             else if (response.data.status == -1) {
                 $scope.error = response.data.message;
-                $scope.insert = null;
-                $scope.R_password = null;
                 loading_none();
             }
         });
@@ -87,8 +91,9 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
             } else if (response.data.status == 1) {
                 localStorage.setItem('username',response.data.user.username);
                 localStorage.setItem('email',response.data.user.email);
+                localStorage.setItem('been',true);
                 location.href = "Dashboard_base.html#!/dashboard";
-                $scope.login = null;
+
             }
             else if (response.data.status == -1) {
                 $scope.error = response.data.message;

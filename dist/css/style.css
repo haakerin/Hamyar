@@ -179,7 +179,7 @@ a:hover {
     background-color: #F7F8F9;
     width: 20.6875rem;
     height: 3rem;
-    border: 1px solid#E8ECF4 !important;
+    border: 1px solid#E8ECF4;
     color: var(--gray, #8391A1);
     text-align: right;
     font-size: 0.9375rem;
@@ -212,11 +212,11 @@ a:hover {
 
 /* /// signup page/// */
 input.ng-invalid.ng-touched {
-    border: 3px solid red !important;
+    border: 3px solid red ;
 }
 
 input.ng-valid.ng-touched {
-    border: 3px solid #133675 !important;
+    border: 3px solid #133675;
 }
 
 /*------------------------------------- styles Dashbord -------------------------------------*/
