@@ -375,7 +375,12 @@ background: var(--main-blue, #133675);
 .marker_menu{
     transition: 1s ease-in-out;
 }
-
+.grid_dahsboard_app{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 3%;
+    margin-bottom: 9rem;
+}
 /* ////////////////////Select app//////////////////// */
 .title_languages_programing p {
     color: var(--main-dark, #1E232C);
@@ -834,6 +839,7 @@ box-sizing: content-box;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(11, 8.75rem);
     }
+
     .time-type-add{
         font-size:1rem !important;
         }
@@ -898,7 +904,11 @@ box-sizing: content-box;
             "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
             ;
         }
-
+        .grid_dahsboard_app{
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 6%;
+            column-gap: 2%;
+        }
     .day-type ,.time-type {
         transform: rotate(0deg) !important;
         padding: 1rem;
