@@ -30,8 +30,10 @@
      <!-- Section left code -->
      <div ng-app="dashboard_app" ng-contorller="dashboardapp">
         <div class="row position-relative" id="card_box">
-            <div class="col-12 d-flex flex-column flex-wrap  flex-lg-nowrap flex-md-row-reverse" style="" id="boz">
-                <div class="card col-12 p-1 me-lg-3  col-lg-6"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+            <!-- <div class="col-12 d-flex flex-column flex-wrap  flex-lg-nowrap flex-md-row-reverse" style="" id="boz"> -->
+            <div class=" grid_dahsboard_app p-0" style="" id="boz">
+
+                <div class="card  p-1 me-lg-3"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                         <p class="">:نام برنامه</p>
@@ -56,8 +58,32 @@
                       </div>
                     </div>
                   </div>
-z
-                  <div class="card col-12 p-1 mt-3 mt-md-0 ms-md-3  col-lg-6"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                  <div class="card  p-1 me-lg-3"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                    <div class="card-body">
+                      <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
+                        <p class="">:نام برنامه</p>
+                        <img src="./dist/image/icon/trash.svg" class="trash " alt="">
+                      </div>
+                      <p class="card-text d-flex col-12 flex-row-reverse">{{boz}}</p>
+                      <div class="col-12 p-2 d-flex justify-content-between flex-row-reverse align-items-center box_card_subject">
+                        <div class="d-flex justify-content-center align-items-center flex-row-reverse">
+                            <p class="d-inline m-0"> :موضوع آموزش
+                                <p class="d-inline m-0">Html</p>
+                            </p>
+                        </div>
+                        <div class="">
+                            <img src="./dist/image/icon/icons8-html-5-480 1 (1).png" alt="">
+                        </div>
+                      </div>
+                      <div class="col-12 mt-1  p-1 d-flex justify-content-between flex-row-reverse">
+                        <p class="p-0 m-0 progress_title">درجه سختی</p>
+                        <div class="progress col-8 mt-1">
+                            <div class="progress-bar bg-danger" role="progressbar " style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card float-start p-1 me-lg-3"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                         <p class="">:نام برنامه</p>
