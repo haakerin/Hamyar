@@ -8,8 +8,8 @@ function loading_none(){
 }
 
 form_singup.controller('Formcontoroller', function ($scope, $http) {
-    $scope.insert = {};
 
+    $scope.insert = {};
     $scope.checkemail=function(){
         $scope.error_email = '';
     }
@@ -26,8 +26,6 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
                 $scope.error = response.data.message;
                 $scope.Sign_up_form.$setPristine();
                 $scope.Sign_up_form.$setUntouched();
-                // $scope.insert=null;
-                // $scope.R_password = null;
                 loading_none();
             } else if (response.data.status == 1) {
                 $scope.error = '';
@@ -114,6 +112,9 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
 
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope) {
+    
+    // document.getElementById("boz").style.background = "red";
+    // console.log('boz');
     $scope.username_header = localStorage.getItem('username');
     $scope.change_menu = function (menu) {
         window.location.href = menu[0].url;
@@ -124,15 +125,19 @@ Dashboard.controller('Dashboard', function ($scope) {
         }
             , 1000);
     }
+    $scope.logout = function(){
+        localStorage.removeItem('been');
+        location.reload();
+    }
 });
 window.onload = (event) => {
     var hash = window.location.hash.substring(1);
     // console.log(hash);
-    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem";document.getElementById("marker2_menu").style.top = "14.5rem"; }
-    else if (hash == '!/apps') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
-    else if (hash == '!/select_app') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "19.1rem"; }
-    else if (hash == '!/setting') { document.getElementById("marker_menu").style.top = "14.9rem"; document.getElementById("marker2_menu").style.top = "23.6rem"; }
-    else if (hash == '!/guid') { document.getElementById("marker_menu").style.top = "18.5rem"; document.getElementById("marker2_menu").style.top = "28.2rem"; }
+    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem";document.getElementById("marker2_menu").style.top = "10.9rem"; }
+    else if (hash == '!/apps') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "17rem"; }
+    else if (hash == '!/select_app') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "17rem"; }
+    else if (hash == '!/setting') { document.getElementById("marker_menu").style.top = "14.9rem"; document.getElementById("marker2_menu").style.top = "21.6rem"; }
+    else if (hash == '!/guid') { document.getElementById("marker_menu").style.top = "18.5rem"; document.getElementById("marker2_menu").style.top = "26.2rem"; }
 
 };
 Dashboard.config(["$routeProvider", function ($routeProvider) {
@@ -171,3 +176,16 @@ Dashboard.controller('select_app', function ($scope) {
     }
 
 });
+// Dashboard app
+var Dashboard_app = angular.module("dashboard_app", []);
+Dashboard_app.controller('dashboardapp', function ($scope) {
+  document.getElementById('boz').style.background = 'red';
+  console.log('boz');
+  $scope.boz = 'boz';
+});
+
+
+// window.scroll = (event) =>{
+//     document.getElementById('menu').style.height = "auto !important";
+//     alert('boz');
+// }
