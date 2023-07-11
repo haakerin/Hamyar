@@ -317,8 +317,10 @@ input.ng-valid.ng-touched {
 .menu {
     border-left: 2px solid #2E353F;
     background: #F5F5F5;
-    height: 100vh;
     width: 15.75rem;
+    height:100vh;
+    position: fixed;
+    right: 0;
     overflow: hidden;
 }
 
@@ -429,9 +431,9 @@ background: var(--main-blue, #133675);
     grid-template-areas: "c2 c1 c1"" c3 c1 c1""c4 c5 c6""c7 c8 c9"
         "c10 c10 c11""c10 c10 c12""c13 c14 c15 ""c16 c17 c18""c19 c20 c20""c21 c20 c20""c22 c23 c24"
     ;
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(11, 5.5rem);
+    grid-template-rows: repeat(7, 5.5rem);
 
     justify-content: end;
 }
@@ -825,7 +827,7 @@ box-sizing: content-box;
 @media only screen and (min-width: 375px) {
     .languages_programing_box {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 6.5rem);
+        grid-template-rows: repeat(7, 6.5rem);
     }
 
     .div-checkbox{
@@ -837,7 +839,7 @@ box-sizing: content-box;
 @media only screen and (min-width: 425px) {
     .languages_programing_box {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 8.75rem);
+        grid-template-rows: repeat(7, 8.75rem);
     }
 
     .time-type-add{
@@ -898,15 +900,16 @@ box-sizing: content-box;
 @media only screen and (min-width: 768px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6,  5.25rem);
+        grid-template-rows: repeat(3,  5.25rem);
         gap: 1%;
         grid-template-areas: "c2 c3 c4 c5 c6 c1 c1""c7 c10 c10 c9 c8 c1 c1""c11 c10 c10 c12 c13 c14 c15""c16 c17 c18 c19 c20 c20 c21"
             "c22 c23 c24 c25 c20 c20 c26""c27 c28 c29 c30 c31 c32 c33"
             ;
         }
         .grid_dahsboard_app{
+            grid-template-rows: repeat(auto ,1fr);
             grid-template-columns: repeat(2, 1fr);
-            row-gap: 6%;
+            /* row-gap: 6%; */
             column-gap: 2%;
         }
     .day-type ,.time-type {
@@ -926,20 +929,19 @@ box-sizing: content-box;
 @media only screen and (min-width: 990px) {
     .languages_programing_box {
         grid-template-columns: repeat(7,1fr);
-        grid-template-rows: repeat(6,5.25rem);
-        gap: 1%;
+        grid-template-rows: repeat(3,5.25rem);
     }
 }
 @media only screen and (min-width: 1024px) {
     .languages_programing_box {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(6, 6.6rem);
+        grid-template-rows: repeat(3, 6.6rem);
     }
 }
 
 @media only screen and (min-width: 1220px) {
     .languages_programing_box {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 7.75rem);
+        grid-template-rows: repeat(3, 7.75rem);
     }
 }

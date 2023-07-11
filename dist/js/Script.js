@@ -183,9 +183,3 @@ Dashboard_app.controller('dashboardapp', function ($scope) {
   console.log('boz');
   $scope.boz = 'boz';
 });
-
-
-// window.scroll = (event) =>{
-//     document.getElementById('menu').style.height = "auto !important";
-//     alert('boz');
-// }
