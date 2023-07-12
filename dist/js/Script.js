@@ -117,21 +117,22 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }
             , 1000);
     }
+
     $scope.logout = function () {
         localStorage.removeItem('been');
         location.reload();
     }
+
     function getplan() {
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/get-plans.php',
             data: { "username": localStorage.getItem('username') },
         }).then(function (response) {
-            console.log(response.data.message);
+            // console.log(response.data.message);
             console.log(response);
             $scope.message = response.data.message;
             let color = [];
-
             for(let i = 0; i < response.data.message.length; i++) {
                 let level = response.data.message[i].level;
                console.log($scope.message[i].color);
@@ -139,20 +140,25 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     $scope.message[i].color='green';
                 }
                 else if(level > 60 ){
-                    $scope.message[i].color ='red';
+                    $scope.message[i].color ='#ff2e01';
                 }
                 else{
-                    $scope.message[i].color ='yellow';
+                    $scope.message[i].color ='#ffd301';
                 }
             }
-            console.log(color);
-            // $scope.message.color = color;
-
         });
     }
-
-    // console.log(progress);
     getplan();
+    $scope.delete_plan = function (id) {
+        $http({
+            method: "POST",
+            url: 'https://hamyar-api.iran.liara.run/delete-plan.php',
+            data:{"id": id } ,
+        }).then(function (response) {
+            location.reload();
+            console.log(response);
+            });
+    }
 });
 var n = 0
 window.onload = (event) => {
@@ -194,6 +200,7 @@ Dashboard.controller('select_app', function ($scope, $http) {
     $scope.disChoies_timetable = function () {
         location.href += "?anything#selectapp";
     };
+
     $scope.send_timetable = function () {
 
         let saturday = ['saturday1', 'saturday2', 'saturday3', 'saturday4', 'saturday5', 'saturday6', 'saturday7', 'saturday8'];
@@ -272,7 +279,10 @@ Dashboard.controller('select_app', function ($scope, $http) {
 // Dashboard app
 var Dashboard_app = angular.module("dashboard_app", []);
 Dashboard_app.controller('dashboardapp', function ($scope) {
+    console.log('boz');
+
 });
+
 // Setting
 var Setting = angular.module("Setting", []);
 Dashboard.controller('SettingCTR', function ($scope) {

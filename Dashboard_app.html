@@ -31,16 +31,17 @@
        <div ng-app="dashboard_app" ng-contorller="dashboardapp">
           <div class="row position-relative" id="card_box">
               <!-- <div class="col-12 d-flex flex-column flex-wrap  flex-lg-nowrap flex-md-row-reverse" style="" id="boz"> -->
-              <div class=" grid_dahsboard_app p-0" style="" id="boz">
+              <div class=" grid_dahsboard_app p-0" >
   
-                  <div class="card mb-1 p-1 me-lg-3" ng-repeat="data in message"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                  <div class="card mb-1 p-1 me-lg-3" ng-repeat="data in message"  >
                       <div class="card-body">
                         <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                           <p class="d-flex"><span>{{data.name}}</span>:نام برنامه</p>
-                          <img src="./dist/image/icon/trash.svg" ng-click="delete_plan()" class="trash " alt="">
-                          
+                          <div ng-click="delete_plan(data.id)">
+                              <img src="./dist/image/icon/trash.svg"  class="trash m-1" alt="">
+                          </div>
                         </div>
-                        <p class="card-text d-flex col-12 flex-row-reverse">{{boz}}</p>
+                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                         <div class="col-12 p-2 d-flex justify-content-between flex-row-reverse align-items-center box_card_subject">
                           <div class="d-flex justify-content-center align-items-center flex-row-reverse">
                               <p class="d-inline m-0"> :موضوع آموزش
@@ -57,6 +58,7 @@
                               <div id="progress" class="progress-bar" role="progressbar " ng-style="{width : {{data.level}} + '%' , background : ' {{data.color}} ' }" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                    </div>
                       </div>
                     </div>
                     <!-- <div class="alert w-25 position-fixed start-0 bottom-0 m-1 alert-warning alert-dismissible fade show" role="alert">
