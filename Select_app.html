@@ -536,13 +536,21 @@ line-height: 125%;
               <div ng-show="error" class="d-flex  error ">
                 <span class="text-danger  text-center me-2" style="font-size: 0.89rem;">{{error}}</span>
             </div>
-          </div>
+            <div ng-show="success_full" class="d-flex  error position-absolute start-0 ms-4">
+                <span class="text-success  text-center me-2" style="font-size: 0.89rem;">برنامه با موفقیت اضافه شد</span>
+            </div>          </div>
           <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
             <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
             </div>
         </div>
-
-      </div>
+        
+        <!-- <div class="col-12 d-flex mb-2 flex-row-reverse">
+            <div class="alert m-auto alert-primary alert-dismissible fade show position-fixed" role="alert">
+    برنامه مورد نظر با موفقیت اضافه شد                          
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div> -->
+    </div>
   </div>
 </div>
 </div>

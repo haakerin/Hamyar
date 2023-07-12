@@ -279,10 +279,12 @@ Dashboard.controller('select_app', function ($scope, $http) {
             } else if (response.data.status == 1) {
                 loading_none();
                 // document.body.style.background = 'green';
+                $scope.error = null;
+                $scope.success_full = 'برنامه با موفقیت اضافه شد';
                 setTimeout(() => {
                     location.href = "Dashboard_base.html#!/apps";
                     location.reload();
-                }, 1);
+                }, 1000);
             }
         });
 
