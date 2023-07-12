@@ -1,50 +1,44 @@
 
-   <html lang="fa" dir="rtl">
+    <div class="col-12 d-flex justify-content-center">
+        <img src="./dist/image/profile2.png" class="m-auto" alt="" srcset="">
+    </div>
 
-
-   <div class="container">
+   <div class="container" ng-app="Setting" ng-controller="SettingCTR">
         <div class="form d-flex align-items-center flex-column">
-            <div class="mt-3 col-12 col-md-4 text-start">
-                <label for="exampleFormControlInput1" class="form-label">نام و نام خوانوادگی <span
-                        class="star">*</span></label>
-                <input type="name" class="form-control text-start" id="exampleFormControlInput1" placeholder="حسین حسینی">
+            <div class="mt-3 col-12 col-md-7 col-lg-4 text-start">
+                <label for="exampleFormControlInput1" class="form-label"><span class="star">*</span>نام و نام خوانوادگی </label>
+                <input type="name" class="form-control input_setting text-start p-2" id="input_name_setting" >
             </div>
 
-            <div class="mt-2 col-12 col-md-4 text-start">
-                <label for="exampleFormControlInput1" class="form-label">نام حساب کاربری <span
-                        class="star">*</span></label>
-                <input type="username" class="form-control dir-ltr text-start" id="exampleFormControlInput1"
-                    placeholder="H_Hosseini">
+            <div class="mt-2 col-12 col-md-7 col-lg-4 text-start">
+                <label for="exampleFormControlInput1" class="form-label"><span class="star">*</span>نام حساب کاربری</label>
+                <input type="username" class="form-control input_setting p-2 " disabled id="input_username_setting">
             </div>
 
-            <div class="mt-2 col-12 col-md-4 text-start">
-                <label for="exampleFormControlInput1" class="form-label"> ایمیل <span class="star">*</span></label>
-                <input type="email" class="form-control text-start" id="exampleFormControlInput1"
-                    placeholder="emailaddress@email.com">
+            <div class="mt-2 col-12 col-md-7 col-lg-4 text-start">
+                <label for="exampleFormControlInput1" class="form-label"><span class="star">*</span> ایمیل </label>
+                <input type="email" class="form-control p-2 input_setting" id="input_email_setting">
             </div>
 
-            <div class="mt-2 col-12 col-md-4 text-start">
+            <!-- <div class="mt-2 col-12 col-md-7 col-lg-4 text-start">
                 <label for="exampleFormControlInput1" class="form-label">رمز عبور فعلی</label>
-                <input type="email" class="form-control text-start" id="exampleFormControlInput1" value="********">
+                <input type="email" class="form-control" id="exampleFormControlInput1" value="********">
             </div>
 
-            <div class="mt-2 col-12 col-md-4 text-start">
+            <div class="mt-2 col-12 col-md-7 col-lg-4 text-start">
                 <label for="exampleFormControlInput1" class="form-label"> رمز عبور جدید </label>
                 <input type="email" class="form-control text-start" id="exampleFormControlInput1">
             </div>
 
-            <div class="mt-2 col-12 col-md-4 text-start">
+            <div class="mt-2 col-12 col-md-7 col-lg-4 text-start">
                 <label for="exampleFormControlInput1" class="form-label"> تکرار رمز عبور جدید </label>
                 <input type="email" class="form-control text-start" id="exampleFormControlInput1">
-            </div>
+            </div> -->
 
-            <div class="col-auto mt-4">
-                <button type="submit" class="btn btn-primary mb-3 submit-button">ثبت مشخصات</button>
+            <div class="col-auto mt-4 ps-4">
+                <button type="submit" class="btn btn-primary px-5 py-3 mb-3 submit-button">ثبت مشخصات</button>
             </div>
 
         </div>
 
     </div>
-
-
-</html>

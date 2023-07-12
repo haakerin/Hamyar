@@ -1082,7 +1082,6 @@ box-sizing: content-box;
         bottom: 1rem;
     }
 }
-
 @media only screen and (min-width: 990px) {
     .languages_programing_box {
         grid-template-columns: repeat(7,1fr);
@@ -1101,4 +1100,13 @@ box-sizing: content-box;
         /* grid-template-columns: repeat(3, 1fr); */
         grid-template-rows: repeat(3, 7.75rem);
     }
+}
+
+/*  */
+/* sttting style */
+.submit-button{
+    background: var(--main-blue, #133675);
+}
+.input_setting{
+    border: 1px solid var(--main-blue, #133675);
 }

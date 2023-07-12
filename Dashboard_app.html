@@ -33,17 +33,18 @@
             <!-- <div class="col-12 d-flex flex-column flex-wrap  flex-lg-nowrap flex-md-row-reverse" style="" id="boz"> -->
             <div class=" grid_dahsboard_app p-0" style="" id="boz">
 
-                <div class="card  p-1 me-lg-3"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                <div class="card mb-1 p-1 me-lg-3" ng-repeat="data in message"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
-                        <p class="">:نام برنامه</p>
-                        <img src="./dist/image/icon/trash.svg" class="trash " alt="">
+                        <p class="d-flex"><span>{{data.name}}</span>:نام برنامه</p>
+                        <img src="./dist/image/icon/trash.svg" ng-click(delete_plan({{data.id}})) class="trash " alt="">
+                        
                       </div>
                       <p class="card-text d-flex col-12 flex-row-reverse">{{boz}}</p>
                       <div class="col-12 p-2 d-flex justify-content-between flex-row-reverse align-items-center box_card_subject">
                         <div class="d-flex justify-content-center align-items-center flex-row-reverse">
                             <p class="d-inline m-0"> :موضوع آموزش
-                                <p class="d-inline m-0">Html</p>
+                                <p class="d-inline m-0">{{data.subject}}</p>
                             </p>
                         </div>
                         <div class="">
@@ -53,19 +54,23 @@
                       <div class="col-12 mt-1  p-1 d-flex justify-content-between flex-row-reverse">
                         <p class="p-0 m-0 progress_title">درجه سختی</p>
                         <div class="progress col-8 mt-1">
-                            <div class="progress-bar bg-danger" role="progressbar " style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div id="progress" class="progress-bar" role="progressbar " ng-style="{width : {{data.level}} + '%' , background : ' {{data.color}} ' }" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                       </div>
                     </div>
                   </div>
-                  
+                  <a href="#!select_app" style="margin-top: 3rem;">
+                    <div class="add_app col-12 col-md-4 col-lg-3 mb-5 d-flex flex-row-reverse justify-content-center p-2 p-lg-0 mt-5 align-items-center">
+                      <img src="./dist/image/icon/add-circle.svg" alt="">
+                      <p class="m-0">اضافه کردن برنامه جدید</p>
+                    </div>
+                  </a>
+                  <!-- <div class="alert w-25 position-fixed start-0 bottom-0 m-1 alert-warning alert-dismissible fade show" role="alert">
+                    <p>برنامه با موفقیت اعمال شد</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div> -->
             </div>
-               <a href="#!select_app" class="">
-                 <div class="add_app col-12 mb-4 col-md-4 col-lg-3 d-flex flex-row-reverse justify-content-center p-2 p-lg-0 mt-5 align-items-center">
-                   <img src="./dist/image/icon/add-circle.svg" alt="">
-                   <p class="m-0">اضافه کردن برنامه جدید</p>
-                 </div>
-               </a>
+               
              </div> 
              <div class="offcanvas offcanvas-bottom h-100" data-bs-scroll="false" tabindex="-1" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
                <div class="offcanvas-header px-5 pe-md-3 d-flex flex-column-reverse  flex-md-row-reverse">
