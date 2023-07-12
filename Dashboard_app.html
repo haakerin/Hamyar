@@ -1,10 +1,4 @@
-
 <style>
-    /* @media only screen and (min-width: 1400px) {
-      .menu{
-        height: 100vh;
-    }
-  } */
     @media only screen and (min-width: 768px) {
       .header_opinion{
           position: relative;
@@ -25,6 +19,9 @@
   .header_leftbar{
       padding: 0 2.5rem !important;
       padding-top: 1.5rem !important;
+  }
+  body{
+    height: 200vh;
   }
   </style>
        <!-- Section left code -->
@@ -65,13 +62,13 @@
                       <p>برنامه با موفقیت اعمال شد</p>
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div> -->
-              </div>
-              <a href="#!select_app" style="">
-                <div class="add_app col-12 col-md-4 col-lg-3 my-5 d-flex flex-row-reverse justify-content-center p-2 p-lg-0 mt-5 align-items-center">
-                  <img src="./dist/image/icon/add-circle.svg" alt="">
-                  <p class="m-0">اضافه کردن برنامه جدید</p>
+                      <a href="#!select_app" class="col-12 justify-content-center px-5  px-md-0  justify-content-md-start start-0  box_add_app" id="box_add_app">
+                            <div class="add_app col-12 col-sm-9 m-auto m-md-0 col-md-5 col-lg-3 my-5 d-flex flex-row-reverse justify-content-center p-2 p-lg-0 mt-5 align-items-center" id="add_app">
+                              <img src="./dist/image/icon/add-circle.svg" alt="">
+                              <p class="m-0">اضافه کردن برنامه جدید</p>
+                            </div>
+                      </a>
                 </div>
-              </a>
                  
                </div> 
                <div class="offcanvas offcanvas-bottom h-100" data-bs-scroll="false" tabindex="-1" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
@@ -269,4 +266,16 @@
                
                </div>
   
-  
+  <script>
+// window.onscroll = function(){scrolladdapp()}
+// console.log('kar');
+// function scrolladdapp(){
+//     console.log('bioz');
+//     if(document.body.scrollTo > 20 || document.documentElement.scrollTop >20){
+//         document.getElementById('add_app').style.display = 'block !important';
+//     }
+//     else{
+//         document.getElementById('add_app').style.display = 'none !important';
+//     }
+// }
+  </script>

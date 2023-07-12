@@ -117,7 +117,19 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }
             , 1000);
     }
+    window.onscroll = function(){scrolladdapp()}
+    function scrolladdapp(){
+        if(document.body.scrollTo > 20 || document.documentElement.scrollTop >20){
+            document.getElementById("box_add_app").style.opacity = '0%';
+            document.getElementById("box_add_app").style.right = '100rem';
 
+        }
+        else{
+            document.getElementById("box_add_app").style.opacity = '100%';
+            document.getElementById("box_add_app").style.right = '0rem';
+
+        }
+    }
     $scope.logout = function () {
         localStorage.removeItem('been');
         location.reload();
@@ -293,6 +305,7 @@ Dashboard.controller('SettingCTR', function ($scope) {
     }
     getdatasetting();
 });
+
 
 
 
