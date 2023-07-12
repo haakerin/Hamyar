@@ -1,3 +1,15 @@
+//home page
+var form_login = angular.module("home_page", []);
+form_login.controller("home", function ($scope, $http) {
+
+
+    $scope.loadlazy= function(){
+        loading();
+        console.log('boz');
+    }
+});
+
+
 //Forms
 
 var form_singup = angular.module("Sign_up_form", []);

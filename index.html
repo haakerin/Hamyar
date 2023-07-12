@@ -10,9 +10,9 @@
     <title>Hamyar</title>
 </head>
 
-<body style="overflow: hidden;">
+<body style="overflow: hidden;"  ng-app="home_page" ng-controller="home">
 
-    <div class="container-fluid d-md-none" >
+    <div class="container-fluid d-md-none">
         <div class="row h-100 d-flex align-items-center">
             <div class="col-12 col-md-6 p-0" style="height: 161vh; width: 100vw;">
                 <img src="./dist/image/BG.png" class="img-fluid" style="width: 100vw;">
@@ -55,15 +55,19 @@
                         font-style: normal;
                         font-weight: 400;
                         line-height: 27px;"> سامانه خدماتی همیار </p>
-                        <a href="./Login.html">
-                            <button type="button" class="btn w-100 mt-4"
+                        <a href="./Login.html" >
+                            <button type="button" class="btn w-100 mt-4" ng-click="loadlazy()"
                                 style="background-color: #133675;height: 4rem; color: white; border-radius: 8px;">ورود</button>
                         </a>
-                        <a href="./Signup.html">
-                            <button type="button" class="btn w-100 mt-2 mb-5"
+                        <a href="./Signup.html" >
+                            <button type="button" class="btn w-100 mt-2 mb-5" ng-click="loadlazy()"
                                 style="background-color: #ffffff; color: rgb(0, 0, 0);border-radius: 8px;height: 4rem; border: 1px solid rgb(0, 0, 0);">ثبت
                                 نام</button>
                         </a>
+                </div>
+            </div>
+            <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
+                <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
                 </div>
             </div>
         </div>
@@ -104,18 +108,21 @@
                     </g>
                 </svg>
                 <p class="m-0 mt-2 mb-5 fa-1 paragraph" style=""> سامانه خدماتی همیار </p>
-                <a href="./Login.html">
-                    <button type="button" class="btn w-100 mt-5 signup-button"
+                <a  href="./Login.html">
+                    <button  ng-click="loadlazy()" type="button" class="btn w-100 mt-5 signup-button"
                     style="background-color: #133675; color: white; border-radius: 16px;">ورود</button>
                 </a>
-                <a href="./Signup.html">
+                <a href="./Signup.html" ng-click="loadlazy()">
                     <button type="button" class="btn w-100 mt-3 signup-button"
                         style="background-color: #ffffff; color: rgb(0, 0, 0);border-radius: 16px; border: 1px solid rgb(0, 0, 0);">ثبت
                         نام</button>
                 </a>
                 </div>
             </div>
-
+            <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
+                <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
+                </div>
+            </div>
         </div>
     </div>
 
