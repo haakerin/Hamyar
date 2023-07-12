@@ -105,8 +105,6 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
 // Dashboard
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope, $http) {
-    // document.getElementById("boz").style.background = "red";
-    // console.log('boz');
     $scope.username_header = localStorage.getItem('username');
     $scope.change_menu = function (menu) {
         window.location.href = menu[0].url;
@@ -121,16 +119,18 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
     function scrolladdapp(){
         if(document.body.scrollTo > 20 || document.documentElement.scrollTop >20){
             document.getElementById("box_add_app").style.opacity = '0%';
-            document.getElementById("box_add_app").style.right = '100rem';
+            document.getElementById("box_add_app").style.marginRight = '100rem';
 
         }
         else{
             document.getElementById("box_add_app").style.opacity = '100%';
-            document.getElementById("box_add_app").style.right = '0rem';
+            document.getElementById("box_add_app").style.marginRight = '0rem';
 
         }
     }
     $scope.logout = function () {
+        document.getElementById("loading").classList.add("d-flex");
+        document.getElementById("loading").classList.remove("d-none");
         localStorage.removeItem('been');
         location.reload();
     }
@@ -141,8 +141,9 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             url: 'https://hamyar-api.iran.liara.run/get-plans.php',
             data: { "username": localStorage.getItem('username') },
         }).then(function (response) {
-            // console.log(response.data.message);
             console.log(response);
+            // localStorage.setItem('number_plan',response.data.message.length);
+            $scope.number_plan =response.data.message.length;
             $scope.message = response.data.message;
             let color = [];
             for(let i = 0; i < response.data.message.length; i++) {
@@ -176,7 +177,7 @@ var n = 0
 window.onload = (event) => {
     var hash = window.location.hash.substring(1);
     // console.log(hash);
-    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem"; document.getElementById("marker2_menu").style.top = "10.9rem"; }
+    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem"; document.getElementById("marker2_menu").style.top = "12.6rem"; }
     else if (hash == '!/apps') {document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "17rem";}
     else if (hash == '!/select_app') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "17rem"; }
     else if (hash == '!/setting') { document.getElementById("marker_menu").style.top = "14.9rem"; document.getElementById("marker2_menu").style.top = "21.6rem";    }

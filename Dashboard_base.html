@@ -159,7 +159,7 @@
                                 <div class="mt-4 position-relative">
                                     <a ng-click="logout()">
                                         <button
-                                            class="opinion_1 button_menu w-100 bg-transparent position-relative border-0 col-10  tx_black d-flex justify-content-end ">
+                                            class="opinion_1 button_menu  me-1 ps-1 w-100 bg-transparent position-relative border-0 col-10  tx_black d-flex justify-content-end ">
 خروج از حساب کاربری
                                             <img id="note-button"
                                                 src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
@@ -176,10 +176,13 @@
             <div ng-view class="col-12">
 
             </div>
+            <div class="loading w-100 h-100 d-none position-absolute start-0 top-0 d-flex justify-content-center align-items-center" id="loading">
+                <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
+                </div>
+            </div>
         
         </div>
     </div>
-
 
 
 

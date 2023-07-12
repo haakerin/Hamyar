@@ -365,9 +365,8 @@ input.ng-valid.ng-touched {
     height: 4rem;
     border-radius: 12px;
     background: var(--main-blue, #133675);
-    /* position: fixed;
-    bottom: 1rem; */
-    /* transition: 2s ease-in-out; */
+    /* position: fixed; */
+    transition: 2s ease-in-out;
 }
 
 .box_add_app {
@@ -1152,7 +1151,7 @@ a {
             position: fixed;
             bottom: 1rem;
             /* right: 100rem !important; */
-            transition: 2s all;
+            transition:0.9s all;
         }
 
         .row_dashboard_buttom {
