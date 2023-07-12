@@ -37,7 +37,7 @@
                     <div class="card-body">
                       <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
                         <p class="d-flex"><span>{{data.name}}</span>:نام برنامه</p>
-                        <img src="./dist/image/icon/trash.svg" ng-click(delete_plan({{data.id}})) class="trash " alt="">
+                        <img src="./dist/image/icon/trash.svg" ng-click="delete_plan({{data.id}})" class="trash " alt="">
                         
                       </div>
                       <p class="card-text d-flex col-12 flex-row-reverse">{{boz}}</p>
@@ -47,8 +47,8 @@
                                 <p class="d-inline m-0">{{data.subject}}</p>
                             </p>
                         </div>
-                        <div class="">
-                            <img src="./dist/image/icon/icons8-html-5-480 1 (1).png" alt="">
+                        <div class="" style="width: 8%;">
+                            <img ng-src="./dist/image/{{data.subject}}.png" class="" style="max-width: 100%;" alt="">
                         </div>
                       </div>
                       <div class="col-12 mt-1  p-1 d-flex justify-content-between flex-row-reverse">
@@ -59,8 +59,8 @@
                       </div>
                     </div>
                   </div>
-                  <a href="#!select_app" style="margin-top: 3rem;">
-                    <div class="add_app col-12 col-md-4 col-lg-3 mb-5 d-flex flex-row-reverse justify-content-center p-2 p-lg-0 mt-5 align-items-center">
+                  <a href="#!select_app" style="">
+                    <div class="add_app col-12 col-md-4 col-lg-3 my-5 d-flex flex-row-reverse justify-content-center p-2 p-lg-0 mt-5 align-items-center">
                       <img src="./dist/image/icon/add-circle.svg" alt="">
                       <p class="m-0">اضافه کردن برنامه جدید</p>
                     </div>
