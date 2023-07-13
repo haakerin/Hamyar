@@ -186,7 +186,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         });
     }
 });
-var n = 0
 window.onload = (event) => {
     var hash = window.location.hash.substring(1);
     // console.log(hash);
@@ -294,8 +293,8 @@ Dashboard.controller('select_app', function ($scope, $http) {
                 $scope.error = null;
                 $scope.success_full = 'برنامه با موفقیت اضافه شد';
                 setTimeout(() => {
-                    location.href = "Dashboard_base.html#!/apps";
-                    location.reload();
+                    // location.href = "Dashboard_base.html#!/apps";
+                    // location.reload();
                 }, 1000);
             }
         });
@@ -306,7 +305,6 @@ Dashboard.controller('select_app', function ($scope, $http) {
 // Dashboard app
 var Dashboard_app = angular.module("dashboard_app", []);
 Dashboard_app.controller('dashboardapp', function ($scope) {
-    console.log('boz');
 
 });
 
@@ -325,3 +323,46 @@ Dashboard.controller('SettingCTR', function ($scope) {
 
 
 
+
+
+
+// let deg = 6;
+// let horArrow = document.getElementById("h-arrow");
+// let minArrow = document.getElementById("m-arrow");
+// let secArrow = document.getElementById("s-arrow");
+// let digitalClock = document.getElementById("digital-clock");
+
+// setInterval(() => {
+//     let time = new Date();
+//     let h = time.getHours(); // خواندن ساعت از 0 تا 23
+//     let m = time.getMinutes(); // خواندن دقیقه از 0 تا 59
+//     let s = time.getSeconds(); // خواندن ثانیه از 0 تا 59
+
+//     let hDgree = h * 30;
+//     let mDgree = m * deg;
+//     let sDgree = s * deg;
+
+//     horArrow.style.transform = `rotateZ(${hDgree + mDgree / 12
+//         }deg)`;
+//     minArrow.style.transform = `rotateZ(${mDgree}deg)`;
+//     secArrow.style.transform = `rotateZ(${sDgree}deg)`;
+//     showTime(h, m, s);
+// });
+
+// function showTime(h, m, s) {
+//     let midnight = "AM";
+//     if (h == 0) {
+//         h = 12;
+//     }
+//     if (h > 12) {
+//         h = h - 12;
+//         midnight = "PM";
+//     }
+
+//     h = h < 10 ? "0" + h : h;
+//     m = m < 10 ? "0" + m : m;
+//     s = s < 10 ? "0" + s : s;
+
+//     let timeString = h + ":" + m + ":" + s + " " + midnight;
+//     digitalClock.innerText = timeString;
+// }
