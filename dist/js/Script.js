@@ -163,7 +163,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }).then(function (response) {
             console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
-            $scope.number_plan = response.data.message.length;
+            $scope.number_plan = '' ? response.data.message.length : 0;
             $scope.message = response.data.message;
             let color = [];
             for (let i = 0; i < response.data.message.length; i++) {
@@ -214,19 +214,86 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 else if (Item == 'none'){
                     document.getElementById('p'+index).style.background ='transparent';
                 }
-                // console.log(index + name_plan);
             });
-            // for (let i = 0; i < plans.saturday.length; i++) {
-            // // console.log(plans.saturday[i]);
+            plans.sunday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('sun'+index).classList.add('learn');
+                document.getElementById('sun'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('sun'+index).classList.add('practice');
+                    document.getElementById('sun'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('sun'+index).style.background ='transparent';
+                }
+            });
+            plans.monday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('mon'+index).classList.add('learn');
+                document.getElementById('mon'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('mon'+index).classList.add('practice');
+                    document.getElementById('mon'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('mon'+index).style.background ='transparent';
+                }
+            });
+            plans.tuesday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('tue'+index).classList.add('learn');
+                document.getElementById('tue'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('tue'+index).classList.add('practice');
+                    document.getElementById('tue'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('tue'+index).style.background ='transparent';
+                }
+            });
+            plans.wednesday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('wed'+index).classList.add('learn');
+                document.getElementById('wed'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('wed'+index).classList.add('practice');
+                    document.getElementById('wed'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('wed'+index).style.background ='transparent';
+                }
+            });
+            plans.thursday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('thur'+index).classList.add('learn');
+                document.getElementById('thur'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('thur'+index).classList.add('practice');
+                    document.getElementById('thur'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('thur'+index).style.background ='transparent';
+                }
+            });
+            plans.friday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('fri'+index).classList.add('learn');
+                document.getElementById('fri'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('fri'+index).classList.add('practice');
+                    document.getElementById('fri'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('fri'+index).style.background ='transparent';
+                }
+            });
 
-            // // columns_learn.push('p'+ i);
-            // // columns_train.push();
-            // }
-            // console.log(columns_learn);
-            // console.log(columns_train);
-
-            // document.getElementById('plan_day').style.gridTemplateAreas=' "p23 p22 p21"';
-            // document.getElementById('plan_day').style.background = 'red';
         });
     }
 });
