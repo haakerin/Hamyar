@@ -1,11 +1,8 @@
 //home page
 var form_login = angular.module("home_page", []);
 form_login.controller("home", function ($scope, $http) {
-
-
-    $scope.loadlazy= function(){
+    $scope.loadlazy = function () {
         loading();
-        console.log('boz');
     }
 });
 
@@ -89,7 +86,7 @@ var form_login = angular.module("login_form", []);
 form_login.controller("lgoinCTR", function ($scope, $http) {
     $scope.login = {};
     $scope.sendlogin = function () {
-loading();
+        loading();
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/sign-in.php',
@@ -132,18 +129,19 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             , 1000);
     }
     window.onscroll = function () { scrolladdapp() }
+    var lastScrollTop = 0;
     function scrolladdapp() {
-        if (document.body.scrollTo > 20 || document.documentElement.scrollTop > 20) {
+        var st = window.pageYOffset || document.documentElement.scrollTop; 
+        if (st > lastScrollTop) {
             document.getElementById("box_add_app").style.opacity = '0%';
-            document.getElementById("box_add_app").style.marginRight = '100rem';
-
+            document.getElementById("box_add_app").style.bottom = '-50rem';
+            } else if (st < lastScrollTop) {
+                document.getElementById("box_add_app").style.opacity = '100%';
+                document.getElementById("box_add_app").style.bottom = '0.6rem';
         }
-        else {
-            document.getElementById("box_add_app").style.opacity = '100%';
-            document.getElementById("box_add_app").style.marginRight = '0rem';
-
-        }
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     }
+
     $scope.logout = function () {
         loading();
         localStorage.removeItem('been');
@@ -280,7 +278,7 @@ Dashboard.controller('select_app', function ($scope, $http) {
         }
         let user_time = { saturday: TFsaturday, sunday: TFsunday, monday: TFmonday, tuesday: TFtrusday, wednesday: TFwednesday, thursday: TFtrusday, friday: TFfriday };
         let data = { username: localStorage.getItem('username'), subject: localStorage.getItem('subject'), plan_name: localStorage.getItem('plan_name'), user_times: user_time };
-loading();
+        loading();
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/add-plan.php',
