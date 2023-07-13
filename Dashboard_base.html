@@ -48,7 +48,6 @@
                         <button
                             class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
                             راهنمای سایت
-                            <!-- <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"height=30 width=30> -->
                             <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
                             height=30 width=30>
                         </button>
@@ -90,13 +89,19 @@
                         <div class="div_logo gray me-1 ms-lg-2">
                             <img src="./dist/image/profile2.png" class="rounded-circle" style="width: 2rem;height: 2rem;"alt="Avatar" />
                         </div>
-                        <span class="m-2 d-md-flex d-flex align-items-center justify-content-center name_header">d{{dsername_header}}</span>
+                        <span class="m-2 d-md-flex d-flex align-items-center justify-content-center name_header">{{username_header}}</span>
                     </div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                          <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item text-center" href="#setting">تنظیمات</a></li>
-                            <li ng-click="logout()"><a class="dropdown-item text-center" href="">خروج از حساب کاربری</a></li>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-center d-flex justify-content-center align-items-center" href="#!/setting">
+                                تنظیمات
+                                <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"height=20 width=20>
+                                </a></li>
+                            <li ng-click="logout()"><a class="dropdown-item text-center" href="">خروج از حساب کاربری
+                                <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/logout.svg"
+                                height=20 width=20>
+                            </a></li>
                           </ul>
                         </li>
                       </ul>

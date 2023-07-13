@@ -42,7 +42,7 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
                 $scope.error = '';
                 $http({
                     method: "POST",
-                    url: 'https://hamyar-api.iran.liara.run/sign-in.php',
+                    url: 'https://hamyar-api.iran.liara.run/login.php',
                     data: { username: $scope.insert.username, password: $scope.insert.password },
                 }).then(function (response) {
                     console.log(response);
@@ -117,7 +117,6 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
 // Dashboard
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope, $http) {
-    $scope.username_header = localStorage.getItem('username');
     $scope.change_menu = function (menu) {
         loading();
         document.getElementById("marker_menu").style.top = menu[1].size + "rem ";
@@ -142,7 +141,14 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }
         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     }
-
+    $http({
+        method: "POST",
+        url: 'https://hamyar-api.iran.liara.run/get-info.php',
+        data: { "token": localStorage.getItem('token') },
+    }).then(function(response){
+        $scope.username_header = response.data.user_info.name;
+        console.log(response);
+    });
     $scope.logout = function () {
         loading();
         localStorage.removeItem('token');
@@ -180,7 +186,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/delete-plan.php',
-            data: { "id": id },
+            data:{ "id": id ,"token":localStorage.getItem('token') },
         }).then(function (response) {
             location.reload();
             console.log(response);
@@ -190,15 +196,12 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/get-plans.php/sub',
-            data: { "id": id },
+            data: {"id": id ,"token":localStorage.getItem('token')},
         }).then(function (response) {
             $scope.subject = response.data.sub_plan.subject;
             $scope.name_plan = response.data.sub_plan.name;
-
+            console.log(response);
             let plans = JSON.parse(response.data.sub_plan.plan);
-            console.log(plans.saturday);
-            // let columns_learn = [];
-            // let columns_train = [];
             plans.saturday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('p'+index).classList.add('learn');
@@ -348,13 +351,18 @@ Dashboard_app.controller('dashboardapp', function ($scope) {
 
 // Setting
 var Setting = angular.module("Setting", []);
-Dashboard.controller('SettingCTR', function ($scope) {
-    function getdatasetting() {
-        document.getElementById("input_name_setting").value = localStorage.getItem('username');
-        document.getElementById('input_username_setting').value = localStorage.getItem('username');
-        document.getElementById('input_email_setting').value = localStorage.getItem('email');
-    }
-    getdatasetting();
+Dashboard.controller('SettingCTR', function ($scope,$http) {
+    $http({
+        method: "POST",
+        url: 'https://hamyar-api.iran.liara.run/get-info.php',
+        data: { "token": localStorage.getItem('token') },
+    }).then(function(response){
+        $scope.username_header = response.data.user_info.name;
+        console.log(response);
+        document.getElementById("input_name_setting").value = response.data.user_info.name;
+        document.getElementById('input_username_setting').value = response.data.user_info.username;
+        document.getElementById('input_email_setting').value =response.data.user_info.email;
+    });
 });
 
 

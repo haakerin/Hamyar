@@ -1086,7 +1086,9 @@ a {
 .div-checkbox {
     margin-right: 0.8rem !important;
 }
-
+.offcanvas.offcanvas-start{
+    width: auto;
+}
 
 
 
@@ -1101,7 +1103,7 @@ a {
     }
 
     .plan_day {
-        width: 85% !important;
+        width: 82% !important;
     }
 }
 
@@ -1110,7 +1112,9 @@ a {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(7, 8.75rem);
     }
-
+    .plan_day {
+        width: 83% !important;
+    }
     /* .plan_day{
         width: 87% !important;
     } */
