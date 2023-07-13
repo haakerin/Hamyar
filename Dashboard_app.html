@@ -34,7 +34,7 @@
                   <div class="card mb-1 p-1 me-lg-3" ng-repeat="data in message"  >
                       <div class="card-body">
                         <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
-                          <p class="d-flex"><span>{{data.name}}</span>:نام برنامه</p>
+                          <p class="d-flex"><span class="p-1" style="font-size: 0.8rem;">{{data.name}}</span>:نام برنامه</p>
                           <div ng-click="delete_plan(data.id)">
                               <img src="./dist/image/icon/trash.svg"  class="trash m-1" alt="">
                           </div>
@@ -95,14 +95,14 @@
                       برنامه تمرینی شما
                   </div>
                   <div class="col-12 col-md-5 p-3  show_curriculum justify-content-between d-flex">
-                      <span >html</span>
-                      <span>نام برنامه : <span>آموزش برنامه نویسی</span></span>                   
+                      <span >{{subject}}</span>
+                      <span>نام برنامه : <span style="font-size: 0.8rem;">{{name_plan}}</span></span>                   
                   </div>
                  </div>
                  <div class="offcanvas-body small">
                   <div class="modal-body">
-                      <div class="col-12 header-modal-body justify-content-center flex-row-reverse">
-                        <div class=" p-2 time-type"> ساعات </div>
+                      <div class="col-12 header-modal-body flex-row-reverse">
+                        <div class=" p-1 time-type"> ساعات </div>
                         <div class="row col-12 d-flex p-2">
                             <div class="col d-flex justify-content-around flex-row-reverse">
                                 <div class=" px-1 time-number"> 00 </div>
@@ -120,23 +120,36 @@
                 
                     <!-- //////////////// days time//////////////////// -->
                 
-                    <div class="col-12 body-modal-body justify-content-center mt-3 flex-row-reverse">
-                        <div class=" p-2  day-type"> شنبه </div>
-                        <div class="row col-12 d-flex ">
-                            <div class="col d-flex justify-content-around px-3">
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                            </div>
+                    <div class="col-12 body-modal-body mt-3">
+                        <div class=" p-2  day-type position-absolute start-0"> شنبه </div>
+                        <div class="plan_day me-2 me-sm-4 me-md-4 me-md-5"style="width:80%;" id="plan_day">
+                            <div class="div_plan" style="grid-area: p0" id="p0"></div>
+                            <div class="div_plan" style="grid-area: p1" id="p1"></div>
+                            <div class="div_plan" style="grid-area: p2" id="p2"></div>
+                            <div class="div_plan" style="grid-area: p3" id="p3"></div>
+                            <div class="div_plan" style="grid-area: p4" id="p4"></div>
+                            <div class="div_plan" style="grid-area: p5" id="p5"></div>
+                            <div class="div_plan" style="grid-area: p6" id="p6"></div>
+                            <div class="div_plan" style="grid-area: p7" id="p7"></div>
+                            <div class="div_plan" style="grid-area: p8" id="p8"></div>
+                            <div class="div_plan" style="grid-area: p9" id="p9"></div>
+                            <div class="div_plan" style="grid-area: p10" id="p10"></div>
+                            <div class="div_plan" style="grid-area: p11" id="p11"></div>
+                            <div class="div_plan" style="grid-area: p12" id="p12"></div>
+                            <div class="div_plan" style="grid-area: p13" id="p13"></div>
+                            <div class="div_plan" style="grid-area: p14" id="p14"></div>
+                            <div class="div_plan" style="grid-area: p15" id="p15"></div>
+                            <div class="div_plan" style="grid-area: p16" id="p16"></div>
+                            <div class="div_plan" style="grid-area: p17" id="p17"></div>
+                            <div class="div_plan" style="grid-area: p18" id="p18"></div>
+                            <div class="div_plan" style="grid-area: p19" id="p19"></div>
+                            <div class="div_plan" style="grid-area: p20" id="p20"></div>
+                            <div class="div_plan" style="grid-area: p21" id="p21"></div>
+                            <div class="div_plan" style="grid-area: p22" id="p22"></div>
+                            <div class="div_plan" style="grid-area: p23" id="p23"></div>
                         </div>
                     </div>
-                
+<!--                 
                     <div class="col-12 body-modal-body justify-content-center mt-2 flex-row-reverse">
                         <div class=" p-1  day-type"> یکشنبه </div>
                         <div class="row col-12 d-flex ">
@@ -237,7 +250,7 @@
                                 <div class="dividing-line"> </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <button class=" d-flex border-0 bg-transparent  mt-4 align-content-center align-items-center flex-row-reverse justify-content-end"  data-bs-dismiss="offcanvas" aria-label="Close">
                       <p class=" m-0 me-2">بازگشت به داشبورد</p>  
   

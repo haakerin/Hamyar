@@ -48,7 +48,7 @@
             password.setAttribute('type', type);
             this.classList.toggle('fa-eye-slash');
         });
-        if(localStorage.getItem('been') == 'true'){
+        if(localStorage.getItem('token') != undefined){
             location.href = "Dashboard_base.html#!/dashboard";
         }
     </script>

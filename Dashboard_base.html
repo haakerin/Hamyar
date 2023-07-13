@@ -44,16 +44,17 @@
                     </a>
                 </div>
                 <div class="mt-2 position-relative">
-                    <a href="#!setting" onclick="getsetting()" ng-click="change_menu([{url:'#!setting'},{size:'14.9'}])">
+                    <a href="#!guid" ng-click="change_menu([{url:'#!guid'},{size:'14.9'}])">
                         <button
                             class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
-                            تنظیمات
-                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"
-                                height=30 width=30>
+                            راهنمای سایت
+                            <!-- <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"height=30 width=30> -->
+                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
+                            height=30 width=30>
                         </button>
                     </a>
                 </div>
-                <div class="mt-2 position-relative">
+                <!-- <div class="mt-2 position-relative">
                     <a href="#!guid" ng-click="change_menu([{url:'#!guid'},{size:'18.5'}])">
                         <button
                             class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
@@ -62,17 +63,17 @@
                                 height=30 width=30>
                         </button>
                     </a>
-                </div>
-                <div class="mt-2 position-relative">
+                </div> -->
+                <!-- <div class="mt-2 position-relative log_out">
                     <a ng-click="logout()">
                         <button
-                            class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
+                            class=" bg-transparent position-relative border-0  tx_black d-flex justify-content-end align-items-end">
                             خروج از حساب کاربری
-                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
+                            <img id="note-button" src="./dist/image/icon/User Interface/vuesax/outline/logout.svg"
                                 height=30 width=30>
                         </button>
                     </a>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -85,12 +86,20 @@
             <!-- header of opinion -->
             <div class="col-12  header_opinion">
                 <div class="d-flex mb-4 p-0  p-md-0 justify-content-between align-items-center">
-                    <div class="d-flex me-0 me-md-3 me-lg-2">
+                    <div class="d-flex me-0 me-md-3 me-lg-2"class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="collapse">
                         <div class="div_logo gray me-1 ms-lg-2">
                             <img src="./dist/image/profile2.png" class="rounded-circle" style="width: 2rem;height: 2rem;"alt="Avatar" />
                         </div>
-                        <span class="m-2 d-md-flex d-flex align-items-center justify-content-center name_header">{{username_header}}</span>
+                        <span class="m-2 d-md-flex d-flex align-items-center justify-content-center name_header">d{{dsername_header}}</span>
                     </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item text-center" href="#setting">تنظیمات</a></li>
+                            <li ng-click="logout()"><a class="dropdown-item text-center" href="">خروج از حساب کاربری</a></li>
+                          </ul>
+                        </li>
+                      </ul>
                     <div class="d-inline d-lg-none" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                         <img src="./dist/image/icon/menu.svg" style="width: 2.5rem;" alt="">
@@ -137,17 +146,17 @@
                                 </a>
                                 </div>
                                 <div class="mt-4 position-relative">
-                                    <a  ng-click="change_menu([{url:'#!setting'},{size:'21.6'}])">
+                                    <a  ng-click="change_menu([{url:'#!guid'},{size:'21.6'}])">
                                     <button
                                         class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end ">
-                                        تنظیمات
+                                        راهنمای سایت
                                         <img id="note-button"
-                                            src="./dist/image/icon/User Interface/vuesax/outline/setting-2.svg"
-                                            height=30 width=30>
+                                        src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
+                                        height=30 width=30>
                                     </button>
                                 </a>
                                 </div>
-                                <div class="mt-4 position-relative">
+                                <!-- <div class="mt-4 position-relative">
                                     <a ng-click="change_menu([{url:'#!guid'},{size:'26.2'}])">
                                         <button
                                             class="opinion_1 button_menu bg-transparent position-relative border-0  tx_black d-flex justify-content-end ">
@@ -161,14 +170,14 @@
                                 <div class="mt-4 position-relative">
                                     <a ng-click="logout()">
                                         <button
-                                            class="opinion_1 button_menu  me-1 ps-1 w-100 bg-transparent position-relative border-0 col-10  tx_black d-flex justify-content-end ">
+                                            class="opinion_1 button_menu  me-1 ps-1 w-100 bg-transparent position-relative border-0 tx_black d-flex justify-content-end ">
 خروج از حساب کاربری
                                             <img id="note-button"
                                                 src="./dist/image/icon/User Interface/vuesax/outline/info-circle.svg"
                                                 height=30 width=30>
                                         </button>
                                     </a>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
@@ -193,10 +202,7 @@
 
 <script src="./dist/css/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
-    if(localStorage.getItem('been') == 'true'){
-
-    }
-    else{
+    if(localStorage.getItem('token') == undefined){
         location.href = './index.html';
     }
 </script>

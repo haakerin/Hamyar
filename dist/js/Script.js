@@ -1,6 +1,6 @@
 //home page
-var form_login = angular.module("home_page", []);
-form_login.controller("home", function ($scope, $http) {
+var home = angular.module("home_page", []);
+home.controller("home", function ($scope, $http) {
     $scope.loadlazy = function () {
         loading();
     }
@@ -10,7 +10,6 @@ form_login.controller("home", function ($scope, $http) {
 //Forms
 
 var form_singup = angular.module("Sign_up_form", []);
-
 function loading_none() {
     document.getElementById("loading").classList.add("d-none");
     document.getElementById("loading").classList.remove("d-flex");
@@ -48,9 +47,9 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
                 }).then(function (response) {
                     console.log(response);
                     if (response.data.status == 1) {
-                        localStorage.setItem('username', response.data.user.username);
-                        localStorage.setItem('email', response.data.user.email);
-                        localStorage.setItem('been', true);
+                        // localStorage.setItem('username', response.data.user.username);
+                        // localStorage.setItem('email', response.data.user.email);
+                        localStorage.setItem('token', response.data.token);
                         location.href = "Dashboard_base.html#!/dashboard";
                     }
                 });
@@ -89,7 +88,7 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
         loading();
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/sign-in.php',
+            url: 'https://hamyar-api.iran.liara.run/login.php',
             data: $scope.login,
         }).then(function (response) {
             console.log(response);
@@ -98,9 +97,11 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
                 $scope.login = null;
                 loading_none();
             } else if (response.data.status == 1) {
-                localStorage.setItem('username', response.data.user.username);
-                localStorage.setItem('email', response.data.user.email);
-                localStorage.setItem('been', true);
+                // localStorage.setItem('username', response.data.user.username);
+                // localStorage.setItem('email', response.data.user.email);
+                // localStorage.setItem('token', true);
+                localStorage.setItem('token', response.data.token);
+
                 location.href = "Dashboard_base.html#!/dashboard";
 
             }
@@ -131,20 +132,20 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
     window.onscroll = function () { scrolladdapp() }
     var lastScrollTop = 0;
     function scrolladdapp() {
-        var st = window.pageYOffset || document.documentElement.scrollTop; 
+        var st = window.pageYOffset || document.documentElement.scrollTop;
         if (st > lastScrollTop) {
             document.getElementById("box_add_app").style.opacity = '0%';
             document.getElementById("box_add_app").style.bottom = '-50rem';
-            } else if (st < lastScrollTop) {
-                document.getElementById("box_add_app").style.opacity = '100%';
-                document.getElementById("box_add_app").style.bottom = '0.6rem';
+        } else if (st < lastScrollTop) {
+            document.getElementById("box_add_app").style.opacity = '100%';
+            document.getElementById("box_add_app").style.bottom = '0.6rem';
         }
         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     }
 
     $scope.logout = function () {
         loading();
-        localStorage.removeItem('been');
+        localStorage.removeItem('token');
         location.reload();
     }
 
@@ -152,7 +153,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/get-plans.php',
-            data: { "username": localStorage.getItem('username') },
+            data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
             console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
@@ -183,6 +184,46 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }).then(function (response) {
             location.reload();
             console.log(response);
+        });
+    }
+    $scope.get_program = function (id) {
+        $http({
+            method: "POST",
+            url: 'https://hamyar-api.iran.liara.run/get-plans.php/sub',
+            data: { "id": id },
+        }).then(function (response) {
+            $scope.subject = response.data.sub_plan.subject;
+            $scope.name_plan = response.data.sub_plan.name;
+
+            let plans = JSON.parse(response.data.sub_plan.plan);
+            console.log(plans.saturday);
+            // let columns_learn = [];
+            // let columns_train = [];
+            plans.saturday.forEach(function columns(Item, index) {
+                if (Item == 'learn') {
+                document.getElementById('p'+index).classList.add('learn');
+                document.getElementById('p'+index).style.background ='#0076CB';
+                }
+                else if(Item == "practice"){
+                    document.getElementById('p'+index).classList.add('practice');
+                    document.getElementById('p'+index).style.background ='#133675';
+                }
+                else if (Item == 'none'){
+                    document.getElementById('p'+index).style.background ='transparent';
+                }
+                // console.log(index + name_plan);
+            });
+            // for (let i = 0; i < plans.saturday.length; i++) {
+            // // console.log(plans.saturday[i]);
+
+            // // columns_learn.push('p'+ i);
+            // // columns_train.push();
+            // }
+            // console.log(columns_learn);
+            // console.log(columns_train);
+
+            // document.getElementById('plan_day').style.gridTemplateAreas=' "p23 p22 p21"';
+            // document.getElementById('plan_day').style.background = 'red';
         });
     }
 });
@@ -236,9 +277,7 @@ Dashboard.controller('select_app', function ($scope, $http) {
         let thursday = ['thursday1', 'thursday2', 'thursday3', 'thursday4', 'thursday5', 'thursday6', 'thursday7', 'thursday8'];
         let friday = ['friday1', 'friday2', 'friday3', 'friday4', 'friday5', 'friday6', 'friday7', 'friday8'];
         let week = ['saturday', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-        // for (let q = 0,v = 0; q < week.length,v < 8; q++,v++) {
-        //     console.log((week[q]) );
-        // }
+
         let bennTF0 = [];
         let bennTF1 = [];
         let bennTF2 = [];
@@ -275,8 +314,8 @@ Dashboard.controller('select_app', function ($scope, $http) {
             TFfriday.push(bennTF6[j]);
             if (o % 3 === 0) j++;
         }
-        let user_time = { saturday: TFsaturday, sunday: TFsunday, monday: TFmonday, tuesday: TFtrusday, wednesday: TFwednesday, thursday: TFtrusday, friday: TFfriday };
-        let data = { username: localStorage.getItem('username'), subject: localStorage.getItem('subject'), plan_name: localStorage.getItem('plan_name'), user_times: user_time };
+        let user_time = { saturday: TFsaturday, sunday: TFsunday, monday: TFmonday, tuesday: TFtuesday, wednesday: TFwednesday, thursday: TFtrusday, friday: TFfriday };
+        let data = { token: localStorage.getItem('token'), subject: localStorage.getItem('subject'), plan_name: localStorage.getItem('plan_name'), user_times: user_time };
         loading();
         $http({
             method: "POST",
@@ -289,12 +328,11 @@ Dashboard.controller('select_app', function ($scope, $http) {
                 loading_none();
             } else if (response.data.status == 1) {
                 loading_none();
-                // document.body.style.background = 'green';
                 $scope.error = null;
                 $scope.success_full = 'برنامه با موفقیت اضافه شد';
                 setTimeout(() => {
-                    // location.href = "Dashboard_base.html#!/apps";
-                    // location.reload();
+                    location.href = "Dashboard_base.html#!/apps";
+                    location.reload();
                 }, 1000);
             }
         });
