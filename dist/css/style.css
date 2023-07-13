@@ -1122,7 +1122,7 @@ a {
         flex-shrink: 0;
         border-radius: 12px;
     }
-
+}
     @media only screen and (min-width: 768px) {
         .languages_programing_box {
             grid-template-columns: repeat(7, 1fr);
