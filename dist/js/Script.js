@@ -444,50 +444,16 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
     });
 });
 
+setInterval(() => {
+	d = new Date(); //object of date()
+	hr = d.getHours() +1;
+	min = d.getMinutes();
+	sec = d.getSeconds();
+	hr_rotation = 30 * hr + min / 2; //converting current time
+	min_rotation = 6 * min;
+	sec_rotation = 6 * sec;
 
-
-
-
-
-
-
-// let deg = 6;
-// let horArrow = document.getElementById("h-arrow");
-// let minArrow = document.getElementById("m-arrow");
-// let secArrow = document.getElementById("s-arrow");
-// let digitalClock = document.getElementById("digital-clock");
-
-// setInterval(() => {
-//     let time = new Date();
-//     let h = time.getHours(); // خواندن ساعت از 0 تا 23
-//     let m = time.getMinutes(); // خواندن دقیقه از 0 تا 59
-//     let s = time.getSeconds(); // خواندن ثانیه از 0 تا 59
-
-//     let hDgree = h * 30;
-//     let mDgree = m * deg;
-//     let sDgree = s * deg;
-
-//     horArrow.style.transform = `rotateZ(${hDgree + mDgree / 12
-//         }deg)`;
-//     minArrow.style.transform = `rotateZ(${mDgree}deg)`;
-//     secArrow.style.transform = `rotateZ(${sDgree}deg)`;
-//     showTime(h, m, s);
-// });
-
-// function showTime(h, m, s) {
-//     let midnight = "AM";
-//     if (h == 0) {
-//         h = 12;
-//     }
-//     if (h > 12) {
-//         h = h - 12;
-//         midnight = "PM";
-//     }
-
-//     h = h < 10 ? "0" + h : h;
-//     m = m < 10 ? "0" + m : m;
-//     s = s < 10 ? "0" + s : s;
-
-//     let timeString = h + ":" + m + ":" + s + " " + midnight;
-//     digitalClock.innerText = timeString;
-// }
+	document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
+	document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
+	document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;
+}, 1000);
