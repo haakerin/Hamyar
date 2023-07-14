@@ -129,6 +129,18 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }
             , 1000);
     }
+    // setInterval(() => {
+    //     $http({
+    //         method: "POST",
+    //         url: 'http://hamyar-api.iran.liara.run/islogin.php',
+    //         data:  {token: localStorage.getItem('token') },
+    //     }).then(function (response) {
+    //         console.log(response);
+    //         // document.getElementById("input_name_setting").value = response.data.user_info.name;
+    //         // document.getElementById('input_username_setting').value = response.data.user_info.username;
+    //         // document.getElementById('input_email_setting').value = response.data.user_info.email;
+    //     });
+    // }, 1000);
     window.onscroll = function () { scrolladdapp() }
     var lastScrollTop = 0;
     function scrolladdapp() {
@@ -308,6 +320,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
 
         });
     }
+
 });
 window.onload = (event) => {
     var hash = window.location.hash.substring(1);
@@ -442,5 +455,32 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
         document.getElementById('input_username_setting').value = response.data.user_info.username;
         document.getElementById('input_email_setting').value = response.data.user_info.email;
     });
+    $scope.send_setting = function(){
+        let data_setting = {"token": localStorage.getItem('token'),"username":$scope.input_username_setting,"email":$scope.input_email_setting,"name":$scope.input_name_setting}
+        $http({
+            method: "POST",
+            url: 'http://hamyar-api.iran.liara.run/update-user.php',
+            data: data_setting,
+        }).then(function (response) {
+            console.log(response);
+            // document.getElementById("input_name_setting").value = response.data.user_info.name;
+            // document.getElementById('input_username_setting').value = response.data.user_info.username;
+            // document.getElementById('input_email_setting').value = response.data.user_info.email;
+        });
+    }
 });
 
+setInterval(() => {
+	d = new Date(); //object of date()
+	hr = d.getHours();
+	min = d.getMinutes();
+	sec = d.getSeconds();
+	hr_rotation = 30 * hr + min / 2; //converting current time
+	min_rotation = 6 * min;
+	sec_rotation = 6 * sec;
+    document.getElementById('hours').innerHTML =  d.getHours();
+    document.getElementById('minutes').innerHTML =  d.getMinutes();
+	document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
+	document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
+	document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;
+}, 1000);
