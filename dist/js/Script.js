@@ -130,16 +130,16 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             , 1000);
     }
     // setInterval(() => {
-    //     $http({
-    //         method: "POST",
-    //         url: 'http://hamyar-api.iran.liara.run/islogin.php',
-    //         data:  {token: localStorage.getItem('token') },
-    //     }).then(function (response) {
-    //         console.log(response);
-    //         // document.getElementById("input_name_setting").value = response.data.user_info.name;
-    //         // document.getElementById('input_username_setting').value = response.data.user_info.username;
-    //         // document.getElementById('input_email_setting').value = response.data.user_info.email;
-    //     });
+        $http({
+            method: "POST",
+            url: 'http://hamyar-api.iran.liara.run/islogin.php',
+            data:  {"token": localStorage.getItem('token') },
+        }).then(function (response) {
+            console.log(response);
+            // document.getElementById("input_name_setting").value = response.data.user_info.name;
+            // document.getElementById('input_username_setting').value = response.data.user_info.username;
+            // document.getElementById('input_email_setting').value = response.data.user_info.email;
+        });
     // }, 1000);
     window.onscroll = function () { scrolladdapp() }
     var lastScrollTop = 0;
@@ -171,9 +171,9 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             method: "GET",
             url: 'https://api.keybit.ir/time/',
         }).then(function (response) {
-            // console.log(response);
+            console.log(response);
             $scope.date =response.data.date.weekday.name + ', ' +response.data.date.day.number.fa + ' ' + response.data.date.month.name + ' '+response.data.date.year.number.fa;
-            // $scope.hours =response.data.time24.hour.en;
+            $scope.pmam =response.data.time12.shift.short;
             // $scope.minutes=response.data.time24.minute.en;
     
         });
