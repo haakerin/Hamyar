@@ -419,11 +419,13 @@ input.ng-valid.ng-touched {
     border-radius: 50%;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
         inset 0 -15px 15px rgba(255, 255, 255, 0.05),
-        0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+        0 15px 15px rgba(0, 0, 0, 0.3),
+        inset 0 15px 15px rgba(0, 0, 0, 0.3);
+
 }
 
 .analog-clock::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 15px;
     height: 15px;
@@ -465,7 +467,7 @@ input.ng-valid.ng-touched {
 }
 
 #h-arrow::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 25px;
     width: 0.3485rem;
@@ -476,7 +478,7 @@ input.ng-valid.ng-touched {
 }
 
 #m-arrow::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 30px;
     width: 0.2485rem;
@@ -487,7 +489,7 @@ input.ng-valid.ng-touched {
 }
 
 #s-arrow::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 40px;
     width: 0.14894rem;
@@ -551,6 +553,60 @@ input.ng-valid.ng-touched {
 
 .spn12 {
     rotate: 90deg;
+}
+
+/* ///////////////////////////// */
+
+#time {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#time div {
+    position: relative;
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+#time div:nth-child(2)::after {
+    content: '’';
+    position: absolute;
+    right: -4px;
+    top: -4px;
+}
+
+@keyframes seconds {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.date {
+    color: var(--main-dark, #1E232C);
+    text-align: right;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.a-parent a {
+    padding: 1px;
+    color: var(--main-dark, #1E232C);
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
 }
 
 /* ///////////////////////////// */
@@ -834,10 +890,12 @@ input.ng-valid.ng-touched {
     font-size: 0.7rem;
     padding-left: 2.3rem;
 }
-.guid_color{
+
+.guid_color {
     width: 15px;
     height: 15px;
 }
+
 /* ////////// style Microprograms //////////// */
 .header-modal-body {
     background-color: #646A74;
@@ -938,21 +996,30 @@ input.ng-valid.ng-touched {
     /* border-left: 1px dotted #2E353F;
     border-right-width: 1px; */
 }
+
 /* .learn:last-child{
     border: 3px solid red ;
 } */
-.learn:first-child{
+.learn:first-child {
     border-radius: 0rem 0.375rem 0.375rem 0rem !important;
 }
-.learn:last-child{
+
+.learn:last-child {
     border-radius: 0.375rem 0rem 0rem 0.375rem !important;
 }
-.practice:first-child{
+
+.practice:first-child {
     border-radius: 0rem 0.375rem 0.375rem 0rem !important;
 }
-.practice:last-child{
+
+.practice:first {
+    background-color: #35C2C1 !important;
+}
+
+.practice:last-child {
     border-radius: 0.375rem 0rem 0rem 0.375rem !important;
 }
+
 .log_out {
     border-radius: 0.5rem;
     border: 1px solid var(--red, #E40000);
@@ -999,13 +1066,13 @@ a {
 /* dashbord page */
 
 .div-number-Program {
-    background-color: #F1F3F6;
+    background-color: #F0F7FC;
     display: inline-flex;
     padding: 1.2rem;
     justify-content: center;
     align-items: center;
     gap: 2.0625rem;
-    border-radius: 0.75rem;
+    border-radius:1rem !important;
 }
 
 .number {
@@ -1046,25 +1113,25 @@ a {
 }
 
 .div-number-Program-2 {
-    background-color: #F1F3F6;
+    background-color: #F0F7FC;
     display: inline-flex;
     padding: 1.2rem;
     justify-content: center;
     align-items: center;
     gap: 2.0625rem;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     height: 14rem;
     flex-shrink: 0;
 }
 
 .div-number-Program-3 {
-    background-color: #F1F3F6;
+    background-color: #F0F7FC;
     display: inline-flex;
     padding: 1.2rem;
     justify-content: center;
     align-items: center;
     gap: 2.0625rem;
-    border-radius: 0.75rem;
+    border-radius:1rem;
     height: 5rem;
     flex-shrink: 0;
     margin-left: .5rem;
@@ -1091,11 +1158,22 @@ a {
 .div-checkbox {
     margin-right: 0.8rem !important;
 }
-.offcanvas.offcanvas-start{
+
+.offcanvas.offcanvas-start {
     width: auto;
 }
 
-
+.row_dashboard_buttom {
+    margin-right: -10px !important;
+    border-radius: 1rem;
+    background: #EFEFEF;
+    height: 10.3125rem;
+    display: inline-flex;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.0625rem;
+}
 
 @media only screen and (min-width: 375px) {
     .languages_programing_box {
@@ -1117,9 +1195,11 @@ a {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(7, 8.75rem);
     }
+
     .plan_day {
         width: 86% !important;
     }
+
     /* .plan_day{
         width: 87% !important;
     } */
@@ -1161,9 +1241,11 @@ a {
         border-radius: 12px;
 
     }
+
     .plan_day {
         width: 85% !important;
     }
+
     .time-type-add {
         font-size: 1rem !important;
     }
