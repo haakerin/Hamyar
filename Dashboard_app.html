@@ -28,13 +28,12 @@
        <div ng-app="dashboard_app" ng-contorller="dashboardapp">
         
           <div class="row position-relative" id="card_box">
-              <!-- <div class="col-12 d-flex flex-column flex-wrap  flex-lg-nowrap flex-md-row-reverse" style="" id="boz"> -->
               <div class=" grid_dahsboard_app p-2 p-sm-3 p-md-4 p-lg-0" >
   
                   <div class="card mb-1 p-1 me-lg-3" ng-repeat="data in message track by $index"  >
                       <div class="card-body">
                         <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">
-                          <p class="d-flex"><span class="p-1" style="font-size: 0.8rem;">{{data.name}}</span>:نام برنامه</p>
+                          <p class="d-flex"><span dir="rtl" class="p-1" style="font-size: 0.8rem;">{{data.name}}</span>:نام برنامه</p>
                           <div ng-click="delete_plan(data.id)">
                               <img src="./dist/image/icon/trash.svg"  class="trash m-1" alt="">
                           </div>
@@ -93,10 +92,14 @@
                           </g>
                       </svg>
                       برنامه تمرینی شما
+                      <div>
+                        <p>تمرین</p><div class="col-1 bg-secondary opacity-50 rounded-5"></div>
+                        <p>آموزش</p><div class="col-1 bg-secondary opacity-50 rounded-5"></div>
+                      </div>
                   </div>
                   <div class="col-12 col-md-5 p-3  show_curriculum justify-content-between align-items-center d-flex">
-                      <span class="p-0">{{subject}}</span>
-                      <p class="d-flex p-0 m-0 align-items-center flex-row-reverse">:نام برنامه  <span style="font-size: 0.8rem;">{{name_plan}}</span></p>                   
+                      <span dir="rtl" class="p-0">{{subject}}</span>
+                      <p dir="rtl" class="d-flex p-0 m-0  align-items-center">نام برنامه  :<span style="font-size: 0.8rem;">{{name_plan}}</span></p>                   
                   </div>
                  </div>
                  <div class="offcanvas-body small">

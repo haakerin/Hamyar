@@ -163,7 +163,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }).then(function (response) {
             console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
-            $scope.number_plan = '' ? response.data.message.length : 0;
+            $scope.number_plan = '' ? 0 : response.data.message.length;
             $scope.message = response.data.message;
             let color = [];
             for (let i = 0; i < response.data.message.length; i++) {
