@@ -145,7 +145,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         method: "POST",
         url: 'https://hamyar-api.iran.liara.run/get-info.php',
         data: { "token": localStorage.getItem('token') },
-    }).then(function(response){
+    }).then(function (response) {
         $scope.username_header = response.data.user_info.name;
         console.log(response);
     });
@@ -154,12 +154,19 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         localStorage.removeItem('token');
         location.reload();
     }
-    $http({
-method:"GET",
-url:'https://api.keybit.ir/time/',
-    }).then(function(response){
-       $scope.date =response.data.date.full.official.iso.fa;
-    });
+    setInterval(() => {
+        $http({
+            method: "GET",
+            url: 'https://api.keybit.ir/time/',
+        }).then(function (response) {
+            // console.log(response);
+            $scope.date =response.data.date.weekday.name + ', ' +response.data.date.day.number.fa + ' ' + response.data.date.month.name + ' '+response.data.date.year.number.fa;
+            $scope.hours =response.data.time24.hour.en;
+            $scope.minutes=response.data.time24.minute.en;
+    
+        });
+    }, 1000);
+    
     function getplan() {
         $http({
             method: "POST",
@@ -191,7 +198,7 @@ url:'https://api.keybit.ir/time/',
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/delete-plan.php',
-            data:{ "id": id ,"token":localStorage.getItem('token') },
+            data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
             location.reload();
             console.log(response);
@@ -201,7 +208,7 @@ url:'https://api.keybit.ir/time/',
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/get-plans.php/sub',
-            data: {"id": id ,"token":localStorage.getItem('token')},
+            data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
             $scope.subject = response.data.sub_plan.subject;
             $scope.name_plan = response.data.sub_plan.name;
@@ -209,93 +216,93 @@ url:'https://api.keybit.ir/time/',
             let plans = JSON.parse(response.data.sub_plan.plan);
             plans.saturday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('p'+index).classList.add('learn');
-                document.getElementById('p'+index).style.background ='#133675';
+                    document.getElementById('p' + index).classList.add('learn');
+                    document.getElementById('p' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('p'+index).classList.add('practice');
-                    document.getElementById('p'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('p' + index).classList.add('practice');
+                    document.getElementById('p' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('p'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('p' + index).style.background = 'transparent';
                 }
             });
             plans.sunday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('sun'+index).classList.add('learn');
-                document.getElementById('sun'+index).style.background ='#133675';
+                    document.getElementById('sun' + index).classList.add('learn');
+                    document.getElementById('sun' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('sun'+index).classList.add('practice');
-                    document.getElementById('sun'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('sun' + index).classList.add('practice');
+                    document.getElementById('sun' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('sun'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('sun' + index).style.background = 'transparent';
                 }
             });
             plans.monday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('mon'+index).classList.add('learn');
-                document.getElementById('mon'+index).style.background ='#133675';
+                    document.getElementById('mon' + index).classList.add('learn');
+                    document.getElementById('mon' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('mon'+index).classList.add('practice');
-                    document.getElementById('mon'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('mon' + index).classList.add('practice');
+                    document.getElementById('mon' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('mon'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('mon' + index).style.background = 'transparent';
                 }
             });
             plans.tuesday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('tue'+index).classList.add('learn');
-                document.getElementById('tue'+index).style.background ='#133675';
+                    document.getElementById('tue' + index).classList.add('learn');
+                    document.getElementById('tue' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('tue'+index).classList.add('practice');
-                    document.getElementById('tue'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('tue' + index).classList.add('practice');
+                    document.getElementById('tue' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('tue'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('tue' + index).style.background = 'transparent';
                 }
             });
             plans.wednesday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('wed'+index).classList.add('learn');
-                document.getElementById('wed'+index).style.background ='#133675';
+                    document.getElementById('wed' + index).classList.add('learn');
+                    document.getElementById('wed' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('wed'+index).classList.add('practice');
-                    document.getElementById('wed'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('wed' + index).classList.add('practice');
+                    document.getElementById('wed' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('wed'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('wed' + index).style.background = 'transparent';
                 }
             });
             plans.thursday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('thur'+index).classList.add('learn');
-                document.getElementById('thur'+index).style.background ='#133675';
+                    document.getElementById('thur' + index).classList.add('learn');
+                    document.getElementById('thur' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('thur'+index).classList.add('practice');
-                    document.getElementById('thur'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('thur' + index).classList.add('practice');
+                    document.getElementById('thur' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('thur'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('thur' + index).style.background = 'transparent';
                 }
             });
             plans.friday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                document.getElementById('fri'+index).classList.add('learn');
-                document.getElementById('fri'+index).style.background ='#133675';
+                    document.getElementById('fri' + index).classList.add('learn');
+                    document.getElementById('fri' + index).style.background = '#133675';
                 }
-                else if(Item == "practice"){
-                    document.getElementById('fri'+index).classList.add('practice');
-                    document.getElementById('fri'+index).style.background ='#0076CB';
+                else if (Item == "practice") {
+                    document.getElementById('fri' + index).classList.add('practice');
+                    document.getElementById('fri' + index).style.background = '#0076CB';
                 }
-                else if (Item == 'none'){
-                    document.getElementById('fri'+index).style.background ='transparent';
+                else if (Item == 'none') {
+                    document.getElementById('fri' + index).style.background = 'transparent';
                 }
             });
 
@@ -399,7 +406,7 @@ Dashboard.controller('select_app', function ($scope, $http) {
         }).then(function (response) {
             if (response.data.status == -2) {
                 $scope.error = response.data.message;
-                // console.log(response);
+                console.log(response);
                 loading_none();
             } else if (response.data.status == 1) {
                 loading_none();
@@ -423,17 +430,17 @@ Dashboard_app.controller('dashboardapp', function ($scope) {
 
 // Setting
 var Setting = angular.module("Setting", []);
-Dashboard.controller('SettingCTR', function ($scope,$http) {
+Dashboard.controller('SettingCTR', function ($scope, $http) {
     $http({
         method: "POST",
         url: 'https://hamyar-api.iran.liara.run/get-info.php',
         data: { "token": localStorage.getItem('token') },
-    }).then(function(response){
+    }).then(function (response) {
         $scope.username_header = response.data.user_info.name;
         console.log(response);
         document.getElementById("input_name_setting").value = response.data.user_info.name;
         document.getElementById('input_username_setting').value = response.data.user_info.username;
-        document.getElementById('input_email_setting').value =response.data.user_info.email;
+        document.getElementById('input_email_setting').value = response.data.user_info.email;
     });
 });
 
