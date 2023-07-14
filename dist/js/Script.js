@@ -1,3 +1,4 @@
+
 //home page
 var home = angular.module("home_page", []);
 home.controller("home", function ($scope, $http) {
@@ -154,18 +155,16 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         localStorage.removeItem('token');
         location.reload();
     }
-    setInterval(() => {
         $http({
             method: "GET",
             url: 'https://api.keybit.ir/time/',
         }).then(function (response) {
             // console.log(response);
             $scope.date =response.data.date.weekday.name + ', ' +response.data.date.day.number.fa + ' ' + response.data.date.month.name + ' '+response.data.date.year.number.fa;
-            $scope.hours =response.data.time24.hour.en;
-            $scope.minutes=response.data.time24.minute.en;
+            // $scope.hours =response.data.time24.hour.en;
+            // $scope.minutes=response.data.time24.minute.en;
     
         });
-    }, 1000);
     
     function getplan() {
         $http({
@@ -175,7 +174,8 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }).then(function (response) {
             console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
-            $scope.number_plan = '' ? 0 : response.data.message.length;
+            if(response.data.message == false) $scope.number_plan = 0;else $scope.number_plan =  response.data.message.length;
+           
             $scope.message = response.data.message;
             let color = [];
             for (let i = 0; i < response.data.message.length; i++) {
@@ -452,7 +452,8 @@ setInterval(() => {
 	hr_rotation = 30 * hr + min / 2; //converting current time
 	min_rotation = 6 * min;
 	sec_rotation = 6 * sec;
-
+    document.getElementById('hours').innerHTML =  d.getHours() +1;
+    document.getElementById('minutes').innerHTML =  d.getMinutes();
 	document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
 	document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
 	document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;

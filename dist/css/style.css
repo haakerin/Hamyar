@@ -247,7 +247,7 @@ input.ng-valid.ng-touched {
 .card-text {
     color: var(--main-dark, #1E232C);
     text-align: right;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: Urbanist;
     font-style: normal;
     font-weight: 900;
@@ -287,7 +287,7 @@ input.ng-valid.ng-touched {
 .card {
     border-radius: 0.75rem;
     border-color: transparent !important;
-    background: var(--light-blue, #F1F3F6);
+    background: var(--light-blue, #F0F7FC);
 }
 
 .card-body {
@@ -554,7 +554,15 @@ input.ng-valid.ng-touched {
 .spn12 {
     rotate: 90deg;
 }
-
+.bind-subject{
+    color: var(--main-dark, #1E232C);
+text-align: right;
+font-family: Urbanist;
+font-size: 2rem;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+}
 /* ///////////////////////////// */
 
 #time {
