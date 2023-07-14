@@ -205,11 +205,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.saturday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('p'+index).classList.add('learn');
-                document.getElementById('p'+index).style.background ='#0076CB';
+                document.getElementById('p'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('p'+index).classList.add('practice');
-                    document.getElementById('p'+index).style.background ='#133675';
+                    document.getElementById('p'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('p'+index).style.background ='transparent';
@@ -218,11 +218,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.sunday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('sun'+index).classList.add('learn');
-                document.getElementById('sun'+index).style.background ='#0076CB';
+                document.getElementById('sun'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('sun'+index).classList.add('practice');
-                    document.getElementById('sun'+index).style.background ='#133675';
+                    document.getElementById('sun'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('sun'+index).style.background ='transparent';
@@ -231,11 +231,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.monday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('mon'+index).classList.add('learn');
-                document.getElementById('mon'+index).style.background ='#0076CB';
+                document.getElementById('mon'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('mon'+index).classList.add('practice');
-                    document.getElementById('mon'+index).style.background ='#133675';
+                    document.getElementById('mon'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('mon'+index).style.background ='transparent';
@@ -244,11 +244,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.tuesday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('tue'+index).classList.add('learn');
-                document.getElementById('tue'+index).style.background ='#0076CB';
+                document.getElementById('tue'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('tue'+index).classList.add('practice');
-                    document.getElementById('tue'+index).style.background ='#133675';
+                    document.getElementById('tue'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('tue'+index).style.background ='transparent';
@@ -257,11 +257,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.wednesday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('wed'+index).classList.add('learn');
-                document.getElementById('wed'+index).style.background ='#0076CB';
+                document.getElementById('wed'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('wed'+index).classList.add('practice');
-                    document.getElementById('wed'+index).style.background ='#133675';
+                    document.getElementById('wed'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('wed'+index).style.background ='transparent';
@@ -270,11 +270,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.thursday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('thur'+index).classList.add('learn');
-                document.getElementById('thur'+index).style.background ='#0076CB';
+                document.getElementById('thur'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('thur'+index).classList.add('practice');
-                    document.getElementById('thur'+index).style.background ='#133675';
+                    document.getElementById('thur'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('thur'+index).style.background ='transparent';
@@ -283,11 +283,11 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             plans.friday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                 document.getElementById('fri'+index).classList.add('learn');
-                document.getElementById('fri'+index).style.background ='#0076CB';
+                document.getElementById('fri'+index).style.background ='#133675';
                 }
                 else if(Item == "practice"){
                     document.getElementById('fri'+index).classList.add('practice');
-                    document.getElementById('fri'+index).style.background ='#133675';
+                    document.getElementById('fri'+index).style.background ='#0076CB';
                 }
                 else if (Item == 'none'){
                     document.getElementById('fri'+index).style.background ='transparent';
