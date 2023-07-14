@@ -154,7 +154,12 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         localStorage.removeItem('token');
         location.reload();
     }
-
+    $http({
+method:"GET",
+url:'https://api.keybit.ir/time/',
+    }).then(function(response){
+       $scope.date =response.data.date.full.official.iso.fa;
+    });
     function getplan() {
         $http({
             method: "POST",
