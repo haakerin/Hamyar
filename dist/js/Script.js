@@ -6,10 +6,7 @@ home.controller("home", function ($scope, $http) {
         loading();
     }
 });
-
-
 //Forms
-
 var form_singup = angular.module("Sign_up_form", []);
 function loading_none() {
     document.getElementById("loading").classList.add("d-none");
@@ -141,7 +138,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 location.reload();
             };
         });
-    }, 1000);
+    }, 5000);
 
 
     window.onscroll = function () { scrolladdapp() }
@@ -187,7 +184,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             url: 'https://hamyar-api.iran.liara.run/get-plans.php',
             data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
-            // console.log(response);
+            console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
             if (response.data.message == false) $scope.number_plan = 0; else $scope.number_plan = response.data.message.length;
 
@@ -235,7 +232,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('p' + index).classList.add('learn');
                     document.getElementById('p' + index).style.background = '#133675';
-                    // console.log(plans.saturday[index -1]);
                     if (plans.saturday[index] == "learn" && plans.saturday[index - 1] != "learn") {
                         document.getElementById('p' + index).style.borderTopRightRadius = '6px';
                         document.getElementById('p' + index).style.borderBottomRightRadius = '6px';
@@ -243,10 +239,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     if (plans.saturday[index] == "learn" && plans.saturday[index + 1] != "learn") {
                         document.getElementById('p' + index).style.borderTopLeftRadius = '6px';
                         document.getElementById('p' + index).style.borderBottomLeftRadius = '6px';
-
-                        if (plans.saturday[index] == "learn" && plans.saturday[index - 1] != "learn") {
-                            document.getElementById('p' + index + centerbox).style.background = 'red';
-                        }
                     }
                 }
                 else if (Item == "practice") {
@@ -279,10 +271,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     if (plans.sunday[index] == "learn" && plans.sunday[index + 1] != "learn") {
                         document.getElementById('sun' + index).style.borderTopLeftRadius = '6px';
                         document.getElementById('sun' + index).style.borderBottomLeftRadius = '6px';
-                
-                        if (plans.sunday[index] == "learn" && plans.sunday[index - 1] != "learn") {
-                            document.getElementById('sun' + index + centerbox).style.background = 'red';
-                        }
                     }
                 }
                 else if (Item == "practice") {
@@ -439,32 +427,28 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             });
             plans.friday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                    document.getElementById(fri + index).classList.add('learn');
-                    document.getElementById(fri + index).style.background = '#133675';
+                    document.getElementById('fri' + index).classList.add('learn');
+                    document.getElementById('fri' + index).style.background = '#133675';
                     // console.log(plans.friday[index -1]);
                     if (plans.friday[index] == "learn" && plans.friday[index - 1] != "learn") {
-                        document.getElementById(fri + index).style.borderTopRightRadius = '6px';
-                        document.getElementById(fri + index).style.borderBottomRightRadius = '6px';
+                        document.getElementById('fri' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('fri' + index).style.borderBottomRightRadius = '6px';
                     }
                     if (plans.friday[index] == "learn" && plans.friday[index + 1] != "learn") {
-                        document.getElementById(fri + index).style.borderTopLeftRadius = '6px';
-                        document.getElementById(fri + index).style.borderBottomLeftRadius = '6px';
-                        
-                        if (plans.friday[index] == "learn" && plans.friday[index - 1] != "learn"){
-                            document.getElementById(fri + index+ centerbox).style.background = 'red';
-                        }
+                        document.getElementById('fri' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('fri' + index).style.borderBottomLeftRadius = '6px';
                     }
                 }
                 else if (Item == "practice") {
-                    document.getElementById(fri + index).classList.add('practice');
-                    document.getElementById(fri + index).style.background = '#0076CB';
+                    document.getElementById('fri' + index).classList.add('practice');
+                    document.getElementById('fri' + index).style.background = '#0076CB';
                     if (plans.friday[index] == "practice" && plans.friday[index - 1] != "practice") {
-                        document.getElementById(fri + index).style.borderTopRightRadius = '6px';
-                        document.getElementById(fri + index).style.borderBottomRightRadius = '6px';
+                        document.getElementById('fri' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('fri' + index).style.borderBottomRightRadius = '6px';
                     }
                     if (plans.friday[index] == "practice" && plans.friday[index + 1] != "practice") {
-                        document.getElementById(fri + index).style.borderTopLeftRadius = '6px';
-                        document.getElementById(fri + index).style.borderBottomLeftRadius = '6px';
+                        document.getElementById('fri' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('fri' + index).style.borderBottomLeftRadius = '6px';
                     }
                 }
                 else if (Item == 'none') {
@@ -605,25 +589,34 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
     }).then(function (response) {
         $scope.username_header = response.data.user_info.name;
         console.log(response);
+        // $scope.user.input_name_setting = 'response.data.user_info.name';
+        // $scope.user.input_email_setting = response.data.user_info.email;
+        // $scope.user.input_username_setting = response.data.user_info.username;
         document.getElementById("input_name_setting").value = response.data.user_info.name;
         document.getElementById('input_username_setting').value = response.data.user_info.username;
-        document.getElementById('input_email_setting').value = response.data.user_info.email;
+        document.getElementById('input_email_setting').value =response.data.user_info.email;
     });
-    $scope.send_setting = function () {
-        let data_setting = { "token": localStorage.getItem('token'), "username": $scope.input_username_setting, "email": $scope.input_email_setting, "name": $scope.input_name_setting }
+    $scope.sendsetting = function () {
+        // $scope.user = {};
+        // console.log($scope.user);
+        let data_setting = { "token": localStorage.getItem('token'), "username": document.getElementById('input_username_setting').value, "email":  document.getElementById('input_email_setting').value, "name": document.getElementById('input_name_setting').value};
+        console.log(data_setting);
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/update-user.php',
             data: data_setting,
         }).then(function (response) {
+            localStorage.setItem('token',response.data.token);
             console.log(response);
-            // document.getElementById("input_name_setting").value = response.data.user_info.name;
-            // document.getElementById('input_username_setting').value = response.data.user_info.username;
-            // document.getElementById('input_email_setting').value = response.data.user_info.email;
         });
-    }
+    };
 });
-
+function setting(){
+    setTimeout(() => {
+        loading()
+            location.reload();
+    }, 1);
+}
 setInterval(() => {
     d = new Date(); //object of date()
     hr = d.getHours();
