@@ -129,18 +129,21 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }
             , 1000);
     }
-    // setInterval(() => {
+    setInterval(() => {
         $http({
             method: "POST",
-            url: 'http://hamyar-api.iran.liara.run/islogin.php',
-            data:  {"token": localStorage.getItem('token') },
+            url: 'https://hamyar-api.iran.liara.run/is-login.php',
+            data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
-            console.log(response);
-            // document.getElementById("input_name_setting").value = response.data.user_info.name;
-            // document.getElementById('input_username_setting').value = response.data.user_info.username;
-            // document.getElementById('input_email_setting').value = response.data.user_info.email;
+            // console.log(response);
+            if (response.data.status == -2) {
+                localStorage.removeItem('token');
+                location.reload();
+            };
         });
-    // }, 1000);
+    }, 1000);
+
+
     window.onscroll = function () { scrolladdapp() }
     var lastScrollTop = 0;
     function scrolladdapp() {
@@ -160,39 +163,39 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         data: { "token": localStorage.getItem('token') },
     }).then(function (response) {
         $scope.username_header = response.data.user_info.name;
-        console.log(response);
+        // console.log(response);
     });
     $scope.logout = function () {
         loading();
         localStorage.removeItem('token');
         location.reload();
     }
-        $http({
-            method: "GET",
-            url: 'https://api.keybit.ir/time/',
-        }).then(function (response) {
-            console.log(response);
-            $scope.date =response.data.date.weekday.name + ', ' +response.data.date.day.number.fa + ' ' + response.data.date.month.name + ' '+response.data.date.year.number.fa;
-            $scope.pmam =response.data.time12.shift.short;
-            // $scope.minutes=response.data.time24.minute.en;
-    
-        });
-    
+    $http({
+        method: "GET",
+        url: 'https://api.keybit.ir/time/',
+    }).then(function (response) {
+        // console.log(response);
+        $scope.date = response.data.date.weekday.name + ', ' + response.data.date.day.number.fa + ' ' + response.data.date.month.name + ' ' + response.data.date.year.number.fa;
+        // $scope.pmam =response.data.time12.shift.short;
+        // $scope.minutes=response.data.time24.minute.en;
+
+    });
+
     function getplan() {
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/get-plans.php',
             data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
-            if(response.data.message == false) $scope.number_plan = 0;else $scope.number_plan =  response.data.message.length;
-           
+            if (response.data.message == false) $scope.number_plan = 0; else $scope.number_plan = response.data.message.length;
+
             $scope.message = response.data.message;
             let color = [];
             for (let i = 0; i < response.data.message.length; i++) {
                 let level = response.data.message[i].level;
-                console.log($scope.message[i].color);
+                // console.log($scope.message[i].color);
                 if (level < 40) {
                     $scope.message[i].color = 'green';
                 }
@@ -212,8 +215,9 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             url: 'https://hamyar-api.iran.liara.run/delete-plan.php',
             data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
+            loading();
             location.reload();
-            console.log(response);
+            // console.log(response);
         });
     }
     $scope.get_program = function (id) {
@@ -224,16 +228,40 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         }).then(function (response) {
             $scope.subject = response.data.sub_plan.subject;
             $scope.name_plan = response.data.sub_plan.name;
-            console.log(response);
+            // console.log(response);
             let plans = JSON.parse(response.data.sub_plan.plan);
+
             plans.saturday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
                     document.getElementById('p' + index).classList.add('learn');
                     document.getElementById('p' + index).style.background = '#133675';
+                    // console.log(plans.saturday[index -1]);
+                    if (plans.saturday[index] == "learn" && plans.saturday[index - 1] != "learn") {
+                        document.getElementById('p' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('p' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.saturday[index] == "learn" && plans.saturday[index + 1] != "learn") {
+                        document.getElementById('p' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('p' + index).style.borderBottomLeftRadius = '6px';
+
+                        if (plans.saturday[index] == "learn" && plans.saturday[index - 1] != "learn") {
+                            document.getElementById('p' + index + centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
                     document.getElementById('p' + index).classList.add('practice');
                     document.getElementById('p' + index).style.background = '#0076CB';
+
+
+                    if (plans.saturday[index] == "practice" && plans.saturday[index - 1] != "practice") {
+                        document.getElementById('p' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('p' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.saturday[index] == "practice" && plans.saturday[index + 1] != "practice") {
+                        document.getElementById('p' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('p' + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('p' + index).style.background = 'transparent';
@@ -243,10 +271,31 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('sun' + index).classList.add('learn');
                     document.getElementById('sun' + index).style.background = '#133675';
+                    // console.log(plans.sunday[index -1]);
+                    if (plans.sunday[index] == "learn" && plans.sunday[index - 1] != "learn") {
+                        document.getElementById('sun' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('sun' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.sunday[index] == "learn" && plans.sunday[index + 1] != "learn") {
+                        document.getElementById('sun' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('sun' + index).style.borderBottomLeftRadius = '6px';
+                
+                        if (plans.sunday[index] == "learn" && plans.sunday[index - 1] != "learn") {
+                            document.getElementById('sun' + index + centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
                     document.getElementById('sun' + index).classList.add('practice');
                     document.getElementById('sun' + index).style.background = '#0076CB';
+                    if (plans.sunday[index] == "practice" && plans.sunday[index - 1] != "practice") {
+                        document.getElementById('sun' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('sun' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.sunday[index] == "practice" && plans.sunday[index + 1] != "practice") {
+                        document.getElementById('sun' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('sun' + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('sun' + index).style.background = 'transparent';
@@ -256,10 +305,31 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('mon' + index).classList.add('learn');
                     document.getElementById('mon' + index).style.background = '#133675';
+                    // console.log(plans.monday[index -1]);
+                    if (plans.monday[index] == "learn" && plans.monday[index - 1] != "learn") {
+                        document.getElementById('mon' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('mon' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.monday[index] == "learn" && plans.monday[index + 1] != "learn") {
+                        document.getElementById('mon' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('mon' + index).style.borderBottomLeftRadius = '6px';
+                
+                        if (plans.monday[index] == "learn" && plans.monday[index - 1] != "learn") {
+                            document.getElementById('mon' + index + centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
                     document.getElementById('mon' + index).classList.add('practice');
                     document.getElementById('mon' + index).style.background = '#0076CB';
+                    if (plans.monday[index] == "practice" && plans.monday[index - 1] != "practice") {
+                        document.getElementById('mon' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('mon' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.monday[index] == "practice" && plans.monday[index + 1] != "practice") {
+                        document.getElementById('mon' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('mon' + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('mon' + index).style.background = 'transparent';
@@ -269,10 +339,31 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('tue' + index).classList.add('learn');
                     document.getElementById('tue' + index).style.background = '#133675';
+                    // console.log(plans.tuesday[index -1]);
+                    if (plans.tuesday[index] == "learn" && plans.tuesday[index - 1] != "learn") {
+                        document.getElementById('tue' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('tue' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.tuesday[index] == "learn" && plans.tuesday[index + 1] != "learn") {
+                        document.getElementById('tue' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('tue' + index).style.borderBottomLeftRadius = '6px';
+                
+                        if (plans.tuesday[index] == "learn" && plans.tuesday[index - 1] != "learn") {
+                            document.getElementById('tue' + index + centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
                     document.getElementById('tue' + index).classList.add('practice');
                     document.getElementById('tue' + index).style.background = '#0076CB';
+                    if (plans.tuesday[index] == "practice" && plans.tuesday[index - 1] != "practice") {
+                        document.getElementById('tue' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('tue' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.tuesday[index] == "practice" && plans.tuesday[index + 1] != "practice") {
+                        document.getElementById('tue' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('tue' + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('tue' + index).style.background = 'transparent';
@@ -282,10 +373,31 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('wed' + index).classList.add('learn');
                     document.getElementById('wed' + index).style.background = '#133675';
+                    // console.log(plans.wednesday[index -1]);
+                    if (plans.wednesday[index] == "learn" && plans.wednesday[index - 1] != "learn") {
+                        document.getElementById('wed' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('wed' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.wednesday[index] == "learn" && plans.wednesday[index + 1] != "learn") {
+                        document.getElementById('wed' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('wed' + index).style.borderBottomLeftRadius = '6px';
+                
+                        if (plans.wednesday[index] == "learn" && plans.wednesday[index - 1] != "learn") {
+                            document.getElementById('wed' + index + centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
                     document.getElementById('wed' + index).classList.add('practice');
                     document.getElementById('wed' + index).style.background = '#0076CB';
+                    if (plans.wednesday[index] == "practice" && plans.wednesday[index - 1] != "practice") {
+                        document.getElementById('wed' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('wed' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.wednesday[index] == "practice" && plans.wednesday[index + 1] != "practice") {
+                        document.getElementById('wed' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('wed' + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('wed' + index).style.background = 'transparent';
@@ -295,10 +407,31 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('thur' + index).classList.add('learn');
                     document.getElementById('thur' + index).style.background = '#133675';
+                    // console.log(plans.thursday[index -1]);
+                    if (plans.thursday[index] == "learn" && plans.thursday[index - 1] != "learn") {
+                        document.getElementById('thur' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('thur' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.thursday[index] == "learn" && plans.thursday[index + 1] != "learn") {
+                        document.getElementById('thur' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('thur' + index).style.borderBottomLeftRadius = '6px';
+                
+                        if (plans.thursday[index] == "learn" && plans.thursday[index - 1] != "learn") {
+                            document.getElementById('thur' + index + centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
                     document.getElementById('thur' + index).classList.add('practice');
                     document.getElementById('thur' + index).style.background = '#0076CB';
+                    if (plans.thursday[index] == "practice" && plans.thursday[index - 1] != "practice") {
+                        document.getElementById('thur' + index).style.borderTopRightRadius = '6px';
+                        document.getElementById('thur' + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.thursday[index] == "practice" && plans.thursday[index + 1] != "practice") {
+                        document.getElementById('thur' + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById('thur' + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('thur' + index).style.background = 'transparent';
@@ -306,12 +439,33 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             });
             plans.friday.forEach(function columns(Item, index) {
                 if (Item == 'learn') {
-                    document.getElementById('fri' + index).classList.add('learn');
-                    document.getElementById('fri' + index).style.background = '#133675';
+                    document.getElementById(fri + index).classList.add('learn');
+                    document.getElementById(fri + index).style.background = '#133675';
+                    // console.log(plans.friday[index -1]);
+                    if (plans.friday[index] == "learn" && plans.friday[index - 1] != "learn") {
+                        document.getElementById(fri + index).style.borderTopRightRadius = '6px';
+                        document.getElementById(fri + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.friday[index] == "learn" && plans.friday[index + 1] != "learn") {
+                        document.getElementById(fri + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById(fri + index).style.borderBottomLeftRadius = '6px';
+                        
+                        if (plans.friday[index] == "learn" && plans.friday[index - 1] != "learn"){
+                            document.getElementById(fri + index+ centerbox).style.background = 'red';
+                        }
+                    }
                 }
                 else if (Item == "practice") {
-                    document.getElementById('fri' + index).classList.add('practice');
-                    document.getElementById('fri' + index).style.background = '#0076CB';
+                    document.getElementById(fri + index).classList.add('practice');
+                    document.getElementById(fri + index).style.background = '#0076CB';
+                    if (plans.friday[index] == "practice" && plans.friday[index - 1] != "practice") {
+                        document.getElementById(fri + index).style.borderTopRightRadius = '6px';
+                        document.getElementById(fri + index).style.borderBottomRightRadius = '6px';
+                    }
+                    if (plans.friday[index] == "practice" && plans.friday[index + 1] != "practice") {
+                        document.getElementById(fri + index).style.borderTopLeftRadius = '6px';
+                        document.getElementById(fri + index).style.borderBottomLeftRadius = '6px';
+                    }
                 }
                 else if (Item == 'none') {
                     document.getElementById('fri' + index).style.background = 'transparent';
@@ -455,11 +609,11 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
         document.getElementById('input_username_setting').value = response.data.user_info.username;
         document.getElementById('input_email_setting').value = response.data.user_info.email;
     });
-    $scope.send_setting = function(){
-        let data_setting = {"token": localStorage.getItem('token'),"username":$scope.input_username_setting,"email":$scope.input_email_setting,"name":$scope.input_name_setting}
+    $scope.send_setting = function () {
+        let data_setting = { "token": localStorage.getItem('token'), "username": $scope.input_username_setting, "email": $scope.input_email_setting, "name": $scope.input_name_setting }
         $http({
             method: "POST",
-            url: 'http://hamyar-api.iran.liara.run/update-user.php',
+            url: 'https://hamyar-api.iran.liara.run/update-user.php',
             data: data_setting,
         }).then(function (response) {
             console.log(response);
@@ -471,16 +625,17 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
 });
 
 setInterval(() => {
-	d = new Date(); //object of date()
-	hr = d.getHours();
-	min = d.getMinutes();
-	sec = d.getSeconds();
-	hr_rotation = 30 * hr + min / 2; //converting current time
-	min_rotation = 6 * min;
-	sec_rotation = 6 * sec;
-    document.getElementById('hours').innerHTML =  d.getHours();
-    document.getElementById('minutes').innerHTML =  d.getMinutes();
-	document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
-	document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
-	document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;
+    d = new Date(); //object of date()
+    hr = d.getHours();
+    min = d.getMinutes();
+    sec = d.getSeconds();
+    hr_rotation = 30 * hr + min / 2; //converting current time
+    min_rotation = 6 * min;
+    sec_rotation = 6 * sec;
+    document.getElementById('hours').innerHTML = d.getHours();
+    document.getElementById('minutes').innerHTML = d.getMinutes();
+    document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
+    document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
+    document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;
 }, 1000);
+

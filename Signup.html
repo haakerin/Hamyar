@@ -21,7 +21,7 @@
                         <br>
                         <input type="text" class="w-100  p-4 user-input "ng-model="insert.name" id="name" name="name" ng-required="true" placeholder="نام و نام خانوادگی">
                         <input type="text" class="w-100  p-4 user-input mt-3 "ng-model="insert.username" id="username" name="username" ng-required="true" placeholder=" نام  کاربری">
-                        <input type="email" ng-click="checkemail()" class="w-100  p-4 password-input mt-3" ng-model="insert.email"id="email" name="email" ng-required="true" placeholder="ایمیل">
+                        <input type="email" ng-pattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'                        ng-click="checkemail()" class="w-100  p-4 password-input mt-3" ng-model="insert.email"id="email" name="email" ng-required="true" placeholder="ایمیل">
                         <input type="password" class="w-100  d-block p-4 password-input mt-3"ng-model="insert.password"id="password" ng-minlength="8"  name="password" ng-required="true" placeholder="رمز عبور">
                         <div ng-show="Sign_up_form.password.$invalid && Sign_up_form.password.$touched" class="d-flex col-12 ">
                             <span class="text-danger mt-1 me-1" style="font-size: 0.89rem;">رمز عبور باید بیشتر از هشت کاراکتر باشد</span>

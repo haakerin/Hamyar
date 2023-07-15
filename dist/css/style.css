@@ -993,23 +993,50 @@ line-height: normal;
 .div_plan {
     /* background: #133675; */
     height: 1.9rem;
-}
 
-#p0, #p3, #p6, #p9, #p12, #p15, #p18, #p21 {
+}
+.div_plan{
     /* border-right: 3px dotted #2E353F;
     border-right-width: 1px; */
 }
-
-#p23 {
-    /* border-left: 1px dotted #2E353F;
-    border-right-width: 1px; */
+#p0, #p3, #p6, #p9, #p12, #p15, #p18, #p21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#sun0, #sun3, #sun6, #sun9, #sun12, #sun15, #sun18, #sun21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#mon0, #mon3, #mon6, #mon9, #mon12, #mon15, #mon18, #mon21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#tue0, #tue3, #tue6, #tue9, #tue12, #tue15, #tue18, #tue21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#wed0, #wed3, #wed6, #wed9, #wed12, #wed15, #wed18, #wed21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#thur0, #thur3, #thur6, #thur9, #thur12, #thur15, #thur18, #thur21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#fri0, #fri3, #fri6, #fri9, #fri12, #fri15, #fri18, #fri21 {
+    border-right: 3px dotted #2E353F;
+    border-right-width: 1px;
+}
+#p23 , #sun23 ,#mon23 , #tue23 , #wed23 , #thur23, #fri23{
+    border-left: 1px dotted #2E353F;
+    border-right-width: 1px;
 }
 
 /* .learn:last-child{
     border: 3px solid red ;
 } */
-.learn:first-child {
-    border-radius: 0rem 0.375rem 0.375rem 0rem !important;
+/* .learn:first-child {
+    border-radius: 0 8px 8px 0 !important;
 }
 
 .learn:last-child {
@@ -1026,7 +1053,7 @@ line-height: normal;
 
 .practice:last-child {
     border-radius: 0.375rem 0rem 0rem 0.375rem !important;
-}
+} */
 
 .log_out {
     border-radius: 0.5rem;

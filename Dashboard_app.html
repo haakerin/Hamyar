@@ -30,15 +30,15 @@
           <div class="row position-relative" id="card_box">
               <div class=" grid_dahsboard_app p-2 p-sm-3 p-md-2 p-lg-0 m-lg-0" >
   
-                  <div class="card mb-1 px-3 py-2 me-lg-3" ng-repeat="data in message track by $index"  >
+                  <div class="card pointer-event mb-1 px-3 py-2 me-lg-3" ng-repeat="data in message track by $index">
                       <div class="card-body">
                         <div class="card-title m-0 p-0 align-items-baseline d-flex justify-content-between flex-row-reverse">       
-                          <p class="">:نام برنامه</p>
+                          <p class=""data-bs-toggle="offcanvas" ng-click="get_program(data.id)" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" >:نام برنامه</p>
                           <img  ng-click="delete_plan(data.id)" src="./dist/image/icon/trash.svg" class="trash " alt="">
                         </div>
-                        <p dir="rtl" class="card-text d-flex col-12 "> {{data.name}}</p>
+                        <p dir="rtl" class="card-text d-flex col-12 "data-bs-toggle="offcanvas" ng-click="get_program(data.id)" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" > {{data.name}}</p>
                         </div>
-                    <div data-bs-toggle="offcanvas" ng-click="get_program(data.id)" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                    <div class="pointer-event"data-bs-toggle="offcanvas" ng-click="get_program(data.id)" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"   >
                         <div class="col-12 p-2 d-flex justify-content-between flex-row-reverse align-items-center box_card_subject">
                           <div class="d-flex justify-content-center align-items-center flex-row-reverse">
                               <p class="d-inline m-0"> :موضوع آموزش
@@ -95,9 +95,9 @@
                       </svg>
                       <small>برنامه تمرینی شما    </small>                
                     </div>
-                      <div class="d-flex align-items-center flex-row-reverse p-1 m-1 ps-4">
-                        <p class="m-0 pe-1" style="font-size: 1rem;">آموزش</p><div class="guid_color rounded-3 pe-1" style="background-color: #133675;"></div>
-                        <p class="ps-1 m-0" style="font-size: 1rem;">تمرین<div class="guid_color rounded-3 pe-1" style="background-color: #0076CB;"></div></p>
+                      <div class="d-flex align-items-center flex-row-reverse  m-1 ps-4">
+                        <p class="m-0 pe-2" style="font-size: 1rem;">آموزش</p><div class="guid_color rounded-3 pe-1" style="background-color: #133675;"></div>
+                        <p class="px-2 m-0" style="font-size: 1rem;">تمرین<div class="guid_color rounded-3 pe-1" style="background-color: #0076CB;"></div></p>
                       </div>
                   </div>
                   <div class="col-12 col-md-5 p-3  show_curriculum justify-content-between align-items-center d-flex">
@@ -128,19 +128,6 @@
                 
                     <div class="col-12 body-modal-body mt-3">
                         <div class=" p-3  day-type position-absolute start-0"> شنبه </div>
-                        <!-- <div class="d-inline position-absolute">
-                            <div class="d-inline-flex justify-content-around px-3">
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                                <div class="dividing-line"> </div>
-                            </div>
-                        </div> -->
                         <div class="plan_day me-3 me-sm-4 me-md-4 me-lg-5 me-md-5"style="width:80%;" id="plan_day">
                             <div class="div_plan" style="grid-area: p0" id="p0"></div>
                             <div class="div_plan" style="grid-area: p1" id="p1"></div>
