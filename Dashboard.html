@@ -2,17 +2,12 @@
     <div class="d-flex overflow-hidden mt-md-5 mt-3 flex-sm-row-reverse">
 
         <div class="col-12 ps-0 ps-md-3">
-
-
-            <!-- /////////////////////// -->
-        
-        
                 <div class="row justify-content-center">
 
                     <div class="row d-flex d-md-none justify-content-center">
                         <div class="col-12 div-number-Program">
                             <div class="col-12 align-items-center d-flex flex-row-reverse">
-                                <div class="col-2">
+                                <div class="col-2 d-flex flex-row-reverse">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" fill="none">
                                         <g id="vuesax/outline/stickynote">
                                             <g id="vuesax/outline/stickynote_2">
@@ -201,32 +196,8 @@
                         </div>
         
                     </div>
-        
                 </div>
-        
-                <!-- <div class="col-12 mt-3 px-md-0 mx-0 me-md-0 row_dashboard_buttom  d-flex justify-content-center">
-
-                </div> -->
                 </div>
-        
             </div>
-            <!--  -->
     </div>
-<script>
-    setInterval(() => {
-	d = new Date(); //object of date()
-	hr = d.getHours();
-	min = d.getMinutes();
-	sec = d.getSeconds();
-	hr_rotation = 30 * hr + min / 2; //converting current time
-	min_rotation = 6 * min;
-	sec_rotation = 6 * sec;
-    document.getElementById('hours').innerHTML =  d.getHours();
-    document.getElementById('minutes').innerHTML =  d.getMinutes();
-	document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
-	document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
-	document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;
-}, 1000);
-
-</script>
 </body>

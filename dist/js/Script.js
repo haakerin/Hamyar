@@ -1,13 +1,11 @@
 
 //home page
 var home = angular.module("home_page", []);
-home.controller("home", function ($scope, $http) {
+home.controller("home", function ($scope) {
     $scope.loadlazy = function () {
         loading();
     }
 });
-//Forms
-var form_singup = angular.module("Sign_up_form", []);
 function loading_none() {
     document.getElementById("loading").classList.add("d-none");
     document.getElementById("loading").classList.remove("d-flex");
@@ -16,102 +14,6 @@ function loading() {
     document.getElementById("loading").classList.add("d-flex");
     document.getElementById("loading").classList.remove("d-none");
 }
-
-form_singup.controller('Formcontoroller', function ($scope, $http) {
-
-    $scope.insert = {};
-    $scope.checkemail = function () {
-        $scope.error_email = '';
-    }
-    $scope.sendsignup = function () {
-        loading();
-        $http({
-            method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/signup.php',
-            data: $scope.insert,
-        }).then(function (response) {
-            console.log(response);
-            if (response.data.status == -2) {
-                $scope.error = response.data.message;
-                $scope.Sign_up_form.$setPristine();
-                $scope.Sign_up_form.$setUntouched();
-                loading_none();
-            } else if (response.data.status == 1) {
-                $scope.error = '';
-                $http({
-                    method: "POST",
-                    url: 'https://hamyar-api.iran.liara.run/login.php',
-                    data: { username: $scope.insert.username, password: $scope.insert.password },
-                }).then(function (response) {
-                    console.log(response);
-                    if (response.data.status == 1) {
-                        // localStorage.setItem('username', response.data.user.username);
-                        // localStorage.setItem('email', response.data.user.email);
-                        localStorage.setItem('token', response.data.token);
-                        location.href = "Dashboard_base.html#!/dashboard";
-                    }
-                });
-                loading_none();
-            }
-            else if (response.data.status == -1) {
-                $scope.error = response.data.message;
-                loading_none();
-            }
-        });
-    }
-});
-
-form_singup.directive("compareTo", function () {
-    return {
-        require: "ngModel",
-        scope:
-        {
-            confirmPassword: "=compareTo"
-        },
-        link: function (scope, element, attributes, modelVal) {
-            modelVal.$validators.compareTo = function (val) {
-                return val == scope.confirmPassword;
-            };
-            scope.$watch("confirmPassword", function () {
-                modelVal.$validate();
-            });
-        }
-    };
-});
-
-var form_login = angular.module("login_form", []);
-form_login.controller("lgoinCTR", function ($scope, $http) {
-    $scope.login = {};
-    $scope.sendlogin = function () {
-        loading();
-        $http({
-            method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/login.php',
-            data: $scope.login,
-        }).then(function (response) {
-            console.log(response);
-            if (response.data.status == -2) {
-                $scope.error = response.data.message;
-                $scope.login = null;
-                loading_none();
-            } else if (response.data.status == 1) {
-                // localStorage.setItem('username', response.data.user.username);
-                // localStorage.setItem('email', response.data.user.email);
-                // localStorage.setItem('token', true);
-                localStorage.setItem('token', response.data.token);
-
-                location.href = "Dashboard_base.html#!/dashboard";
-
-            }
-            else if (response.data.status == -1) {
-                $scope.error = response.data.message;
-                $scope.login = null;
-                loading_none();
-            }
-        });
-
-    }
-});
 // Dashboard
 var Dashboard = angular.module("Dashboard", ["ngRoute"]);
 Dashboard.controller('Dashboard', function ($scope, $http) {
@@ -463,7 +365,9 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
 window.onload = (event) => {
     var hash = window.location.hash.substring(1);
     // console.log(hash);
-    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem"; document.getElementById("marker2_menu").style.top = "12.6rem"; }
+    if (hash == '!/dashboard') { document.getElementById("marker_menu").style.top = "8.1rem"; document.getElementById("marker2_menu").style.top = "12.6rem"; 
+    
+}
     else if (hash == '!/apps') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "17rem"; }
     else if (hash == '!/select_app') { document.getElementById("marker_menu").style.top = "11.6rem"; document.getElementById("marker2_menu").style.top = "17rem"; }
     else if (hash == '!/setting') { document.getElementById("marker_menu").style.top = "14.9rem"; document.getElementById("marker2_menu").style.top = "21.6rem"; }
@@ -582,31 +486,42 @@ Dashboard_app.controller('dashboardapp', function ($scope) {
 // Setting
 var Setting = angular.module("Setting", []);
 Dashboard.controller('SettingCTR', function ($scope, $http) {
+    loading();
     $http({
         method: "POST",
         url: 'https://hamyar-api.iran.liara.run/get-info.php',
         data: { "token": localStorage.getItem('token') },
     }).then(function (response) {
+        loading_none();
         $scope.username_header = response.data.user_info.name;
         console.log(response);
-        // $scope.user.input_name_setting = 'response.data.user_info.name';
-        // $scope.user.input_email_setting = response.data.user_info.email;
-        // $scope.user.input_username_setting = response.data.user_info.username;
         document.getElementById("input_name_setting").value = response.data.user_info.name;
         document.getElementById('input_username_setting').value = response.data.user_info.username;
         document.getElementById('input_email_setting').value =response.data.user_info.email;
     });
     $scope.sendsetting = function () {
-        // $scope.user = {};
-        // console.log($scope.user);
-        let data_setting = { "token": localStorage.getItem('token'), "username": document.getElementById('input_username_setting').value, "email":  document.getElementById('input_email_setting').value, "name": document.getElementById('input_name_setting').value};
+        let data_setting = {"token": localStorage.getItem('token'), "username": document.getElementById('input_username_setting').value, "email":  document.getElementById('input_email_setting').value, "name": document.getElementById('input_name_setting').value};
         console.log(data_setting);
+        loading();
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/update-user.php',
             data: data_setting,
         }).then(function (response) {
-            localStorage.setItem('token',response.data.token);
+            if(response.data.status == -2){
+                $scope.error = response.data.message;
+                loading_none();
+            }
+            if(response.data.status == 0){
+                $scope.error = response.data.message;
+                loading_none();
+            }
+            if(response.data.status == 1){
+                localStorage.setItem('token',response.data.token);
+                location.href = 'Dashboard_base.html#!/dashboard';
+                localStorage.setItem("token",response.data.token);
+                loading_none();
+            }
             console.log(response);
         });
     };
@@ -617,18 +532,3 @@ function setting(){
             location.reload();
     }, 1);
 }
-setInterval(() => {
-    d = new Date(); //object of date()
-    hr = d.getHours();
-    min = d.getMinutes();
-    sec = d.getSeconds();
-    hr_rotation = 30 * hr + min / 2; //converting current time
-    min_rotation = 6 * min;
-    sec_rotation = 6 * sec;
-    document.getElementById('hours').innerHTML = d.getHours();
-    document.getElementById('minutes').innerHTML = d.getMinutes();
-    document.getElementById('h-arrow').style.transform = `rotate(${hr_rotation}deg)`;
-    document.getElementById('m-arrow').style.transform = `rotate(${min_rotation}deg)`;
-    document.getElementById('s-arrow').style.transform = `rotate(${sec_rotation}deg)`;
-}, 1000);
-
