@@ -146,8 +146,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 else if (Item == "practice") {
                     document.getElementById('p' + index).classList.add('practice');
                     document.getElementById('p' + index).style.background = '#0076CB';
-
-
                     if (plans.saturday[index] == "practice" && plans.saturday[index - 1] != "practice") {
                         document.getElementById('p' + index).style.borderTopRightRadius = '6px';
                         document.getElementById('p' + index).style.borderBottomRightRadius = '6px';
@@ -195,7 +193,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                 if (Item == 'learn') {
                     document.getElementById('mon' + index).classList.add('learn');
                     document.getElementById('mon' + index).style.background = '#133675';
-                    // console.log(plans.monday[index -1]);
                     if (plans.monday[index] == "learn" && plans.monday[index - 1] != "learn") {
                         document.getElementById('mon' + index).style.borderTopRightRadius = '6px';
                         document.getElementById('mon' + index).style.borderBottomRightRadius = '6px';
@@ -203,10 +200,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     if (plans.monday[index] == "learn" && plans.monday[index + 1] != "learn") {
                         document.getElementById('mon' + index).style.borderTopLeftRadius = '6px';
                         document.getElementById('mon' + index).style.borderBottomLeftRadius = '6px';
-                
-                        if (plans.monday[index] == "learn" && plans.monday[index - 1] != "learn") {
-                            document.getElementById('mon' + index + centerbox).style.background = 'red';
-                        }
                     }
                 }
                 else if (Item == "practice") {
@@ -237,10 +230,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     if (plans.tuesday[index] == "learn" && plans.tuesday[index + 1] != "learn") {
                         document.getElementById('tue' + index).style.borderTopLeftRadius = '6px';
                         document.getElementById('tue' + index).style.borderBottomLeftRadius = '6px';
-                
-                        if (plans.tuesday[index] == "learn" && plans.tuesday[index - 1] != "learn") {
-                            document.getElementById('tue' + index + centerbox).style.background = 'red';
-                        }
                     }
                 }
                 else if (Item == "practice") {
@@ -271,10 +260,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     if (plans.wednesday[index] == "learn" && plans.wednesday[index + 1] != "learn") {
                         document.getElementById('wed' + index).style.borderTopLeftRadius = '6px';
                         document.getElementById('wed' + index).style.borderBottomLeftRadius = '6px';
-                
-                        if (plans.wednesday[index] == "learn" && plans.wednesday[index - 1] != "learn") {
-                            document.getElementById('wed' + index + centerbox).style.background = 'red';
-                        }
                     }
                 }
                 else if (Item == "practice") {
@@ -305,10 +290,6 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
                     if (plans.thursday[index] == "learn" && plans.thursday[index + 1] != "learn") {
                         document.getElementById('thur' + index).style.borderTopLeftRadius = '6px';
                         document.getElementById('thur' + index).style.borderBottomLeftRadius = '6px';
-                
-                        if (plans.thursday[index] == "learn" && plans.thursday[index - 1] != "learn") {
-                            document.getElementById('thur' + index + centerbox).style.background = 'red';
-                        }
                     }
                 }
                 else if (Item == "practice") {
