@@ -86,7 +86,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             url: 'https://hamyar-api.iran.liara.run/get-plans.php',
             data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             // localStorage.setItem('number_plan',response.data.message.length);
             if (response.data.message == false) $scope.number_plan = 0; else $scope.number_plan = response.data.message.length;
 
@@ -120,11 +120,13 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         });
     }
     $scope.get_program = function (id) {
+        loading();
         $http({
             method: "POST",
             url: 'https://hamyar-api.iran.liara.run/get-plans.php/sub',
             data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
+            // loading_none();
             $scope.subject = response.data.sub_plan.subject;
             $scope.name_plan = response.data.sub_plan.name;
             // console.log(response);
@@ -441,7 +443,7 @@ Dashboard.controller('select_app', function ($scope, $http) {
         }).then(function (response) {
             if (response.data.status == -2) {
                 $scope.error = response.data.message;
-                console.log(response);
+                // console.log(response);
                 loading_none();
             } else if (response.data.status == 1) {
                 loading_none();
@@ -474,14 +476,15 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
     }).then(function (response) {
         loading_none();
         $scope.username_header = response.data.user_info.name;
-        console.log(response);
+        // console.log(response);
         document.getElementById("input_name_setting").value = response.data.user_info.name;
         document.getElementById('input_username_setting').value = response.data.user_info.username;
         document.getElementById('input_email_setting').value =response.data.user_info.email;
     });
     $scope.sendsetting = function () {
         let data_setting = {"token": localStorage.getItem('token'), "username": document.getElementById('input_username_setting').value, "email":  document.getElementById('input_email_setting').value, "name": document.getElementById('input_name_setting').value};
-        console.log(data_setting);
+        // console.log(data_setting);
+
         loading();
         $http({
             method: "POST",
@@ -503,7 +506,7 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
                 location.reload();
                 loading_none();
             }
-            console.log(response);
+            // console.log(response);
         });
     };
 });
