@@ -1207,7 +1207,22 @@ a {
     align-items: center;
     gap: 2.0625rem;
 }
+/*  */
+/* sttting style */
+.submit-button {
+    background: var(--main-blue, #133675);
+}
 
+.input_setting {
+    border: 1px solid var(--main-blue, #133675);
+}
+
+/* about us  */
+.titel-aboutus{
+    font-family: Urbanist;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 600;}
 @media only screen and (min-width: 375px) {
     .languages_programing_box {
         grid-template-columns: repeat(3, 1fr);
@@ -1367,12 +1382,3 @@ a {
     }
 }
 
-/*  */
-/* sttting style */
-.submit-button {
-    background: var(--main-blue, #133675);
-}
-
-.input_setting {
-    border: 1px solid var(--main-blue, #133675);
-}

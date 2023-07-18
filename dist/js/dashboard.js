@@ -110,7 +110,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
             url: 'https://hamyar-api.iran.liara.run/get-plans.php/sub',
             data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
-            // loading_none();
+            loading_none();
             $scope.subject = response.data.sub_plan.subject;
             $scope.name_plan = response.data.sub_plan.name;
             // console.log(response);
