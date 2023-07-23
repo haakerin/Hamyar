@@ -15,7 +15,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
     setInterval(() => {
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/is-login.php',
+            url: 'https://hamyar.qom20.ir/API/is-login.php',
             data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
             // console.log(response);
@@ -42,7 +42,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
     }
     $http({
         method: "POST",
-        url: 'https://hamyar-api.iran.liara.run/get-info.php',
+        url: 'https://hamyar.qom20.ir/API/get-info.php',
         data: { "token": localStorage.getItem('token') },
     }).then(function (response) {
         $scope.username_header = response.data.user_info.name;
@@ -67,7 +67,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
     function getplan() {
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/get-plans.php',
+            url: 'https://hamyar.qom20.ir/API/get-plans.php',
             data: { "token": localStorage.getItem('token') },
         }).then(function (response) {
             // console.log(response);
@@ -95,7 +95,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
     $scope.delete_plan = function (id) {
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/delete-plan.php',
+            url: 'https://hamyar.qom20.ir/API/delete-plan.php',
             data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
             loading();
@@ -107,7 +107,7 @@ Dashboard.controller('Dashboard', function ($scope, $http) {
         loading();
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/get-plans.php/sub',
+            url: 'https://hamyar.qom20.ir/API/get-plans.php/sub',
             data: { "id": id, "token": localStorage.getItem('token') },
         }).then(function (response) {
             loading_none();
@@ -410,7 +410,7 @@ Dashboard.controller('select_app', function ($scope, $http) {
         loading();
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/add-plan.php',
+            url: 'https://hamyar.qom20.ir/API/add-plan.php',
             data: data,
         }).then(function (response) {
             if (response.data.status == -2) {

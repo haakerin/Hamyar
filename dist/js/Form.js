@@ -19,7 +19,7 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
         loading();
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/signup.php',
+            url: 'https://hamyar.qom20.ir/API/signup.php',
             data: $scope.insert,
         }).then(function (response) {
             console.log(response);
@@ -32,7 +32,7 @@ form_singup.controller('Formcontoroller', function ($scope, $http) {
                 $scope.error = '';
                 $http({
                     method: "POST",
-                    url: 'https://hamyar-api.iran.liara.run/login.php',
+                    url: 'https://hamyar.qom20.ir/API/login.php',
                     data: { username: $scope.insert.username, password: $scope.insert.password },
                 }).then(function (response) {
                     console.log(response);
@@ -78,7 +78,7 @@ form_login.controller("lgoinCTR", function ($scope, $http) {
         loading();
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/login.php',
+            url: 'https://hamyar.qom20.ir/API/login.php',
             data: $scope.login,
         }).then(function (response) {
             console.log(response);

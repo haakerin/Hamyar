@@ -4,7 +4,7 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
     loading();
     $http({
         method: "POST",
-        url: 'https://hamyar-api.iran.liara.run/get-info.php',
+        url: 'https://hamyar.qom20.ir/API/get-info.php',
         data: { "token": localStorage.getItem('token') },
     }).then(function (response) {
         loading_none();
@@ -21,7 +21,7 @@ Dashboard.controller('SettingCTR', function ($scope, $http) {
         loading();
         $http({
             method: "POST",
-            url: 'https://hamyar-api.iran.liara.run/update-user.php',
+            url: 'https://hamyar.qom20.ir/API/update-user.php',
             data: data_setting,
         }).then(function (response) {
             if (response.data.status == -2) {
